@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,half=upper": {
+      "model": "prehistoriccraft:block/acid_shower_t",
+      "y": 180
+    },
+    "facing=north,half=upper": {
+      "model": "prehistoriccraft:block/acid_shower_t",
+      "y": 90
+    },
+    "facing=south,half=upper": {
+      "model": "prehistoriccraft:block/acid_shower_t",
+      "y": 270
+    },
+    "facing=west,half=upper": {
+      "model": "prehistoriccraft:block/acid_shower_t"
+    },
+    "facing=east,half=lower": {
+      "model": "prehistoriccraft:block/acid_shower_b",
+      "y": 180
+    },
+    "facing=north,half=lower": {
+      "model": "prehistoriccraft:block/acid_shower_b",
+      "y": 90
+    },
+    "facing=south,half=lower": {
+      "model": "prehistoriccraft:block/acid_shower_b",
+      "y": 270
+    },
+    "facing=west,half=lower": {
+      "model": "prehistoriccraft:block/acid_shower_b"
+    }
+  }
+}

@@ -8,6 +8,7 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
+import net.smazeee.prehistoriccraft.item.ModItems;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -16,7 +17,17 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        //simpleItem(ModItems.THING);
+        simpleItem(ModItems.CAMBRIAN_FOSSIL);
+        simpleItem(ModItems.PRECAMBRIAN_FOSSIL);
+        simpleItem(ModItems.CARBONIFEROUS_FOSSIL);
+        simpleItem(ModItems.CRETACEOUS_FOSSIL);
+        simpleItem(ModItems.DEVONIAN_FOSSIL);
+        simpleItem(ModItems.JURASSIC_FOSSIL);
+        simpleItem(ModItems.ORDOVICIAN_FOSSIL);
+        simpleItem(ModItems.PERMIAN_FOSSIL);
+        simpleItem(ModItems.SILURIAN_FOSSIL);
+        simpleItem(ModItems.TRIASSIC_FOSSIL);
+        simpleItem(ModItems.AMBER);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

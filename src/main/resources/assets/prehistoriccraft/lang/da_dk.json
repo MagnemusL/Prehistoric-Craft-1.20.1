@@ -1,0 +1,27 @@
+{
+  "block.prehistoriccraft.cambrian_fossiliferous_stone": "Kambrisk fossil sten",
+  "block.prehistoriccraft.precambrian_fossiliferous_stone": "Prækambrium fossil sten",
+  "block.prehistoriccraft.carboniferous_fossiliferous_stone": "Carbon fossil sten",
+  "block.prehistoriccraft.cretaceous_fossiliferous_stone": "Kridt fossil sten",
+  "block.prehistoriccraft.devonian_fossiliferous_stone": "Devon fossil sten",
+  "block.prehistoriccraft.jurassic_fossiliferous_stone": "Jura fossil sten",
+  "block.prehistoriccraft.ordovician_fossiliferous_stone": "Ordovicium fossil sten",
+  "block.prehistoriccraft.permian_fossiliferous_stone": "Permian fossil sten",
+  "block.prehistoriccraft.silurian_fossiliferous_stone": "Silur fossil sten",
+  "block.prehistoriccraft.triassic_fossiliferous_stone": "Trias fossil sten",
+  "block.prehistoriccraft.amber_ore": "Ravmalm",
+
+  "item.prehistoriccraft.cambrian_fossil": "Kambrisk fossil",
+  "item.prehistoriccraft.precambrian_fossil": "Prækambrium fossil",
+  "item.prehistoriccraft.carboniferous_fossil": "Carbon fossil",
+  "item.prehistoriccraft.cretaceous_fossil": "Kridt fossil",
+  "item.prehistoriccraft.devonian_fossil": "Devon fossil",
+  "item.prehistoriccraft.jurassic_fossil": "ura fossil",
+  "item.prehistoriccraft.ordovician_fossil": "Ordovicium fossil",
+  "item.prehistoriccraft.permian_fossil": "Permian fossil",
+  "item.prehistoriccraft.silurian_fossil": "Silur fossil",
+  "item.prehistoriccraft.triassic_fossil": "Trias fossil",
+  "item.prehistoriccraft.amber": "Rav",
+
+  "blockentity.acid_shower": "Syrebruser"
+}

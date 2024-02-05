@@ -1,0 +1,27 @@
+{
+  "block.prehistoriccraft.cambrian_fossiliferous_stone": "Skamielina z Kambru",
+  "block.prehistoriccraft.precambrian_fossiliferous_stone": "Skamielina z Prekambru",
+  "block.prehistoriccraft.carboniferous_fossiliferous_stone": "Skamielina z Karbonu",
+  "block.prehistoriccraft.cretaceous_fossiliferous_stone": "Skamielina z Kredy",
+  "block.prehistoriccraft.devonian_fossiliferous_stone": "Skamielina z Dewonu",
+  "block.prehistoriccraft.jurassic_fossiliferous_stone": "Skamielina z Jury",
+  "block.prehistoriccraft.ordovician_fossiliferous_stone": "Skamielina z Ordowiku",
+  "block.prehistoriccraft.permian_fossiliferous_stone": "Skamielina z Permu",
+  "block.prehistoriccraft.silurian_fossiliferous_stone": "Skamielina z Syluru",
+  "block.prehistoriccraft.triassic_fossiliferous_stone": "Skamielina z Triasu",
+  "block.prehistoriccraft.amber_ore": "Ruda Bursztynu",
+
+  "item.prehistoriccraft.cambrian_fossil": "Skamielina z Kambru",
+  "item.prehistoriccraft.precambrian_fossil": "Skamielina z Prekambru",
+  "item.prehistoriccraft.carboniferous_fossil": "Skamielina z Karbonu",
+  "item.prehistoriccraft.cretaceous_fossil": "Skamielina z Kredy",
+  "item.prehistoriccraft.devonian_fossil": "Skamielina z Dewonu",
+  "item.prehistoriccraft.jurassic_fossil": "Skamielina z Jury",
+  "item.prehistoriccraft.ordovician_fossil": "Skamielina z Ordowiku",
+  "item.prehistoriccraft.permian_fossil": "Skamielina z Permu",
+  "item.prehistoriccraft.silurian_fossil": "Skamielina z Syluru",
+  "item.prehistoriccraft.triassic_fossil": "Skamielina z Triasu",
+  "item.prehistoriccraft.amber": "Bursztyn",
+
+  "blockentity.acid_shower": "Spryskacz Kwasu"
+}
