@@ -28,6 +28,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SILURIAN_FOSSIL);
         simpleItem(ModItems.TRIASSIC_FOSSIL);
         simpleItem(ModItems.AMBER);
+
+        simpleItem(ModItems.SULFUR);
+        simpleItem(ModItems.SULFURIC_ACID_BUCKET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

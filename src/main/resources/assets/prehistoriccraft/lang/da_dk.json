@@ -10,6 +10,10 @@
   "block.prehistoriccraft.silurian_fossiliferous_stone": "Silur fossil sten",
   "block.prehistoriccraft.triassic_fossiliferous_stone": "Trias fossil sten",
   "block.prehistoriccraft.amber_ore": "Ravmalm",
+  "block.prehistoriccraft.sulfur_ore": "Svovlmalm",
+  "block.prehistoriccraft.deepslate_sulfur_ore": "Dybt skifer svovlmalm",
+
+  "block.prehistoriccraft.acid_shower": "Syrebruser",
 
   "item.prehistoriccraft.cambrian_fossil": "Kambrisk fossil",
   "item.prehistoriccraft.precambrian_fossil": "Prækambrium fossil",
@@ -22,6 +26,8 @@
   "item.prehistoriccraft.silurian_fossil": "Silur fossil",
   "item.prehistoriccraft.triassic_fossil": "Trias fossil",
   "item.prehistoriccraft.amber": "Rav",
+  "item.prehistoriccraft.sulfur": "Svovl",
+  "item.prehistoriccraft.sulfuric_acid_bucket": "Svovlsyre spand",
 
   "blockentity.acid_shower": "Syrebruser"
 }

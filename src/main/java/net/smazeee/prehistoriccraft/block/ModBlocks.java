@@ -34,39 +34,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILURIAN_FOSSILIFEROUS_STONE = registerBlock("SILURIAN_FOSSILIFEROUS_STONE".toLowerCase(), () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> TRIASSIC_FOSSILIFEROUS_STONE = registerBlock("TRIASSIC_FOSSILIFEROUS_STONE".toLowerCase(), () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> AMBER_ORE = registerBlock("AMBER_ORE".toLowerCase(), () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-    public static final RegistryObject<Block> ACID_SHOWER = registerBlock("acid_shower", () -> new AcidShowerBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-
-    private static <T extends Block> RegistryObject<T> registerOre(String name, Supplier<T> block) {
-        registerBlock(name,
-                () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)
-                        .strength(2f)
-                        .explosionResistance(1f)
-                        .requiresCorrectToolForDrops()));
-        return null;
-    }
-
-    private static <T extends Block> RegistryObject<T> registerOreDeepslate(String name, Supplier<T> block) {
-        registerBlock(name,
-                () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)
-                        .strength(2f)
-                        .explosionResistance(1f)
-                        .requiresCorrectToolForDrops()));
-        registerBlock("deepslate_" + name,
-                () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)
-                        .strength(2f)
-                        .explosionResistance(1f)
-                        .requiresCorrectToolForDrops()));
-        return null;
-    }
-
-    private static <T extends Block> RegistryObject<T> registerDeepslate(String name, Supplier<T> block) {
-        registerBlock("deepslate_" + name,
-                () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)
-                        .strength(2f)
-                        .explosionResistance(1f)
-                        .requiresCorrectToolForDrops()));
-        return null;
-    }
+    public static final RegistryObject<Block> ACID_SHOWER = registerBlock("acid_shower", () -> new AcidShowerBlock(BlockBehaviour.Properties.of().noLootTable().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+    public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore", () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+    public static final RegistryObject<Block> DEEPSLATE_SULFUR_ORE = registerBlock("deepslate_sulfur_ore", () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

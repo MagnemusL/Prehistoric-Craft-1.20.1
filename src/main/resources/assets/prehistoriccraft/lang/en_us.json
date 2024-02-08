@@ -10,6 +10,10 @@
   "block.prehistoriccraft.silurian_fossiliferous_stone": "Silurian Fossiliferous Stone",
   "block.prehistoriccraft.triassic_fossiliferous_stone": "Triassic Fossiliferous Stone",
   "block.prehistoriccraft.amber_ore": "Amber Ore",
+  "block.prehistoriccraft.sulfur_ore": "Sulfur Ore",
+  "block.prehistoriccraft.deepslate_sulfur_ore": "Deepslate Sulfur Ore",
+
+  "block.prehistoriccraft.acid_shower": "Acid Shower",
 
   "item.prehistoriccraft.cambrian_fossil": "Cambrian Fossil",
   "item.prehistoriccraft.precambrian_fossil": "Precambrian Fossil",
@@ -22,6 +26,8 @@
   "item.prehistoriccraft.silurian_fossil": "Silurian Fossil",
   "item.prehistoriccraft.triassic_fossil": "Triassic Fossil",
   "item.prehistoriccraft.amber": "Amber",
+  "item.prehistoriccraft.sulfur": "Sulfur",
+  "item.prehistoriccraft.sulfuric_acid_bucket": "Sulfuric Acid Bucket",
 
 
   "blockentity.acid_shower": "Acid Shower"

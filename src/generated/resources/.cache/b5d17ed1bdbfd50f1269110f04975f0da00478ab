@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-02T18:13:13.2601355	Item Models: prehistoriccraft
+// 1.20.1	2024-02-06T17:18:29.3431687	Item Models: prehistoriccraft
 45d11e3b53db99e8496d59a036ce7e7d09184f8f assets/prehistoriccraft/models/item/amber.json
 75370d1058ba1cb7f792c0af7b8780abbe54cd20 assets/prehistoriccraft/models/item/cambrian_fossil.json
 49fe64401509b53da9d725cbd3f0db072f39712b assets/prehistoriccraft/models/item/carboniferous_fossil.json
@@ -9,4 +9,6 @@ f0f68653e941b39ddacb1f7bc81b7cb983f021fc assets/prehistoriccraft/models/item/ord
 6961c1f3249994a7919112adaab6de20f4d6c889 assets/prehistoriccraft/models/item/permian_fossil.json
 892fbffafc9feff1d736ba647558dd4ae760f605 assets/prehistoriccraft/models/item/precambrian_fossil.json
 ffb01eff0ecc9b93f6edea648a408f0d1013607c assets/prehistoriccraft/models/item/silurian_fossil.json
+5681c2d0dfc5e4d8ccd21c21d0aa912fa978602c assets/prehistoriccraft/models/item/sulfur.json
+5f5ff2e8ccdab9f40adc5cf7555aaba54ca012e8 assets/prehistoriccraft/models/item/sulfuric_acid_bucket.json
 8c7c8fd539ae246d2d9bc1fbbca01285a00f26cd assets/prehistoriccraft/models/item/triassic_fossil.json

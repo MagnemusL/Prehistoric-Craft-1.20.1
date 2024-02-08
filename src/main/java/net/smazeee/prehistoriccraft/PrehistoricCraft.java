@@ -14,6 +14,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.block.entity.ModBlockEntities;
 import net.smazeee.prehistoriccraft.item.ModItems;
+import net.smazeee.prehistoriccraft.recipe.ModRecipes;
 import net.smazeee.prehistoriccraft.screen.AcidShowerScreen;
 import net.smazeee.prehistoriccraft.screen.ModMenuTypes;
 import org.slf4j.Logger;
@@ -32,6 +33,8 @@ public class PrehistoricCraft
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
