@@ -25,11 +25,13 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.item.ModItems;
+import net.smazeee.prehistoriccraft.recipe.AcidShowerRecipe;
 import net.smazeee.prehistoriccraft.screen.AcidShowerMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Optional;
 
 public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     private static final List<Item> FOSSILS = List.of(ModItems.CAMBRIAN_FOSSIL.get(), ModItems.PRECAMBRIAN_FOSSIL.get(), ModItems.CARBONIFEROUS_FOSSIL.get(), ModItems.CRETACEOUS_FOSSIL.get(), ModItems.DEVONIAN_FOSSIL.get(), ModItems.JURASSIC_FOSSIL.get(), ModItems.ORDOVICIAN_FOSSIL.get(), ModItems.PERMIAN_FOSSIL.get(), ModItems.SILURIAN_FOSSIL.get(), ModItems.TRIASSIC_FOSSIL.get()); //, ModBlocks.CAMBRIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.PRECAMBRIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.CARBONIFEROUS_FOSSILIFEROUS_STONE.get(), ModBlocks.CRETACEOUS_FOSSILIFEROUS_STONE.get(), ModBlocks.DEVONIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.JURASSIC_FOSSILIFEROUS_STONE.get(), ModBlocks.ORDOVICIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.PERMIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.SILURIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.TRIASSIC_FOSSILIFEROUS_STONE.get());
@@ -146,7 +148,7 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     /* CRAFTING */
 
     public void tick(Level level, BlockPos pos, BlockState state) {
-        if (isOutputSlotEmpty() && hasRecipe()) {
+        if (isOutputSlotEmpty() && itemHandler.getStackInSlot(1).equals(new ItemStack(ModItems.CAMBRIAN_FOSSIL.get()))) {
             increaseCraftingProgress();
             setChanged(level, pos, state);
 
@@ -167,7 +169,9 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     private void craftItem() {
         this.itemHandler.extractItem(FOSSIL_SLOT, 1, false);
 
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT_1, new ItemStack(ModItems.PRECAMBRIAN_FOSSIL.get(), this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() + 1));
+        this.itemHandler.setStackInSlot(OUTPUT_SLOT_1, new ItemStack(ModItems.ORDOVICIAN_FOSSIL.get()));
+        this.itemHandler.setStackInSlot(OUTPUT_SLOT_2, new ItemStack(ModItems.ORDOVICIAN_FOSSIL.get()));
+        this.itemHandler.setStackInSlot(OUTPUT_SLOT_3, new ItemStack(ModItems.ORDOVICIAN_FOSSIL.get()));
     }
 
     private boolean hasProgressFinished() {
@@ -179,15 +183,21 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private boolean hasRecipe() {
-        return canInsertAmount(1) && canInsertItem(ModItems.PRECAMBRIAN_FOSSIL.get()) && HasRecipeItem();
+        return canInsertAmount(1) && canInsertItem(ModItems.CAMBRIAN_FOSSIL.get())
+                && isOutputSlotEmpty();
     }
 
-    private boolean HasRecipeItem() {
-        return this.itemHandler.getStackInSlot(FOSSIL_SLOT).getItem() == ModItems.CAMBRIAN_FOSSIL.get();
+    private Optional<AcidShowerRecipe> getCurrentRecipe() {
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for(int i = 0; i < this.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+        }
+
+        return this.level.getRecipeManager().getRecipeFor(AcidShowerRecipe.Type.INSTANCE, inventory, level);
     }
 
     private boolean canInsertItem(Item item) {
-        return this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).is(item) && this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).is(item) && this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).is(item) || this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).isEmpty() && this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).isEmpty() && this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).isEmpty();
+        return this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).is(item) && this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).is(item) && this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).is(item) || this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).isEmpty() && this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).isEmpty() && this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).isEmpty();
     }
 
     private boolean canInsertAmount(int count) {

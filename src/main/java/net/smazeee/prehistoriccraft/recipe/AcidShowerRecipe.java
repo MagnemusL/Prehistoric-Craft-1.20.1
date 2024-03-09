@@ -15,16 +15,17 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.item.ModItems;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class AcidShowerRecipe implements Recipe<SimpleContainer> {
     private final NonNullList<Ingredient> inputItems;
-    private final NonNullList<Item> output;
+    private final ItemStack output;
     private final ResourceLocation id;
 
-    public AcidShowerRecipe(NonNullList<Ingredient> inputItems, NonNullList<Item> outputItems, ResourceLocation id) {
+    public AcidShowerRecipe(NonNullList<Ingredient> inputItems, ItemStack output, ResourceLocation id) {
         this.inputItems = inputItems;
-        this.output = outputItems;
+        this.output = output;
         this.id = id;
     }
 
@@ -39,15 +40,12 @@ public class AcidShowerRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public ItemStack assemble(SimpleContainer container, RegistryAccess access) {
-        return ItemStack.EMPTY;
+        return inputItems.get(1).test(container.getItem(1)) ? getOutput().copy() : ItemStack.EMPTY;
     }
 
-    public NonNullList<Item> assembler(SimpleContainer container, RegistryAccess access) {
-        ItemStack a = new ItemStack(output.get(1)).copy();
-        ItemStack b = new ItemStack(output.get(2)).copy();
-        ItemStack c = new ItemStack(output.get(3)).copy();
-        NonNullList<Item> copiedOutputs = NonNullList.of(a.getItem(), b.getItem(), c.getItem());
-        return copiedOutputs;
+    public ItemStack getOutput()
+    {
+        return output;
     }
 
     @Override
@@ -93,8 +91,7 @@ public class AcidShowerRecipe implements Recipe<SimpleContainer> {
 
         @Override
         public AcidShowerRecipe fromJson(ResourceLocation id, JsonObject json) {
-            JsonArray output = GsonHelper.getAsJsonArray(json, "outputs");
-            NonNullList<Item> outputs = NonNullList.withSize(3, Items.AIR);
+            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
             NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
@@ -103,7 +100,7 @@ public class AcidShowerRecipe implements Recipe<SimpleContainer> {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new AcidShowerRecipe(inputs, outputs, id);
+            return new AcidShowerRecipe(inputs, output, id);
         }
 
         @Override
@@ -114,8 +111,8 @@ public class AcidShowerRecipe implements Recipe<SimpleContainer> {
                 inputs.set(i, Ingredient.fromNetwork(buf));
             }
 
-            NonNullList<Item> outputs = buf.readItem();
-            return new AcidShowerRecipe(inputs, outputs, id);
+            ItemStack output = buf.readItem();
+            return new AcidShowerRecipe(inputs, output, id);
         }
 
         @Override
@@ -125,7 +122,7 @@ public class AcidShowerRecipe implements Recipe<SimpleContainer> {
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.toNetwork(buf);
             }
-            buf.writeItem(recipe.getResultItem(null));
+            buf.writeItemStack(recipe.getResultItem(null), false);
         }
     }
 }

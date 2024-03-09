@@ -1,0 +1,11 @@
+{
+  "type": "prehistoriccraft:acid_showering",
+  "ingredients": [
+    {
+      "item": "prehistoriccraft:cambrian_fossil"
+    }
+  ],
+  "output": {
+    "item": "prehistoriccraft:precambrian_fossil"
+  }
+}
