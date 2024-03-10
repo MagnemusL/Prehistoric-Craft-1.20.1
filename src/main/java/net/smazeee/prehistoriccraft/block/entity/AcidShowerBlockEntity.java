@@ -148,7 +148,7 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     /* CRAFTING */
 
     public void tick(Level level, BlockPos pos, BlockState state) {
-        if (isOutputSlotEmpty() && itemHandler.getStackInSlot(1).equals(new ItemStack(ModItems.CAMBRIAN_FOSSIL.get()))) {
+        if (isOutputSlotEmpty() && hasRecipe()) {
             increaseCraftingProgress();
             setChanged(level, pos, state);
 
@@ -167,11 +167,15 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private void craftItem() {
+        Optional<AcidShowerRecipe> recipe = getCurrentRecipe();
+        ItemStack resultItem = recipe.get().getResultItem(getLevel().registryAccess());
+
+
         this.itemHandler.extractItem(FOSSIL_SLOT, 1, false);
 
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT_1, new ItemStack(ModItems.ORDOVICIAN_FOSSIL.get()));
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT_2, new ItemStack(ModItems.ORDOVICIAN_FOSSIL.get()));
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT_3, new ItemStack(ModItems.ORDOVICIAN_FOSSIL.get()));
+        this.itemHandler.setStackInSlot(OUTPUT_SLOT_1, resultItem);
+        this.itemHandler.setStackInSlot(OUTPUT_SLOT_2, resultItem);
+        this.itemHandler.setStackInSlot(OUTPUT_SLOT_3, resultItem);
     }
 
     private boolean hasProgressFinished() {
@@ -183,8 +187,15 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private boolean hasRecipe() {
-        return canInsertAmount(1) && canInsertItem(ModItems.CAMBRIAN_FOSSIL.get())
-                && isOutputSlotEmpty();
+        Optional<AcidShowerRecipe> recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty()) {
+            return false;
+        }
+        ItemStack resultItem = recipe.get().getResultItem(getLevel().registryAccess());
+
+        return canInsertAmount(resultItem.getCount())
+                && canInsertItem(resultItem.getItem());
     }
 
     private Optional<AcidShowerRecipe> getCurrentRecipe() {

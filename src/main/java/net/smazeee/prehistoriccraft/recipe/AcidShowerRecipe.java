@@ -14,6 +14,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
+import net.smazeee.prehistoriccraft.block.entity.AcidShowerBlockEntity;
 import net.smazeee.prehistoriccraft.item.ModItems;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
