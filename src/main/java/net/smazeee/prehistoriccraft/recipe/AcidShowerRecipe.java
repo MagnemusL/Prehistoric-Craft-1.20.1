@@ -36,7 +36,7 @@ public class AcidShowerRecipe implements Recipe<SimpleContainer> {
             return false;
         }
 
-        return inputItems.get(1).test(container.getItem(1));
+        return inputItems.get(0).test(container.getItem(1));
     }
 
     @Override
@@ -71,7 +71,7 @@ public class AcidShowerRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return null;
+        return Serializer.INSTANCE;
     }
 
     @Override

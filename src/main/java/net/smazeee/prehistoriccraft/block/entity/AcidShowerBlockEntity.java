@@ -63,7 +63,7 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 100;
+    private int maxProgress = 20;
 
     public AcidShowerBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ACID_SHOWER_BE.get(), pos, state);
@@ -168,14 +168,18 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
 
     private void craftItem() {
         Optional<AcidShowerRecipe> recipe = getCurrentRecipe();
-        ItemStack resultItem = recipe.get().getResultItem(getLevel().registryAccess());
+        Item resultItem = recipe.get().getResultItem(getLevel().registryAccess()).getItem();
 
 
         this.itemHandler.extractItem(FOSSIL_SLOT, 1, false);
 
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT_1, resultItem);
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT_2, resultItem);
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT_3, resultItem);
+        if(this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() > this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getMaxStackSize()) {
+            this.itemHandler.setStackInSlot(OUTPUT_SLOT_2, new ItemStack(resultItem, this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getCount() + 1));
+        } else if (this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getCount() > this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getMaxStackSize()){
+            this.itemHandler.setStackInSlot(OUTPUT_SLOT_3, new ItemStack(resultItem, this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() + 1));
+        } else {
+            this.itemHandler.setStackInSlot(OUTPUT_SLOT_1, new ItemStack(resultItem, this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() + 1));
+        }
     }
 
     private boolean hasProgressFinished() {
@@ -216,10 +220,7 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private boolean isOutputSlotEmpty() {
-        int one = OUTPUT_SLOT_1;
-        int two = OUTPUT_SLOT_1;
-        int three = OUTPUT_SLOT_1;
-        return this.itemHandler.getStackInSlot(one).isEmpty() && this.itemHandler.getStackInSlot(two).isEmpty() && this.itemHandler.getStackInSlot(three).isEmpty() ||
-                this.itemHandler.getStackInSlot(one).getCount() < this.itemHandler.getStackInSlot(one).getMaxStackSize() && this.itemHandler.getStackInSlot(two).getCount() < this.itemHandler.getStackInSlot(two).getMaxStackSize() && this.itemHandler.getStackInSlot(three).getCount() < this.itemHandler.getStackInSlot(three).getMaxStackSize();
+        return this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).isEmpty() ||
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).getCount() < this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).getMaxStackSize();
     }
 }
