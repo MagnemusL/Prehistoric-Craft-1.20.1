@@ -173,9 +173,9 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
 
         this.itemHandler.extractItem(FOSSIL_SLOT, 1, false);
 
-        if(this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() > this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getMaxStackSize()) {
+        if(this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() >= this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getMaxStackSize()) {
             this.itemHandler.setStackInSlot(OUTPUT_SLOT_2, new ItemStack(resultItem, this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getCount() + 1));
-        } else if (this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getCount() > this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getMaxStackSize()){
+        } else if (this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getCount() >= this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getMaxStackSize()){
             this.itemHandler.setStackInSlot(OUTPUT_SLOT_3, new ItemStack(resultItem, this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() + 1));
         } else {
             this.itemHandler.setStackInSlot(OUTPUT_SLOT_1, new ItemStack(resultItem, this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() + 1));
@@ -216,11 +216,17 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private boolean canInsertAmount(int count) {
-        return this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getMaxStackSize() > this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() + count;
+        return this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getMaxStackSize() > this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() + count ||
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getMaxStackSize() > this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getCount() + count ||
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).getMaxStackSize() > this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).getCount() + count;
     }
 
     private boolean isOutputSlotEmpty() {
-        return this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).isEmpty() ||
+        return this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).isEmpty() ||
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() < this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getMaxStackSize() ||
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).isEmpty() ||
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getCount() < this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getMaxStackSize() ||
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).isEmpty() ||
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).getCount() < this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).getMaxStackSize();
     }
 }
