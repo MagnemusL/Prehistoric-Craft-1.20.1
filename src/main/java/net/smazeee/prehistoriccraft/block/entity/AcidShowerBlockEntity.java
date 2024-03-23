@@ -212,7 +212,18 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private boolean canInsertItem(Item item) {
-        return this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).is(item) && this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).is(item) && this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).is(item) || this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).isEmpty() && this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).isEmpty() && this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).isEmpty();
+
+        if (this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).is(item) || this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).isEmpty()) {
+            return true;
+        }
+        if (this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).is(item) || this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).isEmpty()) {
+            return true;
+        }
+        if (this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).is(item) || this.itemHandler.getStackInSlot(OUTPUT_SLOT_3).isEmpty()) {
+            return true;
+        }
+
+        return false;
     }
 
     private boolean canInsertAmount(int count) {
