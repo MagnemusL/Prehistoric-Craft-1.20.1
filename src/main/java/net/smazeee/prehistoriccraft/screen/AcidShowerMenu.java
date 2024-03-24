@@ -26,7 +26,7 @@ public class AcidShowerMenu extends AbstractContainerMenu {
 
     public AcidShowerMenu(int containerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.ACID_SHOWER_MENU.get(), containerId);
-        checkContainerSize(inv, 5);
+        checkContainerSize(inv, 6);
         blockEntity = ((AcidShowerBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
@@ -37,9 +37,10 @@ public class AcidShowerMenu extends AbstractContainerMenu {
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
             this.addSlot(new SlotItemHandler(iItemHandler, 0, 79, 97));
             this.addSlot(new SlotItemHandler(iItemHandler, 1, 79, 44));
-            this.addSlot(new SlotItemHandler(iItemHandler, 2, 61, 75));
-            this.addSlot(new SlotItemHandler(iItemHandler, 3, 79, 75));
-            this.addSlot(new SlotItemHandler(iItemHandler, 4, 97, 75));
+            this.addSlot(new SlotItemHandler(iItemHandler, 2, 79, 5));
+            this.addSlot(new SlotItemHandler(iItemHandler, 3, 61, 75));
+            this.addSlot(new SlotItemHandler(iItemHandler, 4, 79, 75));
+            this.addSlot(new SlotItemHandler(iItemHandler, 5, 97, 75));
         });
 
         addDataSlots(data);
@@ -66,7 +67,7 @@ public class AcidShowerMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-    private static final int TE_INVENTORY_SLOT_COUNT = 5;
+    private static final int TE_INVENTORY_SLOT_COUNT = 6;
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -99,7 +100,6 @@ public class AcidShowerMenu extends AbstractContainerMenu {
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
     }
-
 
     @Override
     public boolean stillValid(Player player) {

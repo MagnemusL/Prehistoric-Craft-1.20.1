@@ -29,5 +29,6 @@
   "item.prehistoriccraft.sulfur": "Svovl",
   "item.prehistoriccraft.sulfuric_acid_bucket": "Svovlsyre spand",
 
-  "blockentity.acid_shower": "Syrebruser"
+  "blockentity.acid_shower": "Syrebruser",
+  "title.prehistoriccraft.acid_shower": "Syresprøjtning"
 }

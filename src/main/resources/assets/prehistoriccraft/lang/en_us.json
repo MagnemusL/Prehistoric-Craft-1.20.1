@@ -30,5 +30,6 @@
   "item.prehistoriccraft.sulfuric_acid_bucket": "Sulfuric Acid Bucket",
 
 
-  "blockentity.acid_shower": "Acid Shower"
+  "blockentity.acid_shower": "Acid Shower",
+  "title.prehistoriccraft.acid_shower": "Acid Spraying"
 }

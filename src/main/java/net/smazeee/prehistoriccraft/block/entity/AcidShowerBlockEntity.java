@@ -36,7 +36,7 @@ import java.util.Optional;
 public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     private static final List<Item> FOSSILS = List.of(ModItems.CAMBRIAN_FOSSIL.get(), ModItems.PRECAMBRIAN_FOSSIL.get(), ModItems.CARBONIFEROUS_FOSSIL.get(), ModItems.CRETACEOUS_FOSSIL.get(), ModItems.DEVONIAN_FOSSIL.get(), ModItems.JURASSIC_FOSSIL.get(), ModItems.ORDOVICIAN_FOSSIL.get(), ModItems.PERMIAN_FOSSIL.get(), ModItems.SILURIAN_FOSSIL.get(), ModItems.TRIASSIC_FOSSIL.get()); //, ModBlocks.CAMBRIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.PRECAMBRIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.CARBONIFEROUS_FOSSILIFEROUS_STONE.get(), ModBlocks.CRETACEOUS_FOSSILIFEROUS_STONE.get(), ModBlocks.DEVONIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.JURASSIC_FOSSILIFEROUS_STONE.get(), ModBlocks.ORDOVICIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.PERMIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.SILURIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.TRIASSIC_FOSSILIFEROUS_STONE.get());
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(5) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(6) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -45,9 +45,10 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0 -> stack.getItem() == ModItems.AMBER.get();
+                case 0 -> stack.getItem() == ModItems.SULFURIC_ACID_BUCKET.get();
                 case 1 -> true;
-                case 2, 3, 4 -> false;
+                case 2 -> stack.getItem() == ModItems.AMBER.get();
+                case 3, 4, 5 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -55,9 +56,10 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
 
     private static final int ACID_SLOT = 0;
     private static final int FOSSIL_SLOT = 1;
-    private static final int OUTPUT_SLOT_1 = 2;
-    private static final int OUTPUT_SLOT_2 = 3;
-    private static final int OUTPUT_SLOT_3 = 4;
+    private static final int ENERGY_SLOT = 2;
+    private static final int OUTPUT_SLOT_1 = 3;
+    private static final int OUTPUT_SLOT_2 = 4;
+    private static final int OUTPUT_SLOT_3 = 5;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
