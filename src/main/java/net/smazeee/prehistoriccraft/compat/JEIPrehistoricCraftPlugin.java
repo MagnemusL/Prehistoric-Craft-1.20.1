@@ -35,7 +35,7 @@ public class JEIPrehistoricCraftPlugin implements IModPlugin {
 
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
-        registration.addRecipeClickArea(AcidShowerScreen.class, 65, 73, 108, 61,
+        registration.addRecipeClickArea(AcidShowerScreen.class, 64, 61, 46, 12,
                 AcidShowerRecipeCategory.ACID_SHOWERING_TYPE);
     }
 }

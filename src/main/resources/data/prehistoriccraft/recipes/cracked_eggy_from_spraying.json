@@ -1,0 +1,12 @@
+{
+  "type": "prehistoriccraft:acid_showering",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "prehistoriccraft:eggy"
+    }
+  ],
+  "output": {
+    "item": "prehistoriccraft:cracked_eggy"
+  }
+}

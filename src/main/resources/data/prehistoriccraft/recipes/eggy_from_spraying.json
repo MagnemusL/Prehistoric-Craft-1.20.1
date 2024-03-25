@@ -1,11 +1,12 @@
 {
   "type": "prehistoriccraft:acid_showering",
+  "category": "misc",
   "ingredients": [
     {
-      "item": "prehistoriccraft:cambrian_fossil"
+      "item": "minecraft:egg"
     }
   ],
   "output": {
-    "item": "minecraft:bone_meal"
+    "item": "prehistoriccraft:eggy"
   }
 }

@@ -31,6 +31,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.SULFUR);
         simpleItem(ModItems.SULFURIC_ACID_BUCKET);
+
+        simpleItem(ModItems.EGGY);
+        simpleItem(ModItems.CRACKED_EGGY);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

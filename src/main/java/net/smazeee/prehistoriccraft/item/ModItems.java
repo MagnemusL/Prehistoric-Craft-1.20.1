@@ -26,6 +26,8 @@ public class ModItems {
     public static final RegistryObject<Item> AMBER = ITEMS.register("amber", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SULFUR = ITEMS.register("sulfur", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SULFURIC_ACID_BUCKET = ITEMS.register("sulfuric_acid_bucket", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> EGGY = ITEMS.register("eggy", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CRACKED_EGGY = ITEMS.register("cracked_eggy", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

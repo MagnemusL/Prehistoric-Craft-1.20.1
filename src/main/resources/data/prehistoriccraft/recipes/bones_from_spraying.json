@@ -1,0 +1,12 @@
+{
+  "type": "prehistoriccraft:acid_showering",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "prehistoriccraft:cretaceous_fossil"
+    }
+  ],
+  "output": {
+    "item": "minecraft:bone"
+  }
+}

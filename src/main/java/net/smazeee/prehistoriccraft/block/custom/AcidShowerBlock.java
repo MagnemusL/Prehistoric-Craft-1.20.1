@@ -146,14 +146,21 @@ public class AcidShowerBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if(!level.isClientSide()) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
+            BlockEntity blockEntity1 = level.getBlockEntity(pos.above());
             if(blockEntity instanceof AcidShowerBlockEntity) {
-                NetworkHooks.openScreen(((ServerPlayer)player), (AcidShowerBlockEntity)blockEntity, pos);
+                if(state.getValue(HALF).equals(DoubleBlockHalf.LOWER)) {
+                    NetworkHooks.openScreen(((ServerPlayer)player), (AcidShowerBlockEntity)blockEntity1, pos.above());
+                    System.out.println("Bottom Half Opened");
+                } else if (state.getValue(HALF).equals(DoubleBlockHalf.UPPER)) {
+                    System.out.println("Top Half Opened");
+                    NetworkHooks.openScreen(((ServerPlayer)player), (AcidShowerBlockEntity)blockEntity, pos);
+                }
             } else {
                 throw new IllegalStateException("The Container provider is missing.");
             }
         }
 
-        return  InteractionResult.sidedSuccess(level.isClientSide());
+        return InteractionResult.sidedSuccess(level.isClientSide());
     }
 
     @org.jetbrains.annotations.Nullable
