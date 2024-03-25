@@ -101,12 +101,6 @@ public class AcidShowerBlock extends BaseEntityBlock {
         level.setBlock(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER), 3);
     }
 
-    public boolean canSurvive(BlockState state, LevelReader reader, BlockPos pos) {
-        BlockPos blockpos = pos.below();
-        BlockState blockstate = reader.getBlockState(blockpos);
-        return state.getValue(HALF) == DoubleBlockHalf.LOWER ? blockstate.isFaceSturdy(reader, blockpos, Direction.UP) : blockstate.is(this);
-    }
-
     public BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }

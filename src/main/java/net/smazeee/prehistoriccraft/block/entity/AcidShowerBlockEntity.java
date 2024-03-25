@@ -13,24 +13,27 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.registries.RegistryObject;
-import net.smazeee.prehistoriccraft.block.ModBlocks;
+import net.smazeee.prehistoriccraft.block.custom.AcidShowerBlock;
 import net.smazeee.prehistoriccraft.item.ModItems;
 import net.smazeee.prehistoriccraft.recipe.AcidShowerRecipe;
 import net.smazeee.prehistoriccraft.screen.AcidShowerMenu;
+import net.smazeee.prehistoriccraft.util.InventoryDirectionEntry;
+import net.smazeee.prehistoriccraft.util.InventoryDirectionWrapper;
+import net.smazeee.prehistoriccraft.util.WrappedHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
@@ -62,7 +65,18 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     private static final int OUTPUT_SLOT_3 = 5;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-
+    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
+            new InventoryDirectionWrapper(itemHandler,
+                    new InventoryDirectionEntry(Direction.NORTH, FOSSIL_SLOT, true),
+                    new InventoryDirectionEntry(Direction.SOUTH, OUTPUT_SLOT_1, false),
+                    new InventoryDirectionEntry(Direction.SOUTH, OUTPUT_SLOT_2, false),
+                    new InventoryDirectionEntry(Direction.SOUTH, OUTPUT_SLOT_3, false),
+                    new InventoryDirectionEntry(Direction.WEST, FOSSIL_SLOT, true),
+                    new InventoryDirectionEntry(Direction.EAST, FOSSIL_SLOT, true),
+                    new InventoryDirectionEntry(Direction.UP, FOSSIL_SLOT, true),
+                    new InventoryDirectionEntry(Direction.DOWN, OUTPUT_SLOT_1, false),
+                    new InventoryDirectionEntry(Direction.DOWN, OUTPUT_SLOT_2, false),
+                    new InventoryDirectionEntry(Direction.DOWN, OUTPUT_SLOT_3, false)).directionsMap;
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 20;
@@ -117,7 +131,24 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if(cap == ForgeCapabilities.ITEM_HANDLER) {
-            return lazyItemHandler.cast();
+            if (side == null) {
+                return lazyItemHandler.cast();
+            } if (this.getBlockState().getValue(AcidShowerBlock.HALF) == DoubleBlockHalf.LOWER) {
+                return lazyItemHandler.cast();
+            } if (directionWrappedHandlerMap.containsKey(side)) {
+                Direction localDir = this.getBlockState().getValue(AcidShowerBlock.FACING);
+
+                if (side == Direction.DOWN || side == Direction.UP) {
+                    return directionWrappedHandlerMap.get(side).cast();
+                }
+
+                return switch (localDir) {
+                    default -> directionWrappedHandlerMap.get(side.getOpposite()).cast();
+                    case EAST -> directionWrappedHandlerMap.get(side.getClockWise()).cast();
+                    case SOUTH -> directionWrappedHandlerMap.get(side).cast();
+                    case WEST -> directionWrappedHandlerMap.get(side.getCounterClockWise()).cast();
+                };
+            }
         }
 
         return super.getCapability(cap, side);
