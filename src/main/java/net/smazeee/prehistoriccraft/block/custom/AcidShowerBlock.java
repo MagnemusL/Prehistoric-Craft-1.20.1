@@ -58,8 +58,10 @@ public class AcidShowerBlock extends BaseEntityBlock {
         DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
         if (direction.getAxis() == Direction.Axis.Y && doubleblockhalf == DoubleBlockHalf.LOWER && (direction == Direction.UP)) {
             return state1.is(this) && state1.getValue(HALF) != doubleblockhalf ? state.setValue(FACING, state1.getValue(FACING)) : Blocks.AIR.defaultBlockState();
+        } else if (direction.getAxis() == Direction.Axis.Y && doubleblockhalf != DoubleBlockHalf.LOWER && (direction == Direction.DOWN)) {
+            return state1.is(this) && state1.getValue(HALF) != doubleblockhalf ? state.setValue(FACING, state1.getValue(FACING)).setValue(HALF, DoubleBlockHalf.UPPER) : Blocks.AIR.defaultBlockState();
         } else {
-            return doubleblockhalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, state1, accessor, pos, pos1);
+            return doubleblockhalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canSurvive(accessor, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, state1, accessor, pos, pos1);
         }
     }
 
