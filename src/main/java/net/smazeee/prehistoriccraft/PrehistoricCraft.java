@@ -20,8 +20,7 @@ import net.smazeee.prehistoriccraft.screen.ModMenuTypes;
 import org.slf4j.Logger;
 
 @Mod(PrehistoricCraft.MODID)
-public class PrehistoricCraft
-{
+public class PrehistoricCraft {
     public static final String MODID = "prehistoriccraft";
     public static final Logger LOGGER = LogUtils.getLogger();
 
