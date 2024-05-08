@@ -15,6 +15,22 @@
 
   "block.prehistoriccraft.acid_shower": "Acid Shower",
 
+  "block.prehistoriccraft.belemnopteris": "Belemnopteris",
+  "block.prehistoriccraft.clathropteris": "Clathropteris",
+  "block.prehistoriccraft.neuropteris": "Neuropteris",
+  "block.prehistoriccraft.pachypteris": "Pachypteris",
+
+  "block.prehistoriccraft.aqua_stony_coral": "Aqua Stony Coral",
+  "block.prehistoriccraft.blue_stony_coral": "Blue Stony Coral",
+  "block.prehistoriccraft.green_stony_coral": "Green Stony Coral",
+  "block.prehistoriccraft.pink_stony_coral": "Pink Stony Coral",
+  "block.prehistoriccraft.blue_soft_pan_coral": "Blue Soft Pan Coral",
+  "block.prehistoriccraft.blue_staghorn_coral": "Blue Staghorn Coral",
+  "block.prehistoriccraft.red_staghorn_coral": "Red Staghorn Coral",
+  "block.prehistoriccraft.carnation_tree_coral": "Carnation Tree Coral",
+  "block.prehistoriccraft.orange_bamboo_coral": "Orange Bamboo Coral",
+  "block.prehistoriccraft.red_bamboo_coral": "Red Bamboo Coral",
+
   "item.prehistoriccraft.cambrian_fossil": "Cambrian Fossil",
   "item.prehistoriccraft.precambrian_fossil": "Precambrian Fossil",
   "item.prehistoriccraft.carboniferous_fossil": "Carboniferous Fossil",
@@ -33,5 +49,6 @@
 
 
   "blockentity.acid_shower": "Acid Shower",
-  "title.prehistoriccraft.acid_shower": "Acid Spraying"
+  "title.prehistoriccraft.acid_shower": "Acid Spraying",
+  "creativetab.plants_tab": "Plants Tab"
 }

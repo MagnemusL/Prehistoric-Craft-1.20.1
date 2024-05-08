@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "prehistoriccraft:pink_stony_coral"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "prehistoriccraft:blocks/pink_stony_coral"
+}

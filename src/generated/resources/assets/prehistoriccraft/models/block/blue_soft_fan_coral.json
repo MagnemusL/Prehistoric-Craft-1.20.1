@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "prehistoriccraft:block/blue_soft_fan_coral"
+  }
+}

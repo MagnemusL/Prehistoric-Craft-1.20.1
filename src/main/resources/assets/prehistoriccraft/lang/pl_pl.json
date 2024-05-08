@@ -13,7 +13,25 @@
   "block.prehistoriccraft.silurian_fossiliferous_stone": "Skamielina z Syluru",
   "block.prehistoriccraft.sulfur_ore": "Ruda Siarki",
   "block.prehistoriccraft.triassic_fossiliferous_stone": "Skamielina z Triasu",
+
   "blockentity.acid_shower": "Spryskacz Kwasu",
+
+  "block.prehistoriccraft.belemnopteris": "Belemnopteris",
+  "block.prehistoriccraft.clathropteris": "Clathropteris",
+  "block.prehistoriccraft.neuropteris": "Neuropteris",
+  "block.prehistoriccraft.pachypteris": "Pachypteris",
+
+  "block.prehistoriccraft.aqua_stony_coral": "Aqua Stony Coral",
+  "block.prehistoriccraft.blue_stony_coral": "Blue Stony Coral",
+  "block.prehistoriccraft.green_stony_coral": "Green Stony Coral",
+  "block.prehistoriccraft.pink_stony_coral": "Pink Stony Coral",
+  "block.prehistoriccraft.blue_soft_pan_coral": "Blue Soft Pan Coral",
+  "block.prehistoriccraft.blue_staghorn_coral": "Blue Staghorn Coral",
+  "block.prehistoriccraft.red_staghorn_coral": "Red Staghorn Coral",
+  "block.prehistoriccraft.carnation_tree_coral": "Carnation Tree Coral",
+  "block.prehistoriccraft.orange_bamboo_coral": "Orange Bamboo Coral",
+  "block.prehistoriccraft.red_bamboo_coral": "Red Bamboo Coral",
+
   "item.prehistoriccraft.amber": "Bursztyn",
   "item.prehistoriccraft.cambrian_fossil": "Skamielina z Kambru",
   "item.prehistoriccraft.carboniferous_fossil": "Skamielina z Karbonu",
@@ -30,5 +48,6 @@
   "item.prehistoriccraft.eggy": "Eggy!",
   "item.prehistoriccraft.cracked_eggy": "Rozbite Eggy :(",
 
-  "title.prehistoriccraft.acid_shower": "Spryskiwanie Kwasem"
+  "title.prehistoriccraft.acid_shower": "Spryskiwanie Kwasem",
+  "creativetab.plants_tab": "Plants Tab"
 }

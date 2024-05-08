@@ -13,33 +13,30 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-import net.smazeee.prehistoriccraft.block.custom.AcidShowerBlock;
+import net.minecraftforge.registries.RegistryObject;
+import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.item.ModItems;
 import net.smazeee.prehistoriccraft.recipe.AcidShowerRecipe;
 import net.smazeee.prehistoriccraft.screen.AcidShowerMenu;
-import net.smazeee.prehistoriccraft.util.InventoryDirectionEntry;
-import net.smazeee.prehistoriccraft.util.InventoryDirectionWrapper;
-import net.smazeee.prehistoriccraft.util.WrappedHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     private static final List<Item> FOSSILS = List.of(ModItems.CAMBRIAN_FOSSIL.get(), ModItems.PRECAMBRIAN_FOSSIL.get(), ModItems.CARBONIFEROUS_FOSSIL.get(), ModItems.CRETACEOUS_FOSSIL.get(), ModItems.DEVONIAN_FOSSIL.get(), ModItems.JURASSIC_FOSSIL.get(), ModItems.ORDOVICIAN_FOSSIL.get(), ModItems.PERMIAN_FOSSIL.get(), ModItems.SILURIAN_FOSSIL.get(), ModItems.TRIASSIC_FOSSIL.get()); //, ModBlocks.CAMBRIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.PRECAMBRIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.CARBONIFEROUS_FOSSILIFEROUS_STONE.get(), ModBlocks.CRETACEOUS_FOSSILIFEROUS_STONE.get(), ModBlocks.DEVONIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.JURASSIC_FOSSILIFEROUS_STONE.get(), ModBlocks.ORDOVICIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.PERMIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.SILURIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.TRIASSIC_FOSSILIFEROUS_STONE.get());
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(6) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(5) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -48,10 +45,9 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0 -> stack.getItem() == ModItems.SULFURIC_ACID_BUCKET.get();
+                case 0 -> stack.getItem() == ModItems.AMBER.get();
                 case 1 -> true;
-                case 2 -> stack.getItem() == ModItems.AMBER.get();
-                case 3, 4, 5 -> false;
+                case 2, 3, 4 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -59,24 +55,12 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
 
     private static final int ACID_SLOT = 0;
     private static final int FOSSIL_SLOT = 1;
-    private static final int ENERGY_SLOT = 2;
-    private static final int OUTPUT_SLOT_1 = 3;
-    private static final int OUTPUT_SLOT_2 = 4;
-    private static final int OUTPUT_SLOT_3 = 5;
+    private static final int OUTPUT_SLOT_1 = 2;
+    private static final int OUTPUT_SLOT_2 = 3;
+    private static final int OUTPUT_SLOT_3 = 4;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            new InventoryDirectionWrapper(itemHandler,
-                    new InventoryDirectionEntry(Direction.NORTH, FOSSIL_SLOT, true),
-                    new InventoryDirectionEntry(Direction.SOUTH, OUTPUT_SLOT_1, false),
-                    new InventoryDirectionEntry(Direction.SOUTH, OUTPUT_SLOT_2, false),
-                    new InventoryDirectionEntry(Direction.SOUTH, OUTPUT_SLOT_3, false),
-                    new InventoryDirectionEntry(Direction.WEST, FOSSIL_SLOT, true),
-                    new InventoryDirectionEntry(Direction.EAST, FOSSIL_SLOT, true),
-                    new InventoryDirectionEntry(Direction.UP, FOSSIL_SLOT, true),
-                    new InventoryDirectionEntry(Direction.DOWN, OUTPUT_SLOT_1, false),
-                    new InventoryDirectionEntry(Direction.DOWN, OUTPUT_SLOT_2, false),
-                    new InventoryDirectionEntry(Direction.DOWN, OUTPUT_SLOT_3, false)).directionsMap;
+
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 20;
@@ -131,24 +115,7 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if(cap == ForgeCapabilities.ITEM_HANDLER) {
-            if (side == null) {
-                return lazyItemHandler.cast();
-            } if (this.getBlockState().getValue(AcidShowerBlock.HALF) == DoubleBlockHalf.LOWER) {
-                return lazyItemHandler.cast();
-            } if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(AcidShowerBlock.FACING);
-
-                if (side == Direction.DOWN || side == Direction.UP) {
-                    return directionWrappedHandlerMap.get(side).cast();
-                }
-
-                return switch (localDir) {
-                    default -> directionWrappedHandlerMap.get(side.getOpposite()).cast();
-                    case EAST -> directionWrappedHandlerMap.get(side.getClockWise()).cast();
-                    case SOUTH -> directionWrappedHandlerMap.get(side).cast();
-                    case WEST -> directionWrappedHandlerMap.get(side.getCounterClockWise()).cast();
-                };
-            }
+            return lazyItemHandler.cast();
         }
 
         return super.getCapability(cap, side);

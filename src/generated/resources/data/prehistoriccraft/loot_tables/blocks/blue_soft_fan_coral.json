@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "prehistoriccraft:blue_soft_fan_coral"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "prehistoriccraft:blocks/blue_soft_fan_coral"
+}

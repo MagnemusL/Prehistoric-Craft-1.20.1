@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "prehistoriccraft:block/acid_shower_test",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "prehistoriccraft:block/acid_shower_test",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "prehistoriccraft:block/acid_shower_test",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "prehistoriccraft:block/acid_shower_test"
+    }
+  }
+}

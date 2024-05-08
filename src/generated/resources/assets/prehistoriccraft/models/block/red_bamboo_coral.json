@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "prehistoriccraft:block/red_bamboo_coral"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "type=1,facing=north": {
+      "model": "prehistoriccraft:block/field_horsetail_1"
+    },
+    "type=1,facing=west": {
+      "model": "prehistoriccraft:block/field_horsetail_1"
+    },
+    "type=1,facing=east": {
+      "model": "prehistoriccraft:block/field_horsetail_1"
+    },
+    "type=1,facing=south": {
+      "model": "prehistoriccraft:block/field_horsetail_1"
+    },
+    "type=2,facing=north": {
+      "model": "prehistoriccraft:block/field_horsetail_2"
+    },
+    "type=2,facing=west": {
+      "model": "prehistoriccraft:block/field_horsetail_2"
+    },
+    "type=2,facing=east": {
+      "model": "prehistoriccraft:block/field_horsetail_2"
+    },
+    "type=2,facing=south": {
+      "model": "prehistoriccraft:block/field_horsetail_2"
+    },
+    "type=3,facing=north": {
+      "model": "prehistoriccraft:block/field_horsetail_3"
+    },
+    "type=3,facing=west": {
+      "model": "prehistoriccraft:block/field_horsetail_3"
+    },
+    "type=3,facing=east": {
+      "model": "prehistoriccraft:block/field_horsetail_3"
+    },
+    "type=3,facing=south": {
+      "model": "prehistoriccraft:block/field_horsetail_3"
+    },
+    "type=4,facing=north": {
+      "model": "prehistoriccraft:block/field_horsetail_4"
+    },
+    "type=4,facing=west": {
+      "model": "prehistoriccraft:block/field_horsetail_4"
+    },
+    "type=4,facing=east": {
+      "model": "prehistoriccraft:block/field_horsetail_4"
+    },
+    "type=4,facing=south": {
+      "model": "prehistoriccraft:block/field_horsetail_4"
+    }
+  }
+}

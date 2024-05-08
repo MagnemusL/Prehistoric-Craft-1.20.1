@@ -3,7 +3,12 @@ package net.smazeee.prehistoriccraft.datagen.loot;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
@@ -40,6 +45,26 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         dropOre(ModBlocks.SULFUR_ORE, ModItems.SULFUR);
         dropOre(ModBlocks.DEEPSLATE_SULFUR_ORE, ModItems.SULFUR);
+
+        this.add(ModBlocks.BELEMNOPTERIS.get(), (block) -> {
+            return createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F)))));
+        });
+
+        drop(ModBlocks.CLATHROPTERIS);
+        drop(ModBlocks.PACHYPTERIS);
+        drop(ModBlocks.NEUROPTERIS);
+        drop(ModBlocks.FIELD_HORSETAIL);
+
+        drop(ModBlocks.AQUA_STONY_CORAL);
+        drop(ModBlocks.BLUE_STONY_CORAL);
+        drop(ModBlocks.GREEN_STONY_CORAL);
+        drop(ModBlocks.PINK_STONY_CORAL);
+        drop(ModBlocks.BLUE_SOFT_FAN_CORAL);
+        drop(ModBlocks.BLUE_STAGHORN_CORAL);
+        drop(ModBlocks.RED_STAGHORN_CORAL);
+        drop(ModBlocks.CARNATION_TREE_CORAL);
+        drop(ModBlocks.ORANGE_BAMBOO_CORAL);
+        drop(ModBlocks.RED_BAMBOO_CORAL);
     }
 
     @Override
