@@ -2,7 +2,6 @@ package net.smazeee.prehistoriccraft.plants.client.clathropteris;
 
 import net.minecraft.resources.ResourceLocation;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
-import net.smazeee.prehistoriccraft.plants.item.BelemnopterisBlockItem;
 import net.smazeee.prehistoriccraft.plants.item.ClathropterisBlockItem;
 import software.bernie.geckolib.model.GeoModel;
 

@@ -4,10 +4,8 @@ import com.google.gson.JsonObject;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.CustomLoaderBuilder;
-import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.*;
+import net.minecraftforge.client.model.generators.loaders.ObjModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -58,7 +56,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         registerCable();
         registerFacade();
-        registerExperiment();
     }
 
     public ModelFile crossBlock(Block block) {
@@ -83,12 +80,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .customLoader((builder, helper) -> new CableLoaderBuilder(CableModelLoader.GENERATOR_LOADER, builder, helper, false))
                 .end();
         simpleBlock(ModBlocks.CABLE.get(), model);
-    }
-
-    private void registerExperiment() {
-        BlockModelBuilder model = models().getBuilder("experiment")
-                .parent(models().getExistingFile(mcLoc("cube")));
-        simpleBlock(ModBlocks.EXPERIMENT.get(), model);
     }
 
     private void registerFacade() {

@@ -1,5 +1,12 @@
 {
+  "loader": "forge:obj",
+  "model": "prehistoriccraft:models/obj/belemnopteris.obj",
+  "flip_v": true,
+  "mtl_override": "prehistoriccraft:models/obj/mtl/belemnopteris.mtl",
+  "render_type": "cutout",
+  "automatic_culling": false,
   "textures": {
+    "texture0": "prehistoriccraft:block/belemnopteris",
     "particle": "minecraft:block/grass"
   }
 }

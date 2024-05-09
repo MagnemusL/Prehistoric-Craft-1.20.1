@@ -1,8 +1,19 @@
 package net.smazeee.prehistoriccraft.plants.item;
 
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.smazeee.prehistoriccraft.plants.client.fieldhorsetail.FieldHorsetailBlockItemRenderer;
 import net.smazeee.prehistoriccraft.plants.client.pachypteris.PachypterisBlockItemRenderer;
@@ -13,6 +24,7 @@ import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInst
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.util.RenderUtils;
 
+import java.util.Objects;
 import java.util.function.Consumer;
 
 public class FieldHorsetailBlockItem extends BlockItem implements GeoItem {

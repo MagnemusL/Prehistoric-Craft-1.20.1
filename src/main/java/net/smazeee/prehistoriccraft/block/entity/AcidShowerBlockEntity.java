@@ -36,7 +36,7 @@ import java.util.Optional;
 public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     private static final List<Item> FOSSILS = List.of(ModItems.CAMBRIAN_FOSSIL.get(), ModItems.PRECAMBRIAN_FOSSIL.get(), ModItems.CARBONIFEROUS_FOSSIL.get(), ModItems.CRETACEOUS_FOSSIL.get(), ModItems.DEVONIAN_FOSSIL.get(), ModItems.JURASSIC_FOSSIL.get(), ModItems.ORDOVICIAN_FOSSIL.get(), ModItems.PERMIAN_FOSSIL.get(), ModItems.SILURIAN_FOSSIL.get(), ModItems.TRIASSIC_FOSSIL.get()); //, ModBlocks.CAMBRIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.PRECAMBRIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.CARBONIFEROUS_FOSSILIFEROUS_STONE.get(), ModBlocks.CRETACEOUS_FOSSILIFEROUS_STONE.get(), ModBlocks.DEVONIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.JURASSIC_FOSSILIFEROUS_STONE.get(), ModBlocks.ORDOVICIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.PERMIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.SILURIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.TRIASSIC_FOSSILIFEROUS_STONE.get());
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(5) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(6) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -48,6 +48,7 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
                 case 0 -> stack.getItem() == ModItems.AMBER.get();
                 case 1 -> true;
                 case 2, 3, 4 -> false;
+                case 5 -> true;
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -58,6 +59,7 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     private static final int OUTPUT_SLOT_1 = 2;
     private static final int OUTPUT_SLOT_2 = 3;
     private static final int OUTPUT_SLOT_3 = 4;
+    private static final int BATTERY_SLOT = 5;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -176,7 +178,7 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
         if(this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() >= this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getMaxStackSize()) {
             this.itemHandler.setStackInSlot(OUTPUT_SLOT_2, new ItemStack(resultItem, this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getCount() + 1));
         } else if (this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getCount() >= this.itemHandler.getStackInSlot(OUTPUT_SLOT_2).getMaxStackSize()){
-            this.itemHandler.setStackInSlot(OUTPUT_SLOT_3, new ItemStack(resultItem, this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() + 1));
+          this.itemHandler.setStackInSlot(OUTPUT_SLOT_3, new ItemStack(resultItem, this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() + 1));
         } else {
             this.itemHandler.setStackInSlot(OUTPUT_SLOT_1, new ItemStack(resultItem, this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() + 1));
         }

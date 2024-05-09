@@ -5,7 +5,10 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.model.obj.ObjLoader;
+import net.minecraftforge.client.model.obj.ObjModel;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,7 +23,6 @@ import net.smazeee.prehistoriccraft.plants.client.fieldhorsetail.FieldHorsetailR
 import net.smazeee.prehistoriccraft.tabs.ModCreativeModeTabs;
 import net.smazeee.prehistoriccraft.item.ModItems;
 import net.smazeee.prehistoriccraft.plants.PlantBlockEntities;
-import net.smazeee.prehistoriccraft.plants.client.belemnopteris.BelemnopterisRenderer;
 import net.smazeee.prehistoriccraft.plants.client.clathropteris.ClathropterisRenderer;
 import net.smazeee.prehistoriccraft.plants.client.neuropteris.NeuropterisRenderer;
 import net.smazeee.prehistoriccraft.plants.client.pachypteris.PachypterisRenderer;
@@ -74,7 +76,6 @@ public class PrehistoricCraft {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.ACID_SHOWER_MENU.get(), AcidShowerScreen::new);
-            BlockEntityRenderers.register(PlantBlockEntities.BELEMNOPTERIS_BE.get(), BelemnopterisRenderer::new);
             BlockEntityRenderers.register(PlantBlockEntities.CLATHROPTERIS_BE.get(), ClathropterisRenderer::new);
             BlockEntityRenderers.register(PlantBlockEntities.PACHYPTERIS_BE.get(), PachypterisRenderer::new);
             BlockEntityRenderers.register(PlantBlockEntities.NEUROPTERIS_BE.get(), NeuropterisRenderer::new);

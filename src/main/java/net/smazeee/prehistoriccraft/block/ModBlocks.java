@@ -12,7 +12,6 @@ import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.block.custom.AcidShowerBlock;
 import net.smazeee.prehistoriccraft.block.custom.cables.CableBlock;
 import net.smazeee.prehistoriccraft.block.custom.cables.FacadeBlock;
-import net.smazeee.prehistoriccraft.experiment.ExperimentBlock;
 import net.smazeee.prehistoriccraft.plants.*;
 import net.smazeee.prehistoriccraft.item.ModItems;
 
@@ -36,7 +35,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> ACID_SHOWER = registerBlock("acid_shower", () -> new AcidShowerBlock(BlockBehaviour.Properties.of().noLootTable().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore", () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> DEEPSLATE_SULFUR_ORE = registerBlock("deepslate_sulfur_ore", () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-    public static final RegistryObject<Block> BELEMNOPTERIS = BLOCKS.register("belemnopteris", () -> new Belemnopteris(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+    public static final RegistryObject<Block> BELEMNOPTERIS = registerBlock("belemnopteris", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS)));
     public static final RegistryObject<Block> CLATHROPTERIS = BLOCKS.register("clathropteris", () -> new Clathropteris(BlockBehaviour.Properties.copy(Blocks.GRASS)));
     public static final RegistryObject<Block> PACHYPTERIS = BLOCKS.register("pachypteris", () -> new Pachypteris(BlockBehaviour.Properties.copy(Blocks.GRASS)));
     public static final RegistryObject<Block> NEUROPTERIS = BLOCKS.register("neuropteris", () -> new Neuropteris(BlockBehaviour.Properties.copy(Blocks.GRASS)));
@@ -53,7 +52,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> FIELD_HORSETAIL = BLOCKS.register("field_horsetail", () -> new FieldHorsetail(BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).noOcclusion()));
     public static final RegistryObject<Block> CABLE = registerBlock("cable", CableBlock::new);
     public static final RegistryObject<Block> FACADE = BLOCKS.register("facade", FacadeBlock::new);
-    public static final RegistryObject<Block> EXPERIMENT = registerBlock("experiment", () -> new ExperimentBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noLootTable()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

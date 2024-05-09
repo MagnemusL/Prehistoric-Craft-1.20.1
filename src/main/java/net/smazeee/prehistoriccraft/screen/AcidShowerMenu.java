@@ -21,7 +21,7 @@ public class AcidShowerMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public AcidShowerMenu(int containerID, Inventory inv, FriendlyByteBuf extraData) {
-        this(containerID, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(containerID, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public AcidShowerMenu(int containerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -37,10 +37,10 @@ public class AcidShowerMenu extends AbstractContainerMenu {
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
             this.addSlot(new SlotItemHandler(iItemHandler, 0, 79, 97));
             this.addSlot(new SlotItemHandler(iItemHandler, 1, 79, 44));
-            this.addSlot(new SlotItemHandler(iItemHandler, 2, 79, 5));
-            this.addSlot(new SlotItemHandler(iItemHandler, 3, 61, 75));
-            this.addSlot(new SlotItemHandler(iItemHandler, 4, 79, 75));
-            this.addSlot(new SlotItemHandler(iItemHandler, 5, 97, 75));
+            this.addSlot(new SlotItemHandler(iItemHandler, 5, 79, 5));
+            this.addSlot(new SlotItemHandler(iItemHandler, 2, 61, 75));
+            this.addSlot(new SlotItemHandler(iItemHandler, 3, 79, 75));
+            this.addSlot(new SlotItemHandler(iItemHandler, 4, 97, 75));
         });
 
         addDataSlots(data);

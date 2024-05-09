@@ -7,8 +7,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
-import net.smazeee.prehistoriccraft.experiment.ExperimentBlock;
-import net.smazeee.prehistoriccraft.experiment.ExperimentBlockEntity;
 
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
@@ -18,7 +16,6 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<AcidShowerBlockEntity>> MB_TEST_BE = BLOCK_ENTITIES.register("mb_test_block_entity", () -> BlockEntityType.Builder.of(AcidShowerBlockEntity::new, ModBlocks.ACID_SHOWER.get()).build(null));
     public static final RegistryObject<BlockEntityType<CableBlockEntity>> CABLE_BE = BLOCK_ENTITIES.register("cable_block_entity", () -> BlockEntityType.Builder.of(CableBlockEntity::new, ModBlocks.CABLE.get()).build(null));
     public static final RegistryObject<BlockEntityType<FacadeBlockEntity>> FACADE_BE = BLOCK_ENTITIES.register("facade_block_entity", () -> BlockEntityType.Builder.of(FacadeBlockEntity::new, ModBlocks.FACADE.get()).build(null));
-    public static final RegistryObject<BlockEntityType<ExperimentBlockEntity>> EXPERIMENT_BE = BLOCK_ENTITIES.register("experiment_block_entity", () -> BlockEntityType.Builder.of(ExperimentBlockEntity::new, ModBlocks.EXPERIMENT.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

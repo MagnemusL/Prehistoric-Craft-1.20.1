@@ -14,7 +14,7 @@ import net.smazeee.prehistoriccraft.item.ModItems;
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PrehistoricCraft.MODID);
 
-    public static final RegistryObject<CreativeModeTab> PLANTS_TAB = CREATIVE_MODE_TABS.register("plants_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BELEMNOPTERIS_BLOCK_ITEM.get())).title(Component.translatable("creativetab.plants_tab")).withSearchBar().displayItems((displayParameters, output) -> {
+    public static final RegistryObject<CreativeModeTab> PLANTS_TAB = CREATIVE_MODE_TABS.register("plants_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.CLATHROPTERIS_BLOCK_ITEM.get())).title(Component.translatable("creativetab.plants_tab")).withSearchBar().displayItems((displayParameters, output) -> {
         output.accept(ModBlocks.BELEMNOPTERIS.get());
         output.accept(ModBlocks.CLATHROPTERIS.get());
         output.accept(ModBlocks.PACHYPTERIS.get());

@@ -1,9 +1,6 @@
 package net.smazeee.prehistoriccraft.item;
 
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -12,7 +9,6 @@ import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.item.custom.FacadeBlockItem;
 import net.smazeee.prehistoriccraft.item.custom.FluidContainer;
-import net.smazeee.prehistoriccraft.plants.item.BelemnopterisBlockItem;
 import net.smazeee.prehistoriccraft.plants.item.ClathropterisBlockItem;
 import net.smazeee.prehistoriccraft.plants.item.NeuropterisBlockItem;
 import net.smazeee.prehistoriccraft.plants.item.PachypterisBlockItem;
@@ -36,7 +32,6 @@ public class ModItems {
     public static final RegistryObject<Item> SULFURIC_ACID_BUCKET = ITEMS.register("sulfuric_acid_bucket", () -> new FluidContainer(new Item.Properties()));
     public static final RegistryObject<Item> EGGY = ITEMS.register("eggy", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CRACKED_EGGY = ITEMS.register("cracked_eggy", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> BELEMNOPTERIS_BLOCK_ITEM = ITEMS.register("belemnopteris", () -> new BelemnopterisBlockItem(ModBlocks.BELEMNOPTERIS.get(), new Item.Properties()));
     public static final RegistryObject<Item> CLATHROPTERIS_BLOCK_ITEM = ITEMS.register("clathropteris", () -> new ClathropterisBlockItem(ModBlocks.CLATHROPTERIS.get(), new Item.Properties()));
     public static final RegistryObject<Item> PACHYPTERIS_BLOCK_ITEM = ITEMS.register("pachypteris", () -> new PachypterisBlockItem(ModBlocks.PACHYPTERIS.get(), new Item.Properties()));
     public static final RegistryObject<Item> NEUROPTERIS_BLOCK_ITEM = ITEMS.register("neuropteris", () -> new NeuropterisBlockItem(ModBlocks.NEUROPTERIS.get(), new Item.Properties()));
