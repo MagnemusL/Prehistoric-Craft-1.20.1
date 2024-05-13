@@ -7,6 +7,6 @@
   "automatic_culling": false,
   "textures": {
     "texture0": "prehistoriccraft:block/belemnopteris",
-    "particle": "minecraft:block/grass"
+    "particle": "prehistoriccraft:block/small_grass"
   }
 }

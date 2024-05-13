@@ -1,5 +1,12 @@
 {
+  "loader": "forge:obj",
+  "model": "prehistoriccraft:models/obj/pachypteris.obj",
+  "flip_v": true,
+  "mtl_override": "prehistoriccraft:models/obj/mtl/pachypteris.mtl",
+  "render_type": "cutout",
+  "automatic_culling": false,
   "textures": {
-    "particle": "minecraft:block/grass"
+    "texture0": "prehistoriccraft:block/pachypteris",
+    "particle": "prehistoriccraft:block/small_grass"
   }
 }

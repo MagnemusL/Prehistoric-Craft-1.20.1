@@ -1,5 +1,12 @@
 {
+  "loader": "forge:obj",
+  "model": "prehistoriccraft:models/obj/neuropteris.obj",
+  "flip_v": true,
+  "mtl_override": "prehistoriccraft:models/obj/mtl/neuropteris.mtl",
+  "render_type": "cutout",
+  "automatic_culling": false,
   "textures": {
-    "particle": "minecraft:block/grass"
+    "texture0": "prehistoriccraft:block/neuropteris",
+    "particle": "prehistoriccraft:block/small_grass"
   }
 }

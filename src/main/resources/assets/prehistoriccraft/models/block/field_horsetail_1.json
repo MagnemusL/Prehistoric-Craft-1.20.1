@@ -1,5 +1,12 @@
 {
+  "loader": "forge:obj",
+  "model": "prehistoriccraft:models/obj/field_horsetail_1.obj",
+  "flip_v": true,
+  "mtl_override": "prehistoriccraft:models/obj/mtl/field_horsetail_1.mtl",
+  "render_type": "cutout",
+  "automatic_culling": false,
   "textures": {
-    "particle": "minecraft:block/grass"
+    "texture0": "prehistoriccraft:block/field_horsetail_1",
+    "particle": "prehistoriccraft:block/small_grass"
   }
 }

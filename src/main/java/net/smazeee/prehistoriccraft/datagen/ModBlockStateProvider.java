@@ -11,7 +11,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
-import net.smazeee.prehistoriccraft.block.bakedmodel.CableModelLoader;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -53,9 +52,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItemCross(ModBlocks.CARNATION_TREE_CORAL);
         blockItemCross(ModBlocks.ORANGE_BAMBOO_CORAL);
         blockItemCross(ModBlocks.RED_BAMBOO_CORAL);
-
-        registerCable();
-        registerFacade();
     }
 
     public ModelFile crossBlock(Block block) {
@@ -72,39 +68,5 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void block(RegistryObject<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
-    }
-
-    private void registerCable() {
-        BlockModelBuilder model = models().getBuilder("cable")
-                .parent(models().getExistingFile(mcLoc("cube")))
-                .customLoader((builder, helper) -> new CableLoaderBuilder(CableModelLoader.GENERATOR_LOADER, builder, helper, false))
-                .end();
-        simpleBlock(ModBlocks.CABLE.get(), model);
-    }
-
-    private void registerFacade() {
-        BlockModelBuilder model = models().getBuilder("facade")
-                .parent(models().getExistingFile(mcLoc("cube")))
-                .customLoader((builder, helper) -> new CableLoaderBuilder(CableModelLoader.GENERATOR_LOADER, builder, helper, true))
-                .end();
-        simpleBlock(ModBlocks.FACADE.get(), model);
-    }
-
-    public static class CableLoaderBuilder extends CustomLoaderBuilder<BlockModelBuilder> {
-
-        private final boolean facade;
-
-        public CableLoaderBuilder(ResourceLocation loader, BlockModelBuilder parent, ExistingFileHelper existingFileHelper,
-                                  boolean facade) {
-            super(loader, parent, existingFileHelper);
-            this.facade = facade;
-        }
-
-        @Override
-        public JsonObject toJson(JsonObject json) {
-            JsonObject obj = super.toJson(json);
-            obj.addProperty("facade", facade);
-            return obj;
-        }
     }
 }
