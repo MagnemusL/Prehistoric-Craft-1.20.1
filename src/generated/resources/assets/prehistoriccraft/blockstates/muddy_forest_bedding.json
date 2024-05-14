@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "prehistoriccraft:block/muddy_forest_bedding"
+    },
+    "axis=y": {
+      "model": "prehistoriccraft:block/muddy_forest_bedding"
+    },
+    "axis=z": {
+      "model": "prehistoriccraft:block/muddy_forest_bedding"
+    }
+  }
+}

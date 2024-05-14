@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "prehistoriccraft:block/muddy_dirt",
+    "side": "prehistoriccraft:block/muddy_organic_forest_bedding_side",
+    "top": "prehistoriccraft:block/organic_forest_bedding_top"
+  }
+}

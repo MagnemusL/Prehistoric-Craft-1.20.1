@@ -14,7 +14,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IForgeShearable;
 import org.jetbrains.annotations.Nullable;
 
-public class Clathropteris extends Block implements IForgeShearable {
+public class Clathropteris extends BushBlock implements IForgeShearable {
     protected static final float AABB_OFFSET = 3.0F;
     protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D);
 

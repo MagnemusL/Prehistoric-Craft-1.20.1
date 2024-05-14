@@ -1,0 +1,12 @@
+{
+  "loader": "forge:obj",
+  "model": "prehistoriccraft:models/obj/coniopteris.obj",
+  "flip_v": true,
+  "mtl_override": "prehistoriccraft:models/obj/mtl/coniopteris.mtl",
+  "render_type": "cutout",
+  "automatic_culling": false,
+  "textures": {
+    "texture0": "prehistoriccraft:block/coniopteris",
+    "particle": "prehistoriccraft:block/small_grass"
+  }
+}

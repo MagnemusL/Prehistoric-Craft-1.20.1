@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "prehistoriccraft:block/organic_loamy_dirt"
+    },
+    "axis=y": {
+      "model": "prehistoriccraft:block/organic_loamy_dirt"
+    },
+    "axis=z": {
+      "model": "prehistoriccraft:block/organic_loamy_dirt"
+    }
+  }
+}

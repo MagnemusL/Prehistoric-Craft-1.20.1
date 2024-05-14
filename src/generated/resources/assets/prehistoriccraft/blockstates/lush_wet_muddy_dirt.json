@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "prehistoriccraft:block/lush_wet_muddy_dirt"
+    },
+    "axis=y": {
+      "model": "prehistoriccraft:block/lush_wet_muddy_dirt"
+    },
+    "axis=z": {
+      "model": "prehistoriccraft:block/lush_wet_muddy_dirt"
+    }
+  }
+}

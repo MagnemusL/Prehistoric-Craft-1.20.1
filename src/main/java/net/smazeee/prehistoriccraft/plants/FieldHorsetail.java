@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 
-public class FieldHorsetail extends Block {
+public class FieldHorsetail extends BushBlock {
     protected static final float AABB_OFFSET = 3.0F;
     protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D);
     public static final IntegerProperty TYPE = IntegerProperty.create("type", 0, 3);

@@ -6,6 +6,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -22,6 +23,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     }
 
     private void drop(RegistryObject<Block> block) {
+        this.dropSelf(block.get());
+    }
+
+    private void dropPillar(RegistryObject<RotatedPillarBlock> block) {
         this.dropSelf(block.get());
     }
 
@@ -54,6 +59,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         drop(ModBlocks.PACHYPTERIS);
         drop(ModBlocks.NEUROPTERIS);
         drop(ModBlocks.FIELD_HORSETAIL);
+        drop(ModBlocks.CONIOPTERIS);
 
         drop(ModBlocks.AQUA_STONY_CORAL);
         drop(ModBlocks.BLUE_STONY_CORAL);
@@ -65,6 +71,27 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         drop(ModBlocks.CARNATION_TREE_CORAL);
         drop(ModBlocks.ORANGE_BAMBOO_CORAL);
         drop(ModBlocks.RED_BAMBOO_CORAL);
+
+        drop(ModBlocks.FOREST_BEDDING);
+        drop(ModBlocks.LEAF_LITTER);
+        drop(ModBlocks.LOAMY_DIRT);
+        drop(ModBlocks.LOAMY_FOREST_BEDDING);
+        drop(ModBlocks.LOAMY_ORGANIC_FOREST_BEDDING);
+        drop(ModBlocks.LUSH_WET_DIRT);
+        drop(ModBlocks.LUSH_WET_LOAMY_DIRT);
+        drop(ModBlocks.LUSH_WET_MUDDY_DIRT);
+        drop(ModBlocks.LUSH_WET_ORANGE_SANDY_DIRT);
+        drop(ModBlocks.LUSH_WET_SANDY_DIRT);
+        drop(ModBlocks.MUDDY_DIRT);
+        drop(ModBlocks.MUDDY_FOREST_BEDDING);
+        drop(ModBlocks.MUDDY_ORGANIC_FOREST_BEDDING);
+        drop(ModBlocks.ORANGE_SANDY_DIRT);
+        drop(ModBlocks.ORGANIC_DIRT);
+        drop(ModBlocks.ORGANIC_LOAMY_DIRT);
+        drop(ModBlocks.ORGANIC_MUDDY_DIRT);
+        drop(ModBlocks.ORGANIC_ORANGE_SANDY_DIRT);
+        drop(ModBlocks.ORGANIC_SANDY_DIRT);
+        drop(ModBlocks.SANDY_DIRT);
     }
 
     @Override

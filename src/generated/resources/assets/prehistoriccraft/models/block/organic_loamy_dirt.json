@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "prehistoriccraft:block/loamy_dirt",
+    "side": "prehistoriccraft:block/organic_loamy_dirt_side",
+    "top": "prehistoriccraft:block/organic_loamy_dirt_top"
+  }
+}
