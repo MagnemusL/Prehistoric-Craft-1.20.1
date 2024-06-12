@@ -1,0 +1,14 @@
+{
+  "type": "prehistoriccraft:extracting",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "prehistoriccraft:eggy"
+    }
+  ],
+  "output": {
+    "item": "prehistoriccraft:cracked_eggy"
+  },
+  "processingTime": 100,
+  "energy": 200
+}

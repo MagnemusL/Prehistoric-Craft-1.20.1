@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
+import net.smazeee.prehistoriccraft.item.custom.ExtractionMachineBlockItem;
 import net.smazeee.prehistoriccraft.item.custom.FluidContainer;
 
 public class ModItems {
@@ -28,6 +29,8 @@ public class ModItems {
     public static final RegistryObject<Item> SULFURIC_ACID_BUCKET = ITEMS.register("sulfuric_acid_bucket", () -> new FluidContainer(new Item.Properties()));
     public static final RegistryObject<Item> EGGY = ITEMS.register("eggy", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CRACKED_EGGY = ITEMS.register("cracked_eggy", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> EXTRACTION_MACHINE_BLOCK_ITEM = ITEMS.register("extraction_machine", () -> new ExtractionMachineBlockItem(ModBlocks.EXTRACTION_MACHINE.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

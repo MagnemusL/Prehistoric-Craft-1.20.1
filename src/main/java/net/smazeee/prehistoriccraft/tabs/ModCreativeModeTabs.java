@@ -20,6 +20,7 @@ public class ModCreativeModeTabs {
         output.accept(ModBlocks.PACHYPTERIS.get());
         output.accept(ModBlocks.NEUROPTERIS.get());
         output.accept(ModBlocks.CONIOPTERIS.get());
+        output.accept(ModBlocks.PARACYCAS.get());
         output.accept(ModBlocks.FIELD_HORSETAIL.get());
         output.accept(ModBlocks.AQUA_STONY_CORAL.get());
         output.accept(ModBlocks.BLUE_STONY_CORAL.get());

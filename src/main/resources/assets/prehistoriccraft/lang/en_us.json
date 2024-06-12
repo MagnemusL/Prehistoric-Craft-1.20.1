@@ -14,6 +14,7 @@
   "block.prehistoriccraft.deepslate_sulfur_ore": "Deepslate Sulfur Ore",
 
   "block.prehistoriccraft.acid_shower": "Acid Shower",
+  "block.prehistoriccraft.extraction_machine": "Extractinator",
 
   "block.prehistoriccraft.belemnopteris": "Belemnopteris",
   "block.prehistoriccraft.clathropteris": "Clathropteris",
@@ -72,7 +73,10 @@
 
 
   "blockentity.acid_shower": "Acid Shower",
+  "blockentity.extraction_machine": "Extractinator",
+
   "title.prehistoriccraft.acid_shower": "Acid Spraying",
+  "title.prehistoriccraft.extraction_machine": "Extracting",
   "creativetab.plants_tab": "Plants Tab",
   "creativetab.fossils_tab": "Fossils Tab",
   "creativetab.decorations_tab": "Decorations Tab"

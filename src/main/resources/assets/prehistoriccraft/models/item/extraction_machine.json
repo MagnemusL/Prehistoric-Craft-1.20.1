@@ -1,0 +1,101 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "textures": {
+    "particle": "prehistoriccraft:block/extraction_machine"
+  },
+  "texture_size": [
+    64,
+    64
+  ],
+  "gui_light": "front",
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [
+        0.5,
+        -2.75,
+        0
+      ],
+      "scale": [
+        0.4453125,
+        0.443359375,
+        0.478515625
+      ]
+    },
+    "thirdperson_lefthand": {
+      "translation": [
+        1,
+        -2.25,
+        0
+      ],
+      "scale": [
+        0.47,
+        0.45,
+        0.46
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -10,
+        24,
+        12
+      ],
+      "translation": [
+        2.75,
+        -1.25,
+        0
+      ],
+      "scale": [
+        0.74,
+        0.72,
+        0.68
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -13,
+        -152,
+        -7
+      ],
+      "translation": [
+        3,
+        -1.75,
+        0
+      ],
+      "scale": [
+        0.75,
+        0.73,
+        0.69
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        -3,
+        0
+      ],
+      "scale": [
+        0.57,
+        0.54,
+        0.53
+      ]
+    },
+    "gui": {
+      "rotation": [
+        2.3,
+        54.29,
+        -0.61
+      ],
+      "translation": [
+        0,
+        -7.75,
+        0
+      ],
+      "scale": [
+        0.78,
+        0.775390625,
+        0.77
+      ]
+    }
+  }
+}

@@ -10,7 +10,6 @@ import java.util.function.Predicate;
 /*
  * WrappedHandler by noeppi_noeppi
  * under Apache License 2.0: https://github.com/ModdingX/LibX/blob/1.19/LICENSE
- *
  */
 public class WrappedHandler implements IItemHandlerModifiable {
     private final IItemHandlerModifiable handler;

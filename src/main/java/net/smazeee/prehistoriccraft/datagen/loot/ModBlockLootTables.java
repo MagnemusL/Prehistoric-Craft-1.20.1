@@ -51,15 +51,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropOre(ModBlocks.SULFUR_ORE, ModItems.SULFUR);
         dropOre(ModBlocks.DEEPSLATE_SULFUR_ORE, ModItems.SULFUR);
 
-        this.add(ModBlocks.BELEMNOPTERIS.get(), (block) -> {
-            return createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F)))));
-        });
-
-        drop(ModBlocks.CLATHROPTERIS);
-        drop(ModBlocks.PACHYPTERIS);
-        drop(ModBlocks.NEUROPTERIS);
-        drop(ModBlocks.FIELD_HORSETAIL);
-        drop(ModBlocks.CONIOPTERIS);
+        this.add(ModBlocks.BELEMNOPTERIS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
+        this.add(ModBlocks.CLATHROPTERIS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
+        this.add(ModBlocks.PACHYPTERIS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
+        this.add(ModBlocks.NEUROPTERIS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
+        this.add(ModBlocks.FIELD_HORSETAIL.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
+        this.add(ModBlocks.CONIOPTERIS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
+        this.add(ModBlocks.PARACYCAS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
 
         drop(ModBlocks.AQUA_STONY_CORAL);
         drop(ModBlocks.BLUE_STONY_CORAL);
