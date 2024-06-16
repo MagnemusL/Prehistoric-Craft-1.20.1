@@ -21,7 +21,7 @@ public class AcidShowerMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public AcidShowerMenu(int containerID, Inventory inv, FriendlyByteBuf extraData) {
-        this(containerID, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
+        this(containerID, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
     }
 
     public AcidShowerMenu(int containerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -37,7 +37,7 @@ public class AcidShowerMenu extends AbstractContainerMenu {
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
             this.addSlot(new SlotItemHandler(iItemHandler, 0, 79, 97));
             this.addSlot(new SlotItemHandler(iItemHandler, 1, 79, 44));
-            this.addSlot(new SlotItemHandler(iItemHandler, 5, 79, 5));
+            //this.addSlot(new SlotItemHandler(iItemHandler, 5, 79, 5));
             this.addSlot(new SlotItemHandler(iItemHandler, 2, 61, 75));
             this.addSlot(new SlotItemHandler(iItemHandler, 3, 79, 75));
             this.addSlot(new SlotItemHandler(iItemHandler, 4, 97, 75));
@@ -67,7 +67,7 @@ public class AcidShowerMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-    private static final int TE_INVENTORY_SLOT_COUNT = 6;
+    private static final int TE_INVENTORY_SLOT_COUNT = 5;
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);

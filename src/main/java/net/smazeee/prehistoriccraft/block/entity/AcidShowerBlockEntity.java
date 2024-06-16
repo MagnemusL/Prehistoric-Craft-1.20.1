@@ -15,13 +15,17 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.item.ModItems;
@@ -30,13 +34,14 @@ import net.smazeee.prehistoriccraft.screen.AcidShowerMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Optional;
 
 public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     private static final List<Item> FOSSILS = List.of(ModItems.CAMBRIAN_FOSSIL.get(), ModItems.PRECAMBRIAN_FOSSIL.get(), ModItems.CARBONIFEROUS_FOSSIL.get(), ModItems.CRETACEOUS_FOSSIL.get(), ModItems.DEVONIAN_FOSSIL.get(), ModItems.JURASSIC_FOSSIL.get(), ModItems.ORDOVICIAN_FOSSIL.get(), ModItems.PERMIAN_FOSSIL.get(), ModItems.SILURIAN_FOSSIL.get(), ModItems.TRIASSIC_FOSSIL.get()); //, ModBlocks.CAMBRIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.PRECAMBRIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.CARBONIFEROUS_FOSSILIFEROUS_STONE.get(), ModBlocks.CRETACEOUS_FOSSILIFEROUS_STONE.get(), ModBlocks.DEVONIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.JURASSIC_FOSSILIFEROUS_STONE.get(), ModBlocks.ORDOVICIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.PERMIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.SILURIAN_FOSSILIFEROUS_STONE.get(), ModBlocks.TRIASSIC_FOSSILIFEROUS_STONE.get());
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(6) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(5) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -48,7 +53,7 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
                 case 0 -> stack.getItem() == ModItems.AMBER.get();
                 case 1 -> true;
                 case 2, 3, 4 -> false;
-                case 5 -> true;
+                //case 5 -> true;
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -59,7 +64,7 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
     private static final int OUTPUT_SLOT_1 = 2;
     private static final int OUTPUT_SLOT_2 = 3;
     private static final int OUTPUT_SLOT_3 = 4;
-    private static final int BATTERY_SLOT = 5;
+    //private static final int BATTERY_SLOT = 5;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -168,11 +173,19 @@ public class AcidShowerBlockEntity extends BlockEntity implements MenuProvider {
         this.progress = 0;
     }
 
-    private void craftItem() {
+    public void craftItem() {
         Optional<AcidShowerRecipe> recipe = getCurrentRecipe();
         Item resultItem = recipe.get().getResultItem(getLevel().registryAccess()).getItem();
+        BlockState state = this.getBlockState();
+        Level level = this.getLevel();
+        BlockPos posDown = this.getBlockPos();
+        BlockPos posUp = posDown.above();
 
+        if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF).equals(DoubleBlockHalf.LOWER)) {
+            if(level.getBlockState(posUp).getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) == DoubleBlockHalf.UPPER) {
 
+            }
+        }
         this.itemHandler.extractItem(FOSSIL_SLOT, 1, false);
 
         if(this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getCount() >= this.itemHandler.getStackInSlot(OUTPUT_SLOT_1).getMaxStackSize()) {

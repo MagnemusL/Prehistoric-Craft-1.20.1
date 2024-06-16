@@ -119,6 +119,7 @@ public class ExtractionMachineBlockEntity extends BlockEntity implements MenuPro
                     case 0 -> ExtractionMachineBlockEntity.this.progress;
                     case 1 -> ExtractionMachineBlockEntity.this.maxProgress;
                     case 2 -> ExtractionMachineBlockEntity.this.ENERGY_STORAGE.getEnergyStored();
+                    case 3 -> ExtractionMachineBlockEntity.this.ENERGY_STORAGE.getMaxEnergyStored();
                 };
             }
 
@@ -128,12 +129,13 @@ public class ExtractionMachineBlockEntity extends BlockEntity implements MenuPro
                     case 0 -> ExtractionMachineBlockEntity.this.progress = value;
                     case 1 -> ExtractionMachineBlockEntity.this.maxProgress = getProcessingTime();
                     case 2 -> ExtractionMachineBlockEntity.this.ENERGY_STORAGE.setEnergy(getCurrentEnergy());
+                    case 3 -> ExtractionMachineBlockEntity.this.ENERGY_STORAGE.getMaxEnergyStored();
                 }
             }
 
             @Override
             public int getCount() {
-                return 3;
+                return 4;
             }
         };
     }

@@ -9,6 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
+import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.block.entity.ExtractionMachineBlockEntity;
 import org.jetbrains.annotations.Nullable;
@@ -16,10 +17,10 @@ import org.jetbrains.annotations.Nullable;
 public class ExtractionMachineMenu extends AbstractContainerMenu {
     public final ExtractionMachineBlockEntity blockEntity;
     private final Level level;
-    private final ContainerData data;
+    public final ContainerData data;
 
     public ExtractionMachineMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(3));
+        this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
     public ExtractionMachineMenu(int containerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -58,10 +59,14 @@ public class ExtractionMachineMenu extends AbstractContainerMenu {
 
     public int getEnergyBarAmount() {
         int energy = this.data.get(2);
-        int maxEnergy = 64000;
+        PrehistoricCraft.LOGGER.info(String.valueOf(energy));
+        float maxEnergy = (float) this.data.get(3);
+        PrehistoricCraft.LOGGER.info(String.valueOf(maxEnergy));
         int energyBarSize = 11;
 
-        return energy != 0 ? energyBarSize * energyBarSize / maxEnergy : 0;
+        //If energy is 0, return 0, when energy fills up, gradually go up a pixel at a time until the energy is the same as maxEnergy, then the energy bar should be full
+        //which is 11 pixels high.
+        return (int) (energyBarSize - (((float)energy / maxEnergy) * (float)energyBarSize));
     }
 
     //CREDIT FOR THIS PART GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons

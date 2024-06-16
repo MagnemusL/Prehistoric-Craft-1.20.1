@@ -45,8 +45,7 @@ public class ExtractionMachineScreen extends AbstractContainerScreen<ExtractionM
     }
 
     private void assignEnergyInfoArea() {
-        energyInfoArea = new EnergyDisplayTooltipArea(((width - imageWidth) / 2) + 44,
-                ((height - imageHeight) / 2) + 64, menu.blockEntity.getEnergyStorage());
+        energyInfoArea = new EnergyDisplayTooltipArea(menu.blockEntity.getEnergyStorage());
     }
 
     @Override
@@ -61,7 +60,6 @@ public class ExtractionMachineScreen extends AbstractContainerScreen<ExtractionM
 
         renderProgressArrow(guiGraphics, x, y);
         renderEnergyBar(guiGraphics, x, y);
-        energyInfoArea.render(guiGraphics);
     }
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
@@ -71,7 +69,7 @@ public class ExtractionMachineScreen extends AbstractContainerScreen<ExtractionM
     }
 
     private void renderEnergyBar(GuiGraphics guiGraphics, int x, int y) {
-        guiGraphics.blit(GUI_TEXTURE, x + 44 /*64*/, y + 64 /*36*/, 176 /*176*/, 71 /*33*/, 4 /*49*/, menu.getEnergyBarAmount());
+        guiGraphics.blit(GUI_TEXTURE, x + 44 /*44*/, y + 64 /*64*/, 176 /*176*/, 71 /*71*/, 4 /*4*/, 11 - menu.getEnergyBarAmount() * menu.getEnergyBarAmount());
     }
 
     @Override
