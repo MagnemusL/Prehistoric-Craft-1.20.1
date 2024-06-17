@@ -69,7 +69,7 @@ public class ExtractionMachineScreen extends AbstractContainerScreen<ExtractionM
     }
 
     private void renderEnergyBar(GuiGraphics guiGraphics, int x, int y) {
-        guiGraphics.blit(GUI_TEXTURE, x + 44 /*44*/, y + 64 /*64*/, 176 /*176*/, 71 /*71*/, 4 /*4*/, 11 - menu.getEnergyBarAmount() * menu.getEnergyBarAmount());
+        guiGraphics.blit(GUI_TEXTURE, x + 48, y + 75, 180, 81, -4, -menu.getEnergyBarAmount());
     }
 
     @Override

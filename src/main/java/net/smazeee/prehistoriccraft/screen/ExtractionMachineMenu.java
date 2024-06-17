@@ -58,15 +58,26 @@ public class ExtractionMachineMenu extends AbstractContainerMenu {
     }
 
     public int getEnergyBarAmount() {
-        int energy = this.data.get(2);
-        PrehistoricCraft.LOGGER.info(String.valueOf(energy));
-        float maxEnergy = (float) this.data.get(3);
-        PrehistoricCraft.LOGGER.info(String.valueOf(maxEnergy));
-        int energyBarSize = 11;
 
-        //If energy is 0, return 0, when energy fills up, gradually go up a pixel at a time until the energy is the same as maxEnergy, then the energy bar should be full
-        //which is 11 pixels high.
-        return (int) (energyBarSize - (((float)energy / maxEnergy) * (float)energyBarSize));
+        int OldMin = 0;
+        int OldMax = this.data.get(3);
+        int NewMin = 0;
+        int NewMax = 11;
+
+        int OldRange = (OldMax - OldMin);
+        int NewRange = (NewMax - NewMin);
+
+        int OldValue = this.data.get(2);
+        int NewValue;
+
+        if (OldRange == 0) {
+            NewValue = NewMin;
+        }
+        else {
+            NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
+        }
+
+        return NewValue;
     }
 
     //CREDIT FOR THIS PART GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
