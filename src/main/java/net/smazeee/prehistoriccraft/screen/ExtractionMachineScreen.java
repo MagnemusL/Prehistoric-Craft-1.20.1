@@ -16,6 +16,7 @@ import java.util.Optional;
 public class ExtractionMachineScreen extends AbstractContainerScreen<ExtractionMachineMenu> {
     private static final ResourceLocation GUI_TEXTURE = new ResourceLocation(PrehistoricCraft.MODID, "textures/gui/extraction_machine_gui.png");
     private EnergyDisplayTooltipArea energyInfoArea;
+    private int isCrafting = 0;
 
     public ExtractionMachineScreen(ExtractionMachineMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
@@ -65,11 +66,15 @@ public class ExtractionMachineScreen extends AbstractContainerScreen<ExtractionM
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if (menu.isCrafting()) {
             guiGraphics.blit(GUI_TEXTURE, x + 64 /*64*/, y + 35 /*36*/, 176 /*176*/, 33 /*33*/, 49 /*49*/, (int) menu.getScaledProgress());
+            if (isCrafting == 0) {
+                PrehistoricCraft.LOGGER.info(String.valueOf((int) menu.getScaledProgress()));
+                isCrafting++;
+            }
         }
     }
 
     private void renderEnergyBar(GuiGraphics guiGraphics, int x, int y) {
-        guiGraphics.blit(GUI_TEXTURE, x + 48, y + 75, 180, 81, -4, -menu.getEnergyBarAmount());
+        guiGraphics.blit(GUI_TEXTURE, x + 48 /*48*/, y + 74 /*74*/, 180 /*180*/, 81 /*81*/, -4 /*-4*/, -menu.getEnergyBarAmount());
     }
 
     @Override

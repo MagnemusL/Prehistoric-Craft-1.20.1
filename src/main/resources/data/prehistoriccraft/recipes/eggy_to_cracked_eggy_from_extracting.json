@@ -9,6 +9,6 @@
   "output": {
     "item": "prehistoriccraft:cracked_eggy"
   },
-  "processingTime": 100,
-  "energy": 200
+  "processingTime": 200,
+  "energy": 10
 }

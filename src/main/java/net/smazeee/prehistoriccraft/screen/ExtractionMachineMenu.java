@@ -52,9 +52,9 @@ public class ExtractionMachineMenu extends AbstractContainerMenu {
     public float getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);
-        float progressArrowSize = 8.5F;
+        int progressArrowSize = 27;
 
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+        return ((float) progress / maxProgress) * progressArrowSize;
     }
 
     public int getEnergyBarAmount() {

@@ -289,6 +289,7 @@ public class ExtractionMachineBlockEntity extends BlockEntity implements MenuPro
 
     public void tick(Level level, BlockPos pos, BlockState state) {
         fillUpOnEnergy();
+        int isFirst = 0;
 
         if (isOutputSlotEmpty() && hasRecipe()) {
             increaseCraftingProgress();
@@ -299,6 +300,8 @@ public class ExtractionMachineBlockEntity extends BlockEntity implements MenuPro
                 craftItem();
                 resetProgress();
                 setIsCrafting(false);
+                isFirst++;
+                PrehistoricCraft.LOGGER.info(String.valueOf(isFirst));
             }
         } else {
             resetProgress();
@@ -314,7 +317,7 @@ public class ExtractionMachineBlockEntity extends BlockEntity implements MenuPro
 
     private void fillUpOnEnergy() {
         if(hasEnergyItemInSlot(BATTERY_SLOT)) {
-            this.ENERGY_STORAGE.receiveEnergy(3200, false);
+            this.ENERGY_STORAGE.receiveEnergy(4500, false);
             PrehistoricCraft.LOGGER.info(String.valueOf(this.ENERGY_STORAGE.getEnergyStored()));
         }
     }
@@ -380,7 +383,7 @@ public class ExtractionMachineBlockEntity extends BlockEntity implements MenuPro
 
     private boolean hasEnoughEnergy() {
         Optional<ExtractionMachineRecipe> recipe = getCurrentRecipe();
-        return this.ENERGY_STORAGE.getEnergyStored() >= recipe.get().getEnergyRequired() * 1;
+        return this.ENERGY_STORAGE.getEnergyStored() >= recipe.get().getEnergyRequired();
     }
 
     private Optional<ExtractionMachineRecipe> getCurrentRecipe() {
