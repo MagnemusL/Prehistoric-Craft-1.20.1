@@ -31,7 +31,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> CRETACEOUS_FOSSILIFEROUS_STONE = registerBlock("cretaceous_fossiliferous_stone", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> DEVONIAN_FOSSILIFEROUS_STONE = registerBlock("devonian_fossiliferous_stone", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> JURASSIC_FOSSILIFEROUS_STONE = registerBlock("jurassic_fossiliferous_stone", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+    public static final RegistryObject<Block> NEOGENE_FOSSILIFEROUS_STONE = registerBlock("neogene_fossiliferous_stone", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> ORDOVICIAN_FOSSILIFEROUS_STONE = registerBlock("ordovician_fossiliferous_stone", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+    public static final RegistryObject<Block> PALEOGENE_FOSSILIFEROUS_STONE = registerBlock("paleogene_fossiliferous_stone", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> PERMIAN_FOSSILIFEROUS_STONE = registerBlock("permian_fossiliferous_stone", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> SILURIAN_FOSSILIFEROUS_STONE = registerBlock("silurian_fossiliferous_stone", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> TRIASSIC_FOSSILIFEROUS_STONE = registerBlock("triassic_fossiliferous_stone", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
@@ -83,6 +85,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> ORGANIC_ORANGE_SANDY_DIRT = registerBlock("organic_orange_sandy_dirt", () -> new ModSandBlock(BlockBehaviour.Properties.of().noOcclusion()));
     public static final RegistryObject<Block> ORGANIC_SANDY_DIRT = registerBlock("organic_sandy_dirt", () -> new ModSandBlock(BlockBehaviour.Properties.of().noOcclusion()));
     public static final RegistryObject<Block> SANDY_DIRT = registerBlock("sandy_dirt", () -> new Block(BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.SAND)));
+
+    public static final RegistryObject<Block> TEST_OBJ = registerBlock("test", () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

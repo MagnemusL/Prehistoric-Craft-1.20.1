@@ -20,7 +20,9 @@ public class ModItems {
     public static final RegistryObject<Item> CRETACEOUS_FOSSIL = ITEMS.register("cretaceous_fossil", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DEVONIAN_FOSSIL = ITEMS.register("devonian_fossil", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> JURASSIC_FOSSIL = ITEMS.register("jurassic_fossil", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> NEOGENE_FOSSIL = ITEMS.register("neogene_fossil", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ORDOVICIAN_FOSSIL = ITEMS.register("ordovician_fossil", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PALEOGENE_FOSSIL = ITEMS.register("paleogene_fossil", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PERMIAN_FOSSIL = ITEMS.register("permian_fossil", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILURIAN_FOSSIL = ITEMS.register("silurian_fossil", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TRIASSIC_FOSSIL = ITEMS.register("triassic_fossil", () -> new Item(new Item.Properties()));
@@ -29,6 +31,8 @@ public class ModItems {
     public static final RegistryObject<Item> SULFURIC_ACID_BUCKET = ITEMS.register("sulfuric_acid_bucket", () -> new FluidContainer(new Item.Properties()));
     public static final RegistryObject<Item> EGGY = ITEMS.register("eggy", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CRACKED_EGGY = ITEMS.register("cracked_eggy", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> EMPTY_FLUID_CONTAINER = ITEMS.register("empty_fluid_container", () -> new FluidContainer(new Item.Properties()));
 
     public static final RegistryObject<Item> EXTRACTION_MACHINE_BLOCK_ITEM = ITEMS.register("extraction_machine", () -> new ExtractionMachineBlockItem(ModBlocks.EXTRACTION_MACHINE.get(), new Item.Properties()));
 

@@ -41,7 +41,9 @@ public class ModCreativeModeTabs {
         output.accept(ModBlocks.CRETACEOUS_FOSSILIFEROUS_STONE.get());
         output.accept(ModBlocks.DEVONIAN_FOSSILIFEROUS_STONE.get());
         output.accept(ModBlocks.JURASSIC_FOSSILIFEROUS_STONE.get());
+        output.accept(ModBlocks.NEOGENE_FOSSILIFEROUS_STONE.get());
         output.accept(ModBlocks.ORDOVICIAN_FOSSILIFEROUS_STONE.get());
+        output.accept(ModBlocks.PALEOGENE_FOSSILIFEROUS_STONE.get());
         output.accept(ModBlocks.PERMIAN_FOSSILIFEROUS_STONE.get());
         output.accept(ModBlocks.SILURIAN_FOSSILIFEROUS_STONE.get());
         output.accept(ModBlocks.TRIASSIC_FOSSILIFEROUS_STONE.get());
@@ -51,7 +53,9 @@ public class ModCreativeModeTabs {
         output.accept(ModItems.CRETACEOUS_FOSSIL.get());
         output.accept(ModItems.DEVONIAN_FOSSIL.get());
         output.accept(ModItems.JURASSIC_FOSSIL.get());
+        output.accept(ModItems.NEOGENE_FOSSIL.get());
         output.accept(ModItems.ORDOVICIAN_FOSSIL.get());
+        output.accept(ModItems.PALEOGENE_FOSSIL.get());
         output.accept(ModItems.PERMIAN_FOSSIL.get());
         output.accept(ModItems.SILURIAN_FOSSIL.get());
         output.accept(ModItems.TRIASSIC_FOSSIL.get());

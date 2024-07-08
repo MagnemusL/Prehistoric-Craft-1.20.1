@@ -5,7 +5,9 @@
   "block.prehistoriccraft.cretaceous_fossiliferous_stone": "Cretaceous Fossiliferous Stone",
   "block.prehistoriccraft.devonian_fossiliferous_stone": "Devonian Fossiliferous Stone",
   "block.prehistoriccraft.jurassic_fossiliferous_stone": "Jurassic Fossiliferous Stone",
+  "block.prehistoriccraft.neogene_fossiliferous_stone": "Neogene Fossiliferous Stone",
   "block.prehistoriccraft.ordovician_fossiliferous_stone": "Ordovician Fossiliferous Stone",
+  "block.prehistoriccraft.paleogene_fossiliferous_stone": "Paleogene Fossiliferous Stone",
   "block.prehistoriccraft.permian_fossiliferous_stone": "Permian Fossiliferous Stone",
   "block.prehistoriccraft.silurian_fossiliferous_stone": "Silurian Fossiliferous Stone",
   "block.prehistoriccraft.triassic_fossiliferous_stone": "Triassic Fossiliferous Stone",
@@ -61,7 +63,9 @@
   "item.prehistoriccraft.cretaceous_fossil": "Cretaceous Fossil",
   "item.prehistoriccraft.devonian_fossil": "Devonian Fossil",
   "item.prehistoriccraft.jurassic_fossil": "Jurassic Fossil",
+  "item.prehistoriccraft.neogene_fossil": "Neogene Fossil",
   "item.prehistoriccraft.ordovician_fossil": "Ordovician Fossil",
+  "item.prehistoriccraft.paleogene_fossil": "Paleogene Fossil",
   "item.prehistoriccraft.permian_fossil": "Permian Fossil",
   "item.prehistoriccraft.silurian_fossil": "Silurian Fossil",
   "item.prehistoriccraft.triassic_fossil": "Triassic Fossil",
@@ -77,7 +81,7 @@
 
   "title.prehistoriccraft.acid_shower": "Acid Spraying",
   "title.prehistoriccraft.extraction_machine": "Extracting",
-  "creativetab.plants_tab": "Plants Tab",
-  "creativetab.fossils_tab": "Fossils Tab",
-  "creativetab.decorations_tab": "Decorations Tab"
+  "creativetab.plants_tab": "Plants",
+  "creativetab.fossils_tab": "Fossils",
+  "creativetab.decorations_tab": "Decorations"
 }

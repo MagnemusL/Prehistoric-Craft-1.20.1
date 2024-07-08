@@ -8,9 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class Satchets extends Item {
-    private final int type;
-    public Satchets(Properties properties, int type1) {
+    public Satchets(Properties properties) {
         super(properties);
-        this.type = type1;
     }
 }

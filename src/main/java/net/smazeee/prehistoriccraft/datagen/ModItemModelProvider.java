@@ -23,7 +23,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CRETACEOUS_FOSSIL);
         simpleItem(ModItems.DEVONIAN_FOSSIL);
         simpleItem(ModItems.JURASSIC_FOSSIL);
+        simpleItem(ModItems.NEOGENE_FOSSIL);
         simpleItem(ModItems.ORDOVICIAN_FOSSIL);
+        simpleItem(ModItems.PALEOGENE_FOSSIL);
         simpleItem(ModItems.PERMIAN_FOSSIL);
         simpleItem(ModItems.SILURIAN_FOSSIL);
         simpleItem(ModItems.TRIASSIC_FOSSIL);
@@ -34,6 +36,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.EGGY);
         simpleItem(ModItems.CRACKED_EGGY);
+
+        simpleItem(ModItems.EMPTY_FLUID_CONTAINER);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

@@ -1,0 +1,12 @@
+{
+  "loader": "forge:obj",
+  "model": "prehistoriccraft:models/obj/test.obj",
+  "flip_v": true,
+  "mtl_override": "prehistoriccraft:models/obj/mtl/test.mtl",
+  "render_type": "cutout",
+  "automatic_culling": false,
+  "textures": {
+    "texture0": "prehistoriccraft:block/sulfur_ore",
+    "particle": "prehistoriccraft:block/small_grass"
+  }
+}

@@ -37,12 +37,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockItem(ModBlocks.CAMBRIAN_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.PRECAMBRIAN_FOSSILIFEROUS_STONE);
-        blockItem(ModBlocks.PERMIAN_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.CARBONIFEROUS_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.CRETACEOUS_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.DEVONIAN_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.JURASSIC_FOSSILIFEROUS_STONE);
+        blockItem(ModBlocks.NEOGENE_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.ORDOVICIAN_FOSSILIFEROUS_STONE);
+        blockItem(ModBlocks.PALEOGENE_FOSSILIFEROUS_STONE);
+        blockItem(ModBlocks.PERMIAN_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.SILURIAN_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.TRIASSIC_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.AMBER_ORE);
