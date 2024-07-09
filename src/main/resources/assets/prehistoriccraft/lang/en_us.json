@@ -85,5 +85,6 @@
   "title.prehistoriccraft.extraction_machine": "Extracting",
   "creativetab.plants_tab": "Plants",
   "creativetab.fossils_tab": "Fossils",
-  "creativetab.decorations_tab": "Decorations"
+  "creativetab.decorations_tab": "Decorations",
+  "creativetab.entity_tab": "Entities"
 }
