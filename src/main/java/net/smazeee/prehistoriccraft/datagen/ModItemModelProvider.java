@@ -38,6 +38,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CRACKED_EGGY);
 
         simpleItem(ModItems.EMPTY_FLUID_CONTAINER);
+
+        withExistingParent(ModItems.DAYONGASPIS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

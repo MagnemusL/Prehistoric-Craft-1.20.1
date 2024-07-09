@@ -24,6 +24,7 @@
   "block.prehistoriccraft.pachypteris": "Pachypteris",
   "block.prehistoriccraft.field_horsetail": "Field Horsetail",
   "block.prehistoriccraft.coniopteris": "Coniopteris",
+  "block.prehistoriccraft.paracycas": "Paracycas",
 
   "block.prehistoriccraft.aqua_stony_coral": "Aqua Stony Coral",
   "block.prehistoriccraft.blue_stony_coral": "Blue Stony Coral",
@@ -75,6 +76,7 @@
   "item.prehistoriccraft.eggy": "Eggy!",
   "item.prehistoriccraft.cracked_eggy": "Cracked Eggy :(",
 
+  "item.prehistoriccraft.dayongaspis_spawn_egg": "Dayongaspis Spawn Egg",
 
   "blockentity.acid_shower": "Acid Shower",
   "blockentity.extraction_machine": "Extractinator",

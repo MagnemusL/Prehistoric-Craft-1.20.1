@@ -4,8 +4,8 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -18,6 +18,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.block.entity.ModBlockEntities;
 import net.smazeee.prehistoriccraft.block.entity.client.ExtractionMachineRenderer;
+import net.smazeee.prehistoriccraft.entities.ModEntities;
+import net.smazeee.prehistoriccraft.entities.water.dayongaspis.DayongaspisRenderer;
 import net.smazeee.prehistoriccraft.screen.ExtractionMachineScreen;
 import net.smazeee.prehistoriccraft.tabs.ModCreativeModeTabs;
 import net.smazeee.prehistoriccraft.item.ModItems;
@@ -39,11 +41,12 @@ public class PrehistoricCraft {
         ModItems.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
 
-        ModCreativeModeTabs.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         GeckoLib.initialize();
         modEventBus.addListener(this::commonSetup);
@@ -75,6 +78,8 @@ public class PrehistoricCraft {
             MenuScreens.register(ModMenuTypes.EXTRACTION_MACHINE_MENU.get(), ExtractionMachineScreen::new);
 
             BlockEntityRenderers.register(ModBlockEntities.EXTRACTION_MACHINE_BE.get(), ExtractionMachineRenderer::new);
+
+            EntityRenderers.register(ModEntities.DAYONGASPIS.get(), DayongaspisRenderer::new);
         }
     }
 }

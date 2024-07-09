@@ -1,12 +1,16 @@
 package net.smazeee.prehistoriccraft.item;
 
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
+import net.smazeee.prehistoriccraft.entities.ModEntities;
 import net.smazeee.prehistoriccraft.item.custom.ExtractionMachineBlockItem;
 import net.smazeee.prehistoriccraft.item.custom.FluidContainer;
 
@@ -35,6 +39,9 @@ public class ModItems {
     public static final RegistryObject<Item> EMPTY_FLUID_CONTAINER = ITEMS.register("empty_fluid_container", () -> new FluidContainer(new Item.Properties()));
 
     public static final RegistryObject<Item> EXTRACTION_MACHINE_BLOCK_ITEM = ITEMS.register("extraction_machine", () -> new ExtractionMachineBlockItem(ModBlocks.EXTRACTION_MACHINE.get(), new Item.Properties()));
+
+    //SPAWN EGGS
+    public static final RegistryObject<Item> DAYONGASPIS_SPAWN_EGG = ITEMS.register("dayongaspis_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.DAYONGASPIS, 0x997102, 0x80692b, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

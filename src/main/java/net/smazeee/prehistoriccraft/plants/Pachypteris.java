@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class Pachypteris extends BushBlock {
     protected static final float AABB_OFFSET = 3.0F;
-    protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 30.0D, 11.0D);
+    protected static final VoxelShape SHAPE = Block.box(5.8D, 0.0D, 5.8D, 10.2D, 32.0D, 10.2D);
 
     public Pachypteris(Properties properties) {
         super(properties);

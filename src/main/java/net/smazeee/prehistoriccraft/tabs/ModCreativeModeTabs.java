@@ -14,7 +14,7 @@ import net.smazeee.prehistoriccraft.item.ModItems;
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PrehistoricCraft.MODID);
 
-    public static final RegistryObject<CreativeModeTab> PLANTS_TAB = CREATIVE_MODE_TABS.register("plants_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.BELEMNOPTERIS.get())).title(Component.translatable("creativetab.plants_tab")).withSearchBar().displayItems((displayParameters, output) -> {
+    public static final RegistryObject<CreativeModeTab> PLANTS_TAB = CREATIVE_MODE_TABS.register("plants_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.BELEMNOPTERIS.get())).title(Component.translatable("creativetab.plants_tab")).displayItems((displayParameters, output) -> {
         output.accept(ModBlocks.BELEMNOPTERIS.get());
         output.accept(ModBlocks.CLATHROPTERIS.get());
         output.accept(ModBlocks.PACHYPTERIS.get());
@@ -34,7 +34,7 @@ public class ModCreativeModeTabs {
         output.accept(ModBlocks.RED_BAMBOO_CORAL.get());
     }).build());
 
-    public static final RegistryObject<CreativeModeTab> FOSSILS_TAB = CREATIVE_MODE_TABS.register("fossils_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.CAMBRIAN_FOSSILIFEROUS_STONE.get())).title(Component.translatable("creativetab.fossils_tab")).withSearchBar().displayItems((displayParameters, output) -> {
+    public static final RegistryObject<CreativeModeTab> FOSSILS_TAB = CREATIVE_MODE_TABS.register("fossils_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.CAMBRIAN_FOSSILIFEROUS_STONE.get())).title(Component.translatable("creativetab.fossils_tab")).displayItems((displayParameters, output) -> {
         output.accept(ModBlocks.CAMBRIAN_FOSSILIFEROUS_STONE.get());
         output.accept(ModBlocks.PRECAMBRIAN_FOSSILIFEROUS_STONE.get());
         output.accept(ModBlocks.CARBONIFEROUS_FOSSILIFEROUS_STONE.get());
@@ -59,9 +59,13 @@ public class ModCreativeModeTabs {
         output.accept(ModItems.PERMIAN_FOSSIL.get());
         output.accept(ModItems.SILURIAN_FOSSIL.get());
         output.accept(ModItems.TRIASSIC_FOSSIL.get());
+        output.accept(ModItems.EXTRACTION_MACHINE_BLOCK_ITEM.get());
+        output.accept(ModItems.SULFUR.get());
+        output.accept(ModItems.SULFURIC_ACID_BUCKET.get());
+        output.accept(ModBlocks.SULFUR_ORE.get());
     }).build());
 
-    public static final RegistryObject<CreativeModeTab> DECORATION_TAB = CREATIVE_MODE_TABS.register("decoration_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.LEAF_LITTER.get())).title(Component.translatable("creativetab.decorations_tab")).withSearchBar().displayItems((displayParameters, output) -> {
+    public static final RegistryObject<CreativeModeTab> DECORATION_TAB = CREATIVE_MODE_TABS.register("decoration_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.LEAF_LITTER.get())).title(Component.translatable("creativetab.decorations_tab")).displayItems((displayParameters, output) -> {
         output.accept(ModBlocks.FOREST_BEDDING.get());
         output.accept(ModBlocks.LEAF_LITTER.get());
         output.accept(ModBlocks.LOAMY_DIRT.get());
@@ -82,6 +86,12 @@ public class ModCreativeModeTabs {
         output.accept(ModBlocks.ORGANIC_ORANGE_SANDY_DIRT.get());
         output.accept(ModBlocks.ORGANIC_SANDY_DIRT.get());
         output.accept(ModBlocks.SANDY_DIRT.get());
+    }).build());
+
+    public static final RegistryObject<CreativeModeTab> ENTITY_TAB = CREATIVE_MODE_TABS.register("entity_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.LEAF_LITTER.get())).title(Component.translatable("creativetab.entity_tab")).displayItems((displayParameters, output) -> {
+        output.accept(ModItems.DAYONGASPIS_SPAWN_EGG.get());
+        output.accept(ModItems.EGGY.get());
+        output.accept(ModItems.CRACKED_EGGY.get());
     }).build());
 
     public static void register (IEventBus eventBus) {

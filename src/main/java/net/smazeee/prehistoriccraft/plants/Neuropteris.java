@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class Neuropteris extends BushBlock {
     protected static final float AABB_OFFSET = 3.0F;
-    protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 30.0D, 11.0D);
+    protected static final VoxelShape SHAPE = Block.box(6.8D, 0.0D, 6.8D, 9.2D, 37.0D, 9.2D);
 
     public Neuropteris(Properties properties) {
         super(properties);

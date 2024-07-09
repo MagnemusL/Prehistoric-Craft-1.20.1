@@ -1,32 +1,32 @@
-[07jul.2024 14:04:14.904] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\MagneMus\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.2.20, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, prehistoriccraft, --all, --output, C:\Users\MagneMus\Desktop\Prehistoric-Craft-1.20.1\src\generated\resources, --existing, C:\Users\MagneMus\Desktop\Prehistoric-Craft-1.20.1\src\main\resources]
-[07jul.2024 14:04:14.908] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.11 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[07jul.2024 14:04:15.008] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[07jul.2024 14:04:15.056] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/MagneMus/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[07jul.2024 14:04:15.290] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\MagneMus\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.20\918959a037ab7191a0c45a359f4746ab76c110c3\javafmllanguage-1.20.1-47.2.20.jar is missing mods.toml file
-[07jul.2024 14:04:15.292] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\MagneMus\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.20\c1d1efcb98e8bfcf3dbfed0d1e81b55b648b86bf\lowcodelanguage-1.20.1-47.2.20.jar is missing mods.toml file
-[07jul.2024 14:04:15.296] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\MagneMus\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.20\efca3bee89c0085192b122d47334692b921ca7d1\mclanguage-1.20.1-47.2.20.jar is missing mods.toml file
-[07jul.2024 14:04:15.298] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\MagneMus\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.20\12cd436f148405b50c9b16bd8f3cc6f18db89824\fmlcore-1.20.1-47.2.20.jar is missing mods.toml file
-[07jul.2024 14:04:15.418] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
-[07jul.2024 14:04:16.560] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[07jul.2024 14:04:16.562] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\MagneMus\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, prehistoriccraft, --all, --output, C:\Users\MagneMus\Desktop\Prehistoric-Craft-1.20.1\src\generated\resources, --existing, C:\Users\MagneMus\Desktop\Prehistoric-Craft-1.20.1\src\main\resources]
-[07jul.2024 14:04:16.818] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using C:\Users\MagneMus\Desktop\Prehistoric-Craft-1.20.1\build\createSrgToMcp\output.srg
-[07jul.2024 14:04:17.073] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [prehistoriccraft]
-[07jul.2024 14:04:20.472] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.20, for MC 1.20.1 with MCP 20230612.114412
-[07jul.2024 14:04:20.473] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.20 Initialized
-[07jul.2024 14:04:20.515] [modloading-worker-0/WARN] [software.bernie.geckolib.GeckoLib/]: Minecraft.getInstance() was null, could not register reload listeners
-[07jul.2024 14:04:20.609] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[07jul.2024 14:04:20.614] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 2.860 ms
-[07jul.2024 14:04:20.851] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/MagneMus/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.20_mapped_official_1.20.1/forge-1.20.1-47.2.20_mapped_official_1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[07jul.2024 14:04:20.851] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/MagneMus/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.20_mapped_official_1.20.1/forge-1.20.1-47.2.20_mapped_official_1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[07jul.2024 14:04:21.007] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[07jul.2024 14:04:21.010] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 2 ms
-[07jul.2024 14:04:21.010] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[07jul.2024 14:04:21.061] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 51 ms
-[07jul.2024 14:04:21.062] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block Tags
-[07jul.2024 14:04:21.155] [main/INFO] [net.minecraft.data.DataGenerator/]: Block Tags finished after 92 ms
-[07jul.2024 14:04:21.155] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: prehistoriccraft
-[07jul.2024 14:04:21.168] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: prehistoriccraft finished after 13 ms
-[07jul.2024 14:04:21.168] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: prehistoriccraft
-[07jul.2024 14:04:21.287] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: prehistoriccraft finished after 118 ms
-[07jul.2024 14:04:21.287] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 280 ms
-[07jul.2024 14:04:21.303] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 206, old count: 196, new count: 207, removed stale: 0, written: 10
+[09jul.2024 16:47:13.601] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\magne\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.2.20, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, prehistoriccraft, --all, --output, E:\Skrivebord\Minecraft\Modding\Projects\Prehistoric Craft 1.20.1\src\generated\resources, --existing, E:\Skrivebord\Minecraft\Modding\Projects\Prehistoric Craft 1.20.1\src\main\resources]
+[09jul.2024 16:47:13.610] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.7 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[09jul.2024 16:47:13.748] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[09jul.2024 16:47:13.841] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/magne/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[09jul.2024 16:47:14.291] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\magne\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.20\918959a037ab7191a0c45a359f4746ab76c110c3\javafmllanguage-1.20.1-47.2.20.jar is missing mods.toml file
+[09jul.2024 16:47:14.296] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\magne\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.20\c1d1efcb98e8bfcf3dbfed0d1e81b55b648b86bf\lowcodelanguage-1.20.1-47.2.20.jar is missing mods.toml file
+[09jul.2024 16:47:14.302] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\magne\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.20\efca3bee89c0085192b122d47334692b921ca7d1\mclanguage-1.20.1-47.2.20.jar is missing mods.toml file
+[09jul.2024 16:47:14.308] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\magne\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.20\12cd436f148405b50c9b16bd8f3cc6f18db89824\fmlcore-1.20.1-47.2.20.jar is missing mods.toml file
+[09jul.2024 16:47:14.493] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[09jul.2024 16:47:16.323] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[09jul.2024 16:47:16.326] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\magne\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, prehistoriccraft, --all, --output, E:\Skrivebord\Minecraft\Modding\Projects\Prehistoric Craft 1.20.1\src\generated\resources, --existing, E:\Skrivebord\Minecraft\Modding\Projects\Prehistoric Craft 1.20.1\src\main\resources]
+[09jul.2024 16:47:16.745] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using E:\Skrivebord\Minecraft\Modding\Projects\Prehistoric Craft 1.20.1\build\createSrgToMcp\output.srg
+[09jul.2024 16:47:17.153] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [prehistoriccraft]
+[09jul.2024 16:47:22.699] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.20, for MC 1.20.1 with MCP 20230612.114412
+[09jul.2024 16:47:22.701] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.20 Initialized
+[09jul.2024 16:47:22.809] [modloading-worker-0/WARN] [software.bernie.geckolib.GeckoLib/]: Minecraft.getInstance() was null, could not register reload listeners
+[09jul.2024 16:47:23.063] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[09jul.2024 16:47:23.075] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 6.394 ms
+[09jul.2024 16:47:23.872] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/magne/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.20_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.2.20_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[09jul.2024 16:47:23.873] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/magne/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.20_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.2.20_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[09jul.2024 16:47:24.157] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[09jul.2024 16:47:24.163] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 4 ms
+[09jul.2024 16:47:24.163] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[09jul.2024 16:47:24.312] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 148 ms
+[09jul.2024 16:47:24.312] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block Tags
+[09jul.2024 16:47:24.531] [main/INFO] [net.minecraft.data.DataGenerator/]: Block Tags finished after 218 ms
+[09jul.2024 16:47:24.531] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: prehistoriccraft
+[09jul.2024 16:47:24.550] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: prehistoriccraft finished after 19 ms
+[09jul.2024 16:47:24.550] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: prehistoriccraft
+[09jul.2024 16:47:24.714] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: prehistoriccraft finished after 163 ms
+[09jul.2024 16:47:24.714] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 557 ms
+[09jul.2024 16:47:24.728] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 207, old count: 206, new count: 208, removed stale: 0, written: 1

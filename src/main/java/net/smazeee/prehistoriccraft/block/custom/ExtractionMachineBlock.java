@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -32,7 +31,10 @@ public class ExtractionMachineBlock extends BaseEntityBlock {
         super(pProperties);
     }
 
-    public static final VoxelShape SHAPE = Block.box(2, 0, 3, 14, 20, 15);
+    public static final VoxelShape SHAPE_NORTH = Block.box(2, 0, 1, 14, 20, 13); // FINISHED
+    public static final VoxelShape SHAPE_SOUTH = Block.box(2, 0, 3, 14, 20, 15); // FINISHED
+    public static final VoxelShape SHAPE_WEST = Block.box(3, 0, 2, 15, 20, 14); // FINISHED
+    public static final VoxelShape SHAPE_EAST = Block.box(1, 0, 2, 13, 20, 14); // FINISHED
 
     public BlockState rotate(BlockState pState, Rotation pRot) {
         return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
@@ -43,7 +45,13 @@ public class ExtractionMachineBlock extends BaseEntityBlock {
     }
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return SHAPE;
+        return switch (pState.getValue(FACING)) {
+            case NORTH -> SHAPE_EAST;
+            case SOUTH -> SHAPE_WEST;
+            case WEST -> SHAPE_SOUTH;
+            case EAST -> SHAPE_NORTH;
+            default -> null;
+        };
     }
 
     @Nullable
