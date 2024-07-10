@@ -18,7 +18,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.block.entity.ModBlockEntities;
 import net.smazeee.prehistoriccraft.block.entity.client.ExtractionMachineRenderer;
-import net.smazeee.prehistoriccraft.entities.ModEntities;
+import net.smazeee.prehistoriccraft.entities.ModEntityTypes;
 import net.smazeee.prehistoriccraft.entities.water.dayongaspis.DayongaspisRenderer;
 import net.smazeee.prehistoriccraft.screen.ExtractionMachineScreen;
 import net.smazeee.prehistoriccraft.tabs.ModCreativeModeTabs;
@@ -46,7 +46,7 @@ public class PrehistoricCraft {
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
 
-        ModEntities.register(modEventBus);
+        ModEntityTypes.register(modEventBus);
 
         GeckoLib.initialize();
         modEventBus.addListener(this::commonSetup);
@@ -54,16 +54,6 @@ public class PrehistoricCraft {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.AQUA_STONY_CORAL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUE_STONY_CORAL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GREEN_STONY_CORAL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINK_STONY_CORAL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUE_SOFT_FAN_CORAL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUE_STAGHORN_CORAL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.RED_STAGHORN_CORAL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CARNATION_TREE_CORAL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORANGE_BAMBOO_CORAL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.RED_BAMBOO_CORAL.get(), RenderType.cutout());
     }
 
     @SubscribeEvent
@@ -79,7 +69,7 @@ public class PrehistoricCraft {
 
             BlockEntityRenderers.register(ModBlockEntities.EXTRACTION_MACHINE_BE.get(), ExtractionMachineRenderer::new);
 
-            EntityRenderers.register(ModEntities.DAYONGASPIS.get(), DayongaspisRenderer::new);
+            EntityRenderers.register(ModEntityTypes.DAYONGASPIS.get(), DayongaspisRenderer::new);
         }
     }
 }

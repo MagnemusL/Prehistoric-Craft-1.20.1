@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.entities.water.dayongaspis.Dayongaspis;
 
-public class ModEntities {
+public class ModEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, PrehistoricCraft.MODID);
 
     public static final RegistryObject<EntityType<Dayongaspis>> DAYONGASPIS = ENTITY_TYPES.register("dayongaspis",

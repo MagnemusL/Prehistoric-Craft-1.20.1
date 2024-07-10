@@ -17,7 +17,7 @@ public class ModCreativeModeTabs {
     public static final RegistryObject<CreativeModeTab> PLANTS_TAB = CREATIVE_MODE_TABS.register("plants_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.BELEMNOPTERIS.get())).title(Component.translatable("creativetab.plants_tab")).displayItems((displayParameters, output) -> {
         output.accept(ModBlocks.BELEMNOPTERIS.get());
         output.accept(ModBlocks.CLATHROPTERIS.get());
-        output.accept(ModBlocks.PACHYPTERIS.get());
+        output.accept(ModBlocks.PACHYPTERIS_TRUNK.get());
         output.accept(ModBlocks.NEUROPTERIS.get());
         output.accept(ModBlocks.CONIOPTERIS.get());
         output.accept(ModBlocks.PARACYCAS.get());
@@ -32,6 +32,14 @@ public class ModCreativeModeTabs {
         output.accept(ModBlocks.CARNATION_TREE_CORAL.get());
         output.accept(ModBlocks.ORANGE_BAMBOO_CORAL.get());
         output.accept(ModBlocks.RED_BAMBOO_CORAL.get());
+        output.accept(ModBlocks.NEUROPTERIS_SAPLING.get());
+        output.accept(ModBlocks.PACHYPTERIS_SAPLING.get());
+        output.accept(ModItems.EMPTY_SATCHET.get());
+        output.accept(ModItems.BELEMNOPTERIS_SEEDS_SATCHET.get());
+        output.accept(ModItems.CLATHROPTERIS_SPORES_SATCHET.get());
+        output.accept(ModItems.FIELD_HORSETAIL_SPORES_SATCHET.get());
+        output.accept(ModItems.NEUROPTERIS_SEEDS_SATCHET.get());
+        output.accept(ModItems.PACHYPTERIS_SEEDS_SATCHET.get());
     }).build());
 
     public static final RegistryObject<CreativeModeTab> FOSSILS_TAB = CREATIVE_MODE_TABS.register("fossils_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.CAMBRIAN_FOSSILIFEROUS_STONE.get())).title(Component.translatable("creativetab.fossils_tab")).displayItems((displayParameters, output) -> {
@@ -88,7 +96,7 @@ public class ModCreativeModeTabs {
         output.accept(ModBlocks.SANDY_DIRT.get());
     }).build());
 
-    public static final RegistryObject<CreativeModeTab> ENTITY_TAB = CREATIVE_MODE_TABS.register("entity_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.LEAF_LITTER.get())).title(Component.translatable("creativetab.entity_tab")).displayItems((displayParameters, output) -> {
+    public static final RegistryObject<CreativeModeTab> ENTITY_TAB = CREATIVE_MODE_TABS.register("entity_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.DAYONGASPIS_SPAWN_EGG.get())).title(Component.translatable("creativetab.entity_tab")).displayItems((displayParameters, output) -> {
         output.accept(ModItems.DAYONGASPIS_SPAWN_EGG.get());
         output.accept(ModItems.EGGY.get());
         output.accept(ModItems.CRACKED_EGGY.get());

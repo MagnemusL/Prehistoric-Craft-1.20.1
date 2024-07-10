@@ -23,21 +23,26 @@
             },
             {
               "type": "minecraft:item",
+              "conditions": [
+                {
+                  "chance": 1.0,
+                  "condition": "minecraft:random_chance"
+                }
+              ],
               "functions": [
                 {
-                  "add": false,
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "max": 0.0,
-                    "min": 0.0
-                  },
-                  "function": "minecraft:set_count"
+                  "enchantment": "minecraft:fortune",
+                  "formula": "minecraft:uniform_bonus_count",
+                  "function": "minecraft:apply_bonus",
+                  "parameters": {
+                    "bonusMultiplier": 2
+                  }
                 },
                 {
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "minecraft:wheat_seeds"
+              "name": "prehistoriccraft:neuropteris_sapling"
             }
           ]
         }

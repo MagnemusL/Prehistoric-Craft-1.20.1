@@ -1,8 +1,9 @@
 package net.smazeee.prehistoriccraft.item;
 
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.item.MobBucketItem;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -10,9 +11,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
-import net.smazeee.prehistoriccraft.entities.ModEntities;
+import net.smazeee.prehistoriccraft.entities.ModEntityTypes;
 import net.smazeee.prehistoriccraft.item.custom.ExtractionMachineBlockItem;
+import net.smazeee.prehistoriccraft.item.custom.FieldHorsetailBlockItem;
 import net.smazeee.prehistoriccraft.item.custom.FluidContainer;
+import net.smazeee.prehistoriccraft.item.custom.TestBlockItem;
+import net.smazeee.prehistoriccraft.item.custom.satchets.*;
+import net.smazeee.prehistoriccraft.plants.PachypterisBlockItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -35,13 +40,20 @@ public class ModItems {
     public static final RegistryObject<Item> SULFURIC_ACID_BUCKET = ITEMS.register("sulfuric_acid_bucket", () -> new FluidContainer(new Item.Properties()));
     public static final RegistryObject<Item> EGGY = ITEMS.register("eggy", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CRACKED_EGGY = ITEMS.register("cracked_eggy", () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> EMPTY_FLUID_CONTAINER = ITEMS.register("empty_fluid_container", () -> new FluidContainer(new Item.Properties()));
-
     public static final RegistryObject<Item> EXTRACTION_MACHINE_BLOCK_ITEM = ITEMS.register("extraction_machine", () -> new ExtractionMachineBlockItem(ModBlocks.EXTRACTION_MACHINE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DAYONGASPIS_SPAWN_EGG = ITEMS.register("dayongaspis_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.DAYONGASPIS, 0x997102, 0x80692b, new Item.Properties()));
+    public static final RegistryObject<Item> DAYONGASPIS_BUCKET = ITEMS.register("dayongaspis_bucket", () -> new MobBucketItem(() -> ModEntityTypes.DAYONGASPIS.get(), () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1)));
+    public static final RegistryObject<Item> EMPTY_SATCHET = ITEMS.register("empty_satchet", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BELEMNOPTERIS_SEEDS_SATCHET = ITEMS.register("belemnopteris_seeds_satchet", () -> new BelemnopterisSatchet( new Item.Properties()));
+    public static final RegistryObject<Item> CLATHROPTERIS_SPORES_SATCHET = ITEMS.register("clathropteris_spores_satchet", () -> new ClathropterisSatchet(new Item.Properties()));
+    public static final RegistryObject<Item> FIELD_HORSETAIL_SPORES_SATCHET = ITEMS.register("field_horsetail_spores_satchet", () -> new FieldHorsetailSatchet(new Item.Properties()));
+    public static final RegistryObject<Item> NEUROPTERIS_SEEDS_SATCHET = ITEMS.register("neuropteris_seeds_satchet", () -> new NeuropterisSatchet(new Item.Properties()));
+    public static final RegistryObject<Item> PACHYPTERIS_SEEDS_SATCHET = ITEMS.register("pachypteris_seeds_satchet", () -> new PachypterisSatchet(new Item.Properties()));
 
-    //SPAWN EGGS
-    public static final RegistryObject<Item> DAYONGASPIS_SPAWN_EGG = ITEMS.register("dayongaspis_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.DAYONGASPIS, 0x997102, 0x80692b, new Item.Properties()));
+    public static final RegistryObject<Item> PACHYPTERIS_TRUNK = ITEMS.register("pachypteris_trunk", () -> new PachypterisBlockItem(new Item.Properties()));
+    public static final RegistryObject<Item> FIELD_HORSETAIL = ITEMS.register("field_horsetail", () -> new FieldHorsetailBlockItem(new Item.Properties()));
+    public static final RegistryObject<Item> TEST_OBJ = ITEMS.register("test", () -> new TestBlockItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

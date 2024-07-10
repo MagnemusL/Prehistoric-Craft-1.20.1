@@ -1,8 +1,8 @@
 {
   "loader": "forge:obj",
-  "model": "prehistoriccraft:models/obj/pachypteris.obj",
+  "model": "prehistoriccraft:models/obj/pachypteris_shoot.obj",
   "flip_v": true,
-  "mtl_override": "prehistoriccraft:models/obj/mtl/pachypteris.mtl",
+  "mtl_override": "prehistoriccraft:models/obj/mtl/pachypteris_shoot.mtl",
   "render_type": "cutout",
   "automatic_culling": false,
   "textures": {

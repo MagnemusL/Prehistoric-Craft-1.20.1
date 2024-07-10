@@ -63,6 +63,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItemCross(ModBlocks.ORANGE_BAMBOO_CORAL);
         blockItemCross(ModBlocks.RED_BAMBOO_CORAL);
 
+        blockItemCross(ModBlocks.NEUROPTERIS_SAPLING);
+        blockItemCross(ModBlocks.PACHYPTERIS_SAPLING);
+
         blockItem(ModBlocks.LEAF_LITTER);
         blockItem(ModBlocks.LOAMY_DIRT);
         blockItem(ModBlocks.MUDDY_DIRT);
@@ -86,10 +89,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         forestBedding(ModBlocks.LOAMY_ORGANIC_FOREST_BEDDING, true, 2);
         forestBedding(ModBlocks.MUDDY_FOREST_BEDDING, false, 3);
         forestBedding(ModBlocks.MUDDY_ORGANIC_FOREST_BEDDING, true, 3);
+
+        blockItem(ModBlocks.TEST_OBJ);
     }
 
     public ModelFile crossBlock(Block block) {
-        return models().cross(name(block), blockTexture(block));
+        return models().cross(name(block), blockTexture(block)).renderType("cutout");
     }
 
     private void blockItem(RegistryObject<Block> blockRegistryObject) {

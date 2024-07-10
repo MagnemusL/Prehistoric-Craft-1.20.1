@@ -39,7 +39,15 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.EMPTY_FLUID_CONTAINER);
 
+        simpleItem(ModItems.EMPTY_SATCHET);
+        simpleItem(ModItems.BELEMNOPTERIS_SEEDS_SATCHET);
+        simpleItem(ModItems.CLATHROPTERIS_SPORES_SATCHET);
+        simpleItem(ModItems.FIELD_HORSETAIL_SPORES_SATCHET);
+        simpleItem(ModItems.NEUROPTERIS_SEEDS_SATCHET);
+        simpleItem(ModItems.PACHYPTERIS_SEEDS_SATCHET);
+
         withExistingParent(ModItems.DAYONGASPIS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        simpleItem(ModItems.DAYONGASPIS_BUCKET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

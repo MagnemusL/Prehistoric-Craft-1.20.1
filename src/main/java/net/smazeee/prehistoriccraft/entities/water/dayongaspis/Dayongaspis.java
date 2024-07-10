@@ -2,6 +2,7 @@ package net.smazeee.prehistoriccraft.entities.water.dayongaspis;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.Level;
 import net.smazeee.prehistoriccraft.entities.ai.FishSwimGoal;
 import net.smazeee.prehistoriccraft.entities.ai.GoCloseToBottomFishGoal;
 import net.smazeee.prehistoriccraft.entities.ai.GoToBottomFishGoal;
+import net.smazeee.prehistoriccraft.item.ModItems;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -33,13 +35,25 @@ public class Dayongaspis extends AbstractFish implements GeoEntity {
         return AbstractFish.createMobAttributes().add(Attributes.MAX_HEALTH, 2D).add(Attributes.MOVEMENT_SPEED, 0.6f).build();
     }
 
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.TROPICAL_FISH_AMBIENT;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.TROPICAL_FISH_DEATH;
+    }
+
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.TROPICAL_FISH_HURT;
+    }
+
     protected SoundEvent getFlopSound() {
         return SoundEvents.TROPICAL_FISH_FLOP;
     }
 
     @Override
     public ItemStack getBucketItemStack() {
-        return null;
+        return new ItemStack(ModItems.DAYONGASPIS_BUCKET.get());
     }
 
     @Override

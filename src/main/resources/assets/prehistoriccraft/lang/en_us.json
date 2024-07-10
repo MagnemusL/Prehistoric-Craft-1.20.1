@@ -25,6 +25,14 @@
   "block.prehistoriccraft.field_horsetail": "Field Horsetail",
   "block.prehistoriccraft.coniopteris": "Coniopteris",
   "block.prehistoriccraft.paracycas": "Paracycas",
+  "block.prehistoriccraft.neuropteris_sapling": "Neuropteris Sapling",
+  "block.prehistoriccraft.pachypteris_sapling": "Pachypteris Sapling",
+  "item.prehistoriccraft.empty_satchet": "Empty Satchet",
+  "item.prehistoriccraft.belemnopteris_seeds_satchet": "Belemnopteris Seeds Satchet",
+  "item.prehistoriccraft.clathropteris_spores_satchet": "Clathropteris Spores Satchet",
+  "item.prehistoriccraft.field_horsetail_spores_satchet": "Field Horsetail Spores Satchet",
+  "item.prehistoriccraft.neuropteris_seeds_satchet": "Neuropteris Seeds Satchet",
+  "item.prehistoriccraft.pachypteris_seeds_satchet": "Pachypteris Seeds Satchet",
 
   "block.prehistoriccraft.aqua_stony_coral": "Aqua Stony Coral",
   "block.prehistoriccraft.blue_stony_coral": "Blue Stony Coral",
@@ -77,6 +85,7 @@
   "item.prehistoriccraft.cracked_eggy": "Cracked Eggy :(",
 
   "item.prehistoriccraft.dayongaspis_spawn_egg": "Dayongaspis Spawn Egg",
+  "item.prehistoriccraft.dayongaspis_bucket": "Dayongaspis Bucket",
 
   "blockentity.acid_shower": "Acid Shower",
   "blockentity.extraction_machine": "Extractinator",
