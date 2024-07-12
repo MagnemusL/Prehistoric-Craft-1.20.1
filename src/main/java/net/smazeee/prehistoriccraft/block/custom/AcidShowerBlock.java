@@ -64,7 +64,7 @@ public class AcidShowerBlock extends BaseEntityBlock {
         }
     }
 
-    protected static void preventCreativeDropFromBottomPart(Level level, BlockPos pos, BlockState state, Player player) {
+    public static void preventCreativeDropFromBottomPart(Level level, BlockPos pos, BlockState state, Player player) {
         DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
         if (doubleblockhalf == DoubleBlockHalf.UPPER) {
             BlockPos blockpos = pos.below();

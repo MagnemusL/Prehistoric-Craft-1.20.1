@@ -8,22 +8,32 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.item.ModItems;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class ModBlockLootTables extends BlockLootSubProvider {
     public ModBlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
+
+    private static final LootItemCondition.Builder HAS_SHEARS_OR_SILK_TOUCH = HAS_SHEARS.or(HAS_SILK_TOUCH);
+    private static final LootItemCondition.Builder HAS_NO_SHEARS_OR_SILK_TOUCH = HAS_SHEARS_OR_SILK_TOUCH.invert();
 
     private void drop(RegistryObject<Block> block) {
         this.dropSelf(block.get());
@@ -59,15 +69,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.BELEMNOPTERIS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
         this.add(ModBlocks.CLATHROPTERIS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
         this.add(ModBlocks.PACHYPTERIS_TRUNK.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(ModBlocks.PACHYPTERIS_SAPLING.get()).when(LootItemRandomChanceCondition.randomChance(0F)).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2)))));
-        this.add(ModBlocks.PACHYPTERIS_SHOOT.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(ModBlocks.PACHYPTERIS_SAPLING.get()).when(LootItemRandomChanceCondition.randomChance(1F)).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2)))));
-        this.add(ModBlocks.NEUROPTERIS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(ModBlocks.NEUROPTERIS_SAPLING.get()).when(LootItemRandomChanceCondition.randomChance(1F)).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2)))));
+        this.add(ModBlocks.NEUROPTERIS_TRUNK.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(ModBlocks.NEUROPTERIS_SAPLING.get()).when(LootItemRandomChanceCondition.randomChance(0F)).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2)))));
         this.add(ModBlocks.FIELD_HORSETAIL.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
         this.add(ModBlocks.CONIOPTERIS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
-        this.add(ModBlocks.PARACYCAS.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
+        this.add(ModBlocks.PARACYCAS_TRUNK.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.WHEAT_SEEDS).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 0.0F))))));
         this.add(ModBlocks.NEUROPTERIS_SAPLING.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.AIR))));
         this.add(ModBlocks.PACHYPTERIS_SAPLING.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.AIR))));
-
-        this.add(ModBlocks.PACHYPTERIS_SHOOT.get(), (block -> createLeavesDrops(ModBlocks.PACHYPTERIS_SHOOT.get(), ModBlocks.PACHYPTERIS_SAPLING.get())));
+        this.add(ModBlocks.PARACYCAS_SAPLING.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.AIR))));
 
         drop(ModBlocks.AQUA_STONY_CORAL);
         drop(ModBlocks.BLUE_STONY_CORAL);

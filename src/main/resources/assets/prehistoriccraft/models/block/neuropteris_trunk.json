@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "prehistoriccraft:block/neuropteris",
+		"particle": "prehistoriccraft:block/neuropteris"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 7],
+			"to": [9, 16, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0.75, 8.625, 1, 10.625], "texture": "#0"},
+				"east": {"uv": [0.75, 8.625, 1, 10.625], "texture": "#0"},
+				"south": {"uv": [0.75, 8.625, 1, 10.625], "texture": "#0"},
+				"west": {"uv": [0.75, 8.625, 1, 10.625], "texture": "#0"},
+				"up": {"uv": [0.25, 8.5, 0, 8.25], "texture": "#0"},
+				"down": {"uv": [0.75, 7.375, 1, 7.625], "texture": "#0"}
+			}
+		}
+	],
+	"display": {}
+}

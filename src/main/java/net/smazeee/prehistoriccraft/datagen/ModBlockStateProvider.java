@@ -3,6 +3,7 @@ package net.smazeee.prehistoriccraft.datagen;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -12,9 +13,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
-import net.smazeee.prehistoriccraft.block.custom.ModGrassBlock;
-
-import static net.minecraftforge.client.model.generators.ModelProvider.BLOCK_FOLDER;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -65,6 +63,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockItemCross(ModBlocks.NEUROPTERIS_SAPLING);
         blockItemCross(ModBlocks.PACHYPTERIS_SAPLING);
+        blockItemCross(ModBlocks.PARACYCAS_SAPLING);
+
+        blockItemCrossTemp(ModBlocks.BELEMNOPTERIS);
+        blockItemCrossTemp(ModBlocks.CLATHROPTERIS);
+        blockItemCrossTemp(ModBlocks.CONIOPTERIS);
+        blockItemCrossTemp(ModBlocks.FIELD_HORSETAIL);
 
         blockItem(ModBlocks.LEAF_LITTER);
         blockItem(ModBlocks.LOAMY_DIRT);
@@ -90,7 +94,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         forestBedding(ModBlocks.MUDDY_FOREST_BEDDING, false, 3);
         forestBedding(ModBlocks.MUDDY_ORGANIC_FOREST_BEDDING, true, 3);
 
-        blockItem(ModBlocks.TEST_OBJ);
+        simpleItem(ModBlocks.PACHYPTERIS_TRUNK);
+        simpleItem(ModBlocks.PACHYPTERIS_SHOOT);
+        simpleItem(ModBlocks.NEUROPTERIS_TRUNK);
+        simpleItem(ModBlocks.NEUROPTERIS_SHOOT);
+        simpleItem(ModBlocks.PARACYCAS_TRUNK);
+        simpleItem(ModBlocks.PARACYCAS_SHOOT);
     }
 
     public ModelFile crossBlock(Block block) {
@@ -102,7 +111,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void blockItemCross(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockWithItem(blockRegistryObject.get(), crossBlock(blockRegistryObject.get()));
+        simpleBlockWithItemTextureTemp(blockRegistryObject, false);
+    }
+
+    private void blockItemCrossTemp(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItemTextureTemp(blockRegistryObject, true);
+    }
+
+    private void simpleBlockWithItemTextureTemp(RegistryObject<Block> blockRegistryObject, boolean shouldOnlyDoItem) {
+        if (shouldOnlyDoItem) {
+            itemModels().withExistingParent(blockRegistryObject.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(PrehistoricCraft.MODID, "block/" + ModBlocks.BLUE_STONY_CORAL.getId().getPath()));
+        } else {
+            simpleBlock(blockRegistryObject.get(), crossBlock(blockRegistryObject.get()));
+            itemModels().withExistingParent(blockRegistryObject.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(PrehistoricCraft.MODID, "block/" + blockRegistryObject.getId().getPath()));
+        }
+    }
+
+    private void simpleItem(RegistryObject<Block> blockRegistryObject) {
+        itemModels().withExistingParent(blockRegistryObject.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(PrehistoricCraft.MODID, "item/" + blockRegistryObject.getId().getPath()));
     }
 
     private void block(RegistryObject<Block> blockRegistryObject) {

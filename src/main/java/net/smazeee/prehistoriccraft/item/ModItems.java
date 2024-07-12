@@ -1,6 +1,7 @@
 package net.smazeee.prehistoriccraft.item;
 
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.MobBucketItem;
 import net.minecraft.world.level.material.Fluids;
@@ -17,7 +18,9 @@ import net.smazeee.prehistoriccraft.item.custom.FieldHorsetailBlockItem;
 import net.smazeee.prehistoriccraft.item.custom.FluidContainer;
 import net.smazeee.prehistoriccraft.item.custom.TestBlockItem;
 import net.smazeee.prehistoriccraft.item.custom.satchets.*;
+import net.smazeee.prehistoriccraft.plants.NeuropterisBlockItem;
 import net.smazeee.prehistoriccraft.plants.PachypterisBlockItem;
+import net.smazeee.prehistoriccraft.plants.ParacycasBlockItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -35,6 +38,8 @@ public class ModItems {
     public static final RegistryObject<Item> PERMIAN_FOSSIL = ITEMS.register("permian_fossil", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SILURIAN_FOSSIL = ITEMS.register("silurian_fossil", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TRIASSIC_FOSSIL = ITEMS.register("triassic_fossil", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CLEANED_FOSSIL_STONE = ITEMS.register("cleaned_fossil_stone", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CLEANED_FOSSIL_DEEPSLATE = ITEMS.register("cleaned_fossil_deepslate", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> AMBER = ITEMS.register("amber", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SULFUR = ITEMS.register("sulfur", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SULFURIC_ACID_BUCKET = ITEMS.register("sulfuric_acid_bucket", () -> new FluidContainer(new Item.Properties()));
@@ -50,10 +55,24 @@ public class ModItems {
     public static final RegistryObject<Item> FIELD_HORSETAIL_SPORES_SATCHET = ITEMS.register("field_horsetail_spores_satchet", () -> new FieldHorsetailSatchet(new Item.Properties()));
     public static final RegistryObject<Item> NEUROPTERIS_SEEDS_SATCHET = ITEMS.register("neuropteris_seeds_satchet", () -> new NeuropterisSatchet(new Item.Properties()));
     public static final RegistryObject<Item> PACHYPTERIS_SEEDS_SATCHET = ITEMS.register("pachypteris_seeds_satchet", () -> new PachypterisSatchet(new Item.Properties()));
+    public static final RegistryObject<Item> ANCIENT_PLANT_TISSUE = ITEMS.register("ancient_plant_tissue", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ANCIENT_ANIMAL_TISSUE = ITEMS.register("ancient_animal_tissue", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ANCIENT_BLOOD = ITEMS.register("ancient_blood", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLOOD_PHIAL = ITEMS.register("blood_phial", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BATTERY = ITEMS.register("battery", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLICE = ITEMS.register("blice", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLICE_BOTTLE = ITEMS.register("blice_bottle", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PALEOENCYCLOPEDIA = ITEMS.register("paleoencyclopedia", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PALEOKEEPERS_NOTEBOOK = ITEMS.register("paleokeepers_notebook", () -> new Item(new Item.Properties()));
 
+    /* BLOCK ITEMS */
     public static final RegistryObject<Item> PACHYPTERIS_TRUNK = ITEMS.register("pachypteris_trunk", () -> new PachypterisBlockItem(new Item.Properties()));
+    public static final RegistryObject<Item> PACHYPTERIS_SHOOT = ITEMS.register("pachypteris_shoot", () -> new BlockItem(ModBlocks.PACHYPTERIS_SHOOT.get(), new Item.Properties()));
+    public static final RegistryObject<Item> NEUROPTERIS_TRUNK = ITEMS.register("neuropteris_trunk", () -> new NeuropterisBlockItem(new Item.Properties()));
+    public static final RegistryObject<Item> NEUROPTERIS_SHOOT = ITEMS.register("neuropteris_shoot", () -> new BlockItem(ModBlocks.NEUROPTERIS_SHOOT.get(), new Item.Properties()));
+    public static final RegistryObject<Item> PARACYCAS_TRUNK = ITEMS.register("paracycas_trunk", () -> new ParacycasBlockItem(new Item.Properties()));
+    public static final RegistryObject<Item> PARACYCAS_SHOOT = ITEMS.register("paracycas_shoot", () -> new BlockItem(ModBlocks.PARACYCAS_SHOOT.get(), new Item.Properties()));
     public static final RegistryObject<Item> FIELD_HORSETAIL = ITEMS.register("field_horsetail", () -> new FieldHorsetailBlockItem(new Item.Properties()));
-    public static final RegistryObject<Item> TEST_OBJ = ITEMS.register("test", () -> new TestBlockItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

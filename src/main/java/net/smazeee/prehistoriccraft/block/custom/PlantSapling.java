@@ -1,41 +1,31 @@
 package net.smazeee.prehistoriccraft.block.custom;
 
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
-import net.smazeee.prehistoriccraft.plants.PachypterisBlockItem;
-import net.smazeee.prehistoriccraft.util.TrunkPlacerUtil;
+import net.smazeee.prehistoriccraft.util.MultiblockPlantUtil;
 
-public class PlantSapling extends BushBlock implements BonemealableBlock, TrunkPlacerUtil {
+public class PlantSapling extends BushBlock implements BonemealableBlock, MultiblockPlantUtil {
     public static final IntegerProperty STAGE = BlockStateProperties.STAGE;
     protected static final float AABB_OFFSET = 6.0F;
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
-    private final Block plant;
+    private final int plantType;
 
-    public PlantSapling(Block plant, BlockBehaviour.Properties pProperties) {
+    public PlantSapling(int plantType, BlockBehaviour.Properties pProperties) {
         super(pProperties);
-        this.plant = plant;
+        this.plantType = plantType;
         this.registerDefaultState(this.stateDefinition.any().setValue(STAGE, Integer.valueOf(0)));
     }
 
@@ -57,12 +47,12 @@ public class PlantSapling extends BushBlock implements BonemealableBlock, TrunkP
     public void growPlant(ServerLevel level, BlockPos pos, BlockState state, RandomSource randomSource) {
         if (state.getValue(STAGE) == 0) {
             level.setBlock(pos, state.cycle(STAGE), 4);
-        } else if (plant == ModBlocks.PACHYPTERIS_TRUNK.get()){
-            if (!level.isClientSide) {
-                placeTrunk(pos, level, state, randomSource, 3, new ItemStack(ModBlocks.PACHYPTERIS_SAPLING.get()));
+        } else if (!level.isClientSide) {
+            switch (plantType) {
+                case 0 -> placeTrunk(pos, level, randomSource, 3, ModBlocks.PACHYPTERIS_TRUNK.get(), ModBlocks.PACHYPTERIS_SHOOT.get());
+                case 1 -> placeTrunk(pos, level, randomSource, 4, ModBlocks.NEUROPTERIS_TRUNK.get(), ModBlocks.NEUROPTERIS_SHOOT.get());
+                case 2 -> placeTrunk(pos, level, randomSource, 5, ModBlocks.PARACYCAS_TRUNK.get(), ModBlocks.PARACYCAS_SHOOT.get());
             }
-        } else {
-            level.setBlockAndUpdate(pos, plant.defaultBlockState());
         }
     }
 

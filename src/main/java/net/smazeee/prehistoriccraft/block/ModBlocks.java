@@ -38,6 +38,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore", () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> DEEPSLATE_SULFUR_ORE = registerBlock("deepslate_sulfur_ore", () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
+    //BLOCKS
+    public static final RegistryObject<Block> AMBER_BLOCK = registerBlock("amber_block", () -> new Block(BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.STONE)));
+
     //MACHINES
     public static final RegistryObject<Block> ACID_SHOWER = registerBlock("acid_shower", () -> new AcidShowerBlock(BlockBehaviour.Properties.of().noLootTable().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
     public static final RegistryObject<Block> EXTRACTION_MACHINE = BLOCKS.register("extraction_machine", () -> new ExtractionMachineBlock(BlockBehaviour.Properties.of().noLootTable().requiresCorrectToolForDrops().strength(3.0F, 3.0F).noOcclusion()));
@@ -45,12 +48,14 @@ public class ModBlocks {
     //PLANTS
     public static final RegistryObject<Block> BELEMNOPTERIS = registerBlock("belemnopteris", () -> new Belemnopteris(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().instabreak().dynamicShape().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CLATHROPTERIS = registerBlock("clathropteris", () -> new Clathropteris(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().instabreak().dynamicShape().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> PACHYPTERIS_SHOOT = BLOCKS.register("pachypteris_shoot", () -> new PachypterisShoot(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().instabreak().dynamicShape().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> PACHYPTERIS_TRUNK = BLOCKS.register("pachypteris_trunk", () -> new PachypterisTrunk(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().instabreak().dynamicShape().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> NEUROPTERIS = registerBlock("neuropteris", () -> new Neuropteris(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().instabreak().dynamicShape().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> PACHYPTERIS_SHOOT = BLOCKS.register("pachypteris_shoot", () -> new PachypterisShoot(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().dynamicShape().sound(SoundType.GRASS).ignitedByLava().noLootTable().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> PACHYPTERIS_TRUNK = BLOCKS.register("pachypteris_trunk", () -> new PachypterisTrunk(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).sound(SoundType.WOOD).ignitedByLava()));
+    public static final RegistryObject<Block> NEUROPTERIS_TRUNK = BLOCKS.register("neuropteris_trunk", () -> new NeuropterisTrunk(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).sound(SoundType.WOOD).ignitedByLava()));
+    public static final RegistryObject<Block> NEUROPTERIS_SHOOT = BLOCKS.register("neuropteris_shoot", () -> new NeuropterisShoot(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().dynamicShape().sound(SoundType.GRASS).ignitedByLava().noLootTable().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> FIELD_HORSETAIL = BLOCKS.register("field_horsetail", () -> new FieldHorsetail(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().dynamicShape().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CONIOPTERIS = registerBlock("coniopteris", () -> new Coniopteris(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().instabreak().dynamicShape().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> PARACYCAS = registerBlock("paracycas", () -> new Paracycas(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().instabreak().dynamicShape().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> PARACYCAS_TRUNK = BLOCKS.register("paracycas_trunk", () -> new ParacycasTrunk(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).sound(SoundType.WOOD).ignitedByLava()));
+    public static final RegistryObject<Block> PARACYCAS_SHOOT = BLOCKS.register("paracycas_shoot", () -> new ParacycasShoot(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().dynamicShape().sound(SoundType.GRASS).ignitedByLava().noLootTable().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> AQUA_STONY_CORAL = registerBlock("aqua_stony_coral", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).noOcclusion()));
     public static final RegistryObject<Block> BLUE_STONY_CORAL = registerBlock("blue_stony_coral", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).noOcclusion()));
     public static final RegistryObject<Block> GREEN_STONY_CORAL = registerBlock("green_stony_coral", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).noOcclusion()));
@@ -64,8 +69,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> FOREST_BEDDING = registerBlock("forest_bedding", () -> new ModGrassBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
     //SAPLINGS
-    public static final RegistryObject<Block> NEUROPTERIS_SAPLING = registerBlock("neuropteris_sapling", () -> new PlantSapling(NEUROPTERIS.get(), BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> PACHYPTERIS_SAPLING = registerBlock("pachypteris_sapling", () -> new PlantSapling(PACHYPTERIS_TRUNK.get(), BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.GRASS)));
+    // plantType:
+    //  0: Neuropteris
+    //  1: Pachypteris
+    //  2: Paracycas
+    public static final RegistryObject<Block> NEUROPTERIS_SAPLING = registerBlock("neuropteris_sapling", () -> new PlantSapling(0, BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> PACHYPTERIS_SAPLING = registerBlock("pachypteris_sapling", () -> new PlantSapling(1, BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> PARACYCAS_SAPLING = registerBlock("paracycas_sapling", () -> new PlantSapling(2, BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.GRASS)));
 
     //DECORATION BLOCKS
     public static final RegistryObject<Block> LEAF_LITTER = registerBlock("leaf_litter", () -> new Block(BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.GRASS)));

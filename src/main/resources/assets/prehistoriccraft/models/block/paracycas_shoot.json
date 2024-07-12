@@ -1,0 +1,13 @@
+{
+  "loader": "forge:obj",
+  "model": "prehistoriccraft:models/obj/paracycas_shoot.obj",
+  "flip_v": true,
+  "mtl_override": "prehistoriccraft:models/obj/mtl/paracycas_shoot.mtl",
+  "render_type": "cutout",
+  "automatic_culling": false,
+  "textures": {
+    "texture0": "prehistoriccraft:block/paracycas",
+    "particle": "prehistoriccraft:block/small_grass"
+  },
+  "parent": "block/block"
+}

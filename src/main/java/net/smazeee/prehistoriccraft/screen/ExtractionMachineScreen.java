@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
 import net.smazeee.prehistoriccraft.screen.renderer.EnergyDisplayTooltipArea;
-import net.smazeee.prehistoriccraft.util.MouseUtil;
+import net.smazeee.prehistoriccraft.util.inventorypower.MouseUtil;
 
 import java.util.Optional;
 

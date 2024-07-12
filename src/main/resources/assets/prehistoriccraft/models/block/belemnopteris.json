@@ -8,5 +8,6 @@
   "textures": {
     "texture0": "prehistoriccraft:block/belemnopteris",
     "particle": "prehistoriccraft:block/small_grass"
-  }
+  },
+  "parent": "block/block"
 }

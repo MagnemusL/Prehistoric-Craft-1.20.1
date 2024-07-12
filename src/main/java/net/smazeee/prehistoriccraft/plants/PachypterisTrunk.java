@@ -12,7 +12,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.smazeee.prehistoriccraft.block.ModBlocks;
 
 public class PachypterisTrunk extends BushBlock {
-    protected static final float AABB_OFFSET = 3.0F;
     protected static final VoxelShape SHAPE = Block.box(5.8D, 0.0D, 5.8D, 10.2D, 16.0D, 10.2D);
 
     public PachypterisTrunk(Properties properties) {

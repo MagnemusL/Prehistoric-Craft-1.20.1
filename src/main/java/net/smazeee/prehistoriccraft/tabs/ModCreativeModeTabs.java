@@ -18,9 +18,12 @@ public class ModCreativeModeTabs {
         output.accept(ModBlocks.BELEMNOPTERIS.get());
         output.accept(ModBlocks.CLATHROPTERIS.get());
         output.accept(ModBlocks.PACHYPTERIS_TRUNK.get());
-        output.accept(ModBlocks.NEUROPTERIS.get());
+        output.accept(ModBlocks.PACHYPTERIS_SHOOT.get());
+        output.accept(ModBlocks.NEUROPTERIS_TRUNK.get());
+        output.accept(ModBlocks.NEUROPTERIS_SHOOT.get());
         output.accept(ModBlocks.CONIOPTERIS.get());
-        output.accept(ModBlocks.PARACYCAS.get());
+        output.accept(ModBlocks.PARACYCAS_TRUNK.get());
+        output.accept(ModBlocks.PARACYCAS_SHOOT.get());
         output.accept(ModBlocks.FIELD_HORSETAIL.get());
         output.accept(ModBlocks.AQUA_STONY_CORAL.get());
         output.accept(ModBlocks.BLUE_STONY_CORAL.get());
@@ -34,6 +37,7 @@ public class ModCreativeModeTabs {
         output.accept(ModBlocks.RED_BAMBOO_CORAL.get());
         output.accept(ModBlocks.NEUROPTERIS_SAPLING.get());
         output.accept(ModBlocks.PACHYPTERIS_SAPLING.get());
+        output.accept(ModBlocks.PARACYCAS_SAPLING.get());
         output.accept(ModItems.EMPTY_SATCHET.get());
         output.accept(ModItems.BELEMNOPTERIS_SEEDS_SATCHET.get());
         output.accept(ModItems.CLATHROPTERIS_SPORES_SATCHET.get());

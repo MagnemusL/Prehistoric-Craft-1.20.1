@@ -1,3 +1,6 @@
 {
-  "parent": "prehistoriccraft:block/neuropteris_sapling"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "prehistoriccraft:block/neuropteris_sapling"
+  }
 }

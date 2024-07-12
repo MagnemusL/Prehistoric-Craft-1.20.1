@@ -31,6 +31,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.TRIASSIC_FOSSIL);
         simpleItem(ModItems.AMBER);
 
+        simpleItem(ModItems.CLEANED_FOSSIL_STONE);
+        simpleItem(ModItems.CLEANED_FOSSIL_DEEPSLATE);
+
         simpleItem(ModItems.SULFUR);
         simpleItem(ModItems.SULFURIC_ACID_BUCKET);
 
@@ -46,11 +49,21 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.NEUROPTERIS_SEEDS_SATCHET);
         simpleItem(ModItems.PACHYPTERIS_SEEDS_SATCHET);
 
+        simpleItem(ModItems.ANCIENT_PLANT_TISSUE);
+        simpleItem(ModItems.ANCIENT_ANIMAL_TISSUE);
+        simpleItem(ModItems.ANCIENT_BLOOD);
+        simpleItem(ModItems.BLOOD_PHIAL);
+        simpleItem(ModItems.BATTERY);
+        simpleItem(ModItems.BLICE);
+        simpleItem(ModItems.BLICE_BOTTLE);
+        simpleItem(ModItems.PALEOENCYCLOPEDIA);
+        simpleItem(ModItems.PALEOKEEPERS_NOTEBOOK);
+
         withExistingParent(ModItems.DAYONGASPIS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         simpleItem(ModItems.DAYONGASPIS_BUCKET);
     }
 
-    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
+    public ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(PrehistoricCraft.MODID, "item/" + item.getId().getPath()));

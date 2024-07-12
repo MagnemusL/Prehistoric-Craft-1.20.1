@@ -8,5 +8,6 @@
   "textures": {
     "texture0": "prehistoriccraft:block/field_horsetail_3",
     "particle": "prehistoriccraft:block/small_grass"
-  }
+  },
+  "parent": "block/block"
 }
