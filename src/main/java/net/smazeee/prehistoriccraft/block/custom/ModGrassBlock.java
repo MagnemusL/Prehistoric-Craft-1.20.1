@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.smazeee.prehistoriccraft.util.MultiblockPlantUtil;
 
-public class ModGrassBlock extends Block implements MultiblockUtil, MultiblockPlantUtil {
+public class ModGrassBlock extends Block {
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
 
     public ModGrassBlock(Properties properties) {
