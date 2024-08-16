@@ -15,7 +15,6 @@ public class GoCloseToBottomFishGoal extends Goal {
     private final Level level;
     private double speed;
     private BlockPos targetPos;
-    private BlockPos currentPos;
 
     public GoCloseToBottomFishGoal(Mob fish) {
         this.fish = fish;
@@ -46,7 +45,6 @@ public class GoCloseToBottomFishGoal extends Goal {
     public void tick() {
         if (this.targetPos != null) {
             this.fish.getNavigation().moveTo(this.targetPos.getX(), this.targetPos.getY(), this.targetPos.getZ(), this.speed);
-            currentPos = this.fish.getOnPos();
         }
     }
 

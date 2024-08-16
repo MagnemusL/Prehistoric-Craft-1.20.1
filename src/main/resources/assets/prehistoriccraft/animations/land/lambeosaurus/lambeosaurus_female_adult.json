@@ -1,0 +1,129 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"Idle": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"LeftLeg": {
+					"rotation": {
+						"vector": [-7.5, 0, 0]
+					}
+				},
+				"LeftKnee": {
+					"rotation": {
+						"vector": [-5, 0, 0]
+					}
+				},
+				"LeftAnkle": {
+					"rotation": {
+						"vector": [-12.35115, -1.19649, -0.14472]
+					}
+				},
+				"LeftFoot": {
+					"rotation": {
+						"vector": [25, 0, 0]
+					}
+				},
+				"Torso": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180+20) * 0.5", 0, 0]
+					}
+				},
+				"RightArm": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * 1", 0, 0]
+					}
+				},
+				"RightElbow": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * -2", 0, 0]
+					}
+				},
+				"RightHand": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * -1", 0, 0]
+					}
+				},
+				"LeftArm": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * 1", 0, 0]
+					}
+				},
+				"LeftElbow": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * -2", 0, 0]
+					}
+				},
+				"LeftHand": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * -1", 0, 0]
+					}
+				},
+				"Neck": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180)", 0, 0]
+					}
+				},
+				"Neck2": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180-20)", 0, 0]
+					}
+				},
+				"Neck3": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180-40) * -1", 0, 0]
+					}
+				},
+				"Head": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180-60) * -1", 0, 0]
+					}
+				},
+				"Eye": {
+					"scale": {
+						"0.875": {
+							"vector": [1, 1, 1]
+						},
+						"0.9583": {
+							"vector": [1, 0.1, 1]
+						},
+						"1.0833": {
+							"vector": [1, 1, 1]
+						}
+					}
+				},
+				"Tail1": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time * 180) * 0.5", 0]
+					}
+				},
+				"Tail2": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time * 180-20) * 0.5", 0]
+					}
+				},
+				"Tail3": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time * 180-40) * 0.5", 0]
+					}
+				},
+				"Tail4": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time * 180-60) * 0.5", 0]
+					}
+				},
+				"Tail5": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time * 180-80) * 0.5", 0]
+					}
+				},
+				"Jaw": {
+					"position": {
+						"vector": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

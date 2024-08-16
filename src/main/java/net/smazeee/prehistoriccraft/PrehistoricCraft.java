@@ -6,8 +6,19 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.DimensionDataStorage;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.level.LevelEvent;
+import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,6 +30,7 @@ import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.block.entity.ModBlockEntities;
 import net.smazeee.prehistoriccraft.block.entity.client.ExtractionMachineRenderer;
 import net.smazeee.prehistoriccraft.entities.ModEntityTypes;
+import net.smazeee.prehistoriccraft.entities.water.dayongaspis.Dayongaspis;
 import net.smazeee.prehistoriccraft.entities.water.dayongaspis.DayongaspisRenderer;
 import net.smazeee.prehistoriccraft.screen.ExtractionMachineScreen;
 import net.smazeee.prehistoriccraft.tabs.ModCreativeModeTabs;
@@ -26,8 +38,12 @@ import net.smazeee.prehistoriccraft.item.ModItems;
 import net.smazeee.prehistoriccraft.recipe.ModRecipes;
 import net.smazeee.prehistoriccraft.screen.AcidShowerScreen;
 import net.smazeee.prehistoriccraft.screen.ModMenuTypes;
+import net.smazeee.prehistoriccraft.util.TerritoryUtil;
 import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Mod(PrehistoricCraft.MODID)
 public class PrehistoricCraft {
@@ -36,6 +52,8 @@ public class PrehistoricCraft {
 
     public PrehistoricCraft() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModEntityTypes.register(modEventBus);
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
@@ -46,11 +64,14 @@ public class PrehistoricCraft {
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
 
-        ModEntityTypes.register(modEventBus);
-
         GeckoLib.initialize();
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::entityAttributeEvent);
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    private void entityAttributeEvent(EntityAttributeCreationEvent event) {
+        event.put(ModEntityTypes.DAYONGASPIS.get(), Dayongaspis.setAttributes());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -58,6 +79,8 @@ public class PrehistoricCraft {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+        TerritoryUtil.get(event.getServer().overworld());
+        PrehistoricCraft.LOGGER.info("Instantiated Territory Util");
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -71,5 +94,13 @@ public class PrehistoricCraft {
 
             EntityRenderers.register(ModEntityTypes.DAYONGASPIS.get(), DayongaspisRenderer::new);
         }
+    }
+
+    @Mod.EventBusSubscriber(modid = PrehistoricCraft.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+    public static class ModEventsForge {
+    }
+
+    @Mod.EventBusSubscriber(modid = PrehistoricCraft.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class ModEvents {
     }
 }
