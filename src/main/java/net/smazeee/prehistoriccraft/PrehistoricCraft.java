@@ -2,23 +2,11 @@ package net.smazeee.prehistoriccraft;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.DimensionDataStorage;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.level.LevelEvent;
-import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,7 +18,9 @@ import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.block.entity.ModBlockEntities;
 import net.smazeee.prehistoriccraft.block.entity.client.ExtractionMachineRenderer;
 import net.smazeee.prehistoriccraft.entities.ModEntityTypes;
-import net.smazeee.prehistoriccraft.entities.water.dayongaspis.Dayongaspis;
+import net.smazeee.prehistoriccraft.entities.land.lambeosaurus.StyracosaurusEntity;
+import net.smazeee.prehistoriccraft.entities.land.lambeosaurus.StyracosaurusRenderer;
+import net.smazeee.prehistoriccraft.entities.water.dayongaspis.DayongaspisEntity;
 import net.smazeee.prehistoriccraft.entities.water.dayongaspis.DayongaspisRenderer;
 import net.smazeee.prehistoriccraft.screen.ExtractionMachineScreen;
 import net.smazeee.prehistoriccraft.tabs.ModCreativeModeTabs;
@@ -41,9 +31,6 @@ import net.smazeee.prehistoriccraft.screen.ModMenuTypes;
 import net.smazeee.prehistoriccraft.util.TerritoryUtil;
 import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Mod(PrehistoricCraft.MODID)
 public class PrehistoricCraft {
@@ -71,7 +58,8 @@ public class PrehistoricCraft {
     }
 
     private void entityAttributeEvent(EntityAttributeCreationEvent event) {
-        event.put(ModEntityTypes.DAYONGASPIS.get(), Dayongaspis.setAttributes());
+        event.put(ModEntityTypes.DAYONGASPIS.get(), DayongaspisEntity.setAttributes());
+        event.put(ModEntityTypes.STYRACOSAURUS.get(), StyracosaurusEntity.setAttributes());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -93,6 +81,7 @@ public class PrehistoricCraft {
             BlockEntityRenderers.register(ModBlockEntities.EXTRACTION_MACHINE_BE.get(), ExtractionMachineRenderer::new);
 
             EntityRenderers.register(ModEntityTypes.DAYONGASPIS.get(), DayongaspisRenderer::new);
+            EntityRenderers.register(ModEntityTypes.STYRACOSAURUS.get(), StyracosaurusRenderer::new);
         }
     }
 

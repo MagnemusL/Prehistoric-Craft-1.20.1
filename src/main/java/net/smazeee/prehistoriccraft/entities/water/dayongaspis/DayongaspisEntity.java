@@ -14,7 +14,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.smazeee.prehistoriccraft.entities.ai.FishSwimGoal;
-import net.smazeee.prehistoriccraft.entities.ai.GoCloseToBottomFishGoal;
 import net.smazeee.prehistoriccraft.entities.ai.GoToBottomFishGoal;
 import net.smazeee.prehistoriccraft.item.ModItems;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -24,10 +23,10 @@ import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInst
 import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
-public class Dayongaspis extends AbstractFish implements GeoEntity {
+public class DayongaspisEntity extends AbstractFish implements GeoEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    public Dayongaspis(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
+    public DayongaspisEntity(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
