@@ -98,9 +98,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> ORGANIC_SANDY_DIRT = registerBlock("organic_sandy_dirt", () -> new ModSandBlock(BlockBehaviour.Properties.of().noOcclusion()));
     public static final RegistryObject<Block> SANDY_DIRT = registerBlock("sandy_dirt", () -> new Block(BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.SAND)));
 
-    public static final RegistryObject<Block> TEST_OBJ = BLOCKS.register("test", () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-
-
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

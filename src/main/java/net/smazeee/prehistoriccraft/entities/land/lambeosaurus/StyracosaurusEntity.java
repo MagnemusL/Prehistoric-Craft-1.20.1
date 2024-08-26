@@ -9,12 +9,14 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.AbstractFish;
+import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.smazeee.prehistoriccraft.entities.LandDinosaur;
-import net.smazeee.prehistoriccraft.util.Age;
 import net.smazeee.prehistoriccraft.util.Gender;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -27,15 +29,21 @@ import software.bernie.geckolib.core.object.PlayState;
 import java.util.Random;
 
 public class StyracosaurusEntity extends LandDinosaur implements GeoEntity {
-    public Gender gender;
-    public Age age = Age.JUVENILE;
-
     public StyracosaurusEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
     public static AttributeSupplier setAttributes() {
         return LandDinosaur.createMobAttributes().add(Attributes.MAX_HEALTH, 30D).add(Attributes.MOVEMENT_SPEED, 3f).build();
+    }
+
+    protected void registerGoals() {
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
+        this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1D));
+        this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
     }
 
     @Nullable
@@ -56,14 +64,27 @@ public class StyracosaurusEntity extends LandDinosaur implements GeoEntity {
         } else {
             setRunningStatus(false);
         }
-        addToTirednessLevel(0.5f);
+        addToTirednessLevel(0.05f);
     }
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+        super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
         Random random = new Random();
-        gender = random.nextBoolean() ? Gender.MALE : Gender.FEMALE;
+        setGender(random.nextBoolean() ? Gender.MALE : Gender.FEMALE);
         return pSpawnData;
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag pCompound) {
+        super.readAdditionalSaveData(pCompound);
+        setGender(pCompound.getBoolean("Gender") ? Gender.MALE : Gender.FEMALE);
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag pCompound) {
+        super.addAdditionalSaveData(pCompound);
+        pCompound.putBoolean("Gender", getGender());
     }
 
     /* GECKOLIB */
@@ -97,7 +118,7 @@ public class StyracosaurusEntity extends LandDinosaur implements GeoEntity {
             return PlayState.CONTINUE;
         }
         if (animationState.isMoving()) {
-            animationState.getController().setAnimation(RawAnimation.begin().then("walk", Animation.LoopType.LOOP));
+            animationState.getController().setAnimation(RawAnimation.begin().then("walking", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
         if (isRunning()) {

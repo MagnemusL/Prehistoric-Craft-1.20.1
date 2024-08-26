@@ -25,6 +25,9 @@ public class LandDinosaur extends Animal {
     private static final EntityDataAccessor<Float> TIREDNESS_LEVEL = SynchedEntityData.defineId(LandDinosaur.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Integer> CLEANLINESS_LEVEL = SynchedEntityData.defineId(LandDinosaur.class, EntityDataSerializers.INT);
 
+    private static final EntityDataAccessor<Boolean> GENDER = SynchedEntityData.defineId(LandDinosaur.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> AGE = SynchedEntityData.defineId(LandDinosaur.class, EntityDataSerializers.INT);
+
     public LandDinosaur(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -48,6 +51,9 @@ public class LandDinosaur extends Animal {
         entityData.define(NUTRITION_LEVEL, 100);
         entityData.define(TIREDNESS_LEVEL, 0f);
         entityData.define(CLEANLINESS_LEVEL, 100);
+
+        entityData.define(GENDER, true);
+        entityData.define(AGE, 0);
     }
 
     @Override
@@ -56,6 +62,39 @@ public class LandDinosaur extends Animal {
             this.setSpeed(6f);
         } else {
             this.setSpeed(3f);
+        }
+    }
+
+    public boolean getGender() {return this.entityData.get(GENDER);}
+    public int getAge() {return this.entityData.get(AGE);}
+    public void setGender(Gender gender) {
+        switch (gender) {
+            case MALE:
+                this.entityData.set(GENDER, true);
+                break;
+            case FEMALE:
+                this.entityData.set(GENDER, false);
+                break;
+        }
+    }
+    public void setAge(Age age) {
+        switch(age) {
+            case HATCHLING:
+                this.entityData.set(AGE, 0);
+                break;
+            case JUVENILE:
+                this.entityData.set(AGE, 1);
+                break;
+            case TEEN:
+                this.entityData.set(AGE, 2);
+                break;
+            case SUBADULT:
+                this.entityData.set(AGE, 3);
+                break;
+            case ADULT:
+                this.entityData.set(AGE, 4);
+                break;
+
         }
     }
 

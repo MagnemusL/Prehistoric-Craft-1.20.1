@@ -108,8 +108,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         drop(ModBlocks.ORGANIC_ORANGE_SANDY_DIRT);
         drop(ModBlocks.ORGANIC_SANDY_DIRT);
         drop(ModBlocks.SANDY_DIRT);
-
-        drop(ModBlocks.TEST_OBJ);
     }
 
     @Override
