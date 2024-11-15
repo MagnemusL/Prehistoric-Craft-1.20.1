@@ -1,9 +1,7 @@
-package net.smazeee.prehistoriccraft.entities.ai;
+package net.smazeee.prehistoriccraft.entities.ai.goals;
 
 import net.minecraft.world.entity.ai.behavior.BehaviorUtils;
-import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.phys.Vec3;
 

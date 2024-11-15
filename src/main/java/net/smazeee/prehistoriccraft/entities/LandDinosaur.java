@@ -66,7 +66,16 @@ public class LandDinosaur extends Animal {
     }
 
     public boolean getGender() {return this.entityData.get(GENDER);}
-    public int getAge() {return this.entityData.get(AGE);}
+    public Age getCurrentAge() {
+        return switch (this.entityData.get(AGE)) {
+            case 0 -> Age.HATCHLING;
+            case 1 -> Age.JUVENILE;
+            case 2 -> Age.TEEN;
+            case 3 -> Age.SUBADULT;
+            case 4 -> Age.ADULT;
+            default -> null;
+        };
+    }
     public void setGender(Gender gender) {
         switch (gender) {
             case MALE:
@@ -77,7 +86,7 @@ public class LandDinosaur extends Animal {
                 break;
         }
     }
-    public void setAge(Age age) {
+    public void setCurrentAge(Age age) {
         switch(age) {
             case HATCHLING:
                 this.entityData.set(AGE, 0);
@@ -97,7 +106,6 @@ public class LandDinosaur extends Animal {
 
         }
     }
-
     public boolean isDrinking() {return this.entityData.get(IS_DRINKING);}
     public boolean isEating() {return this.entityData.get(IS_DRINKING);}
     public boolean isSleeping() {return this.entityData.get(IS_SLEEPING);}

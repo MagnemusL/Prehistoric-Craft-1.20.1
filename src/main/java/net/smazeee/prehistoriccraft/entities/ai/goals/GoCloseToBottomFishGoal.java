@@ -1,4 +1,4 @@
-package net.smazeee.prehistoriccraft.entities.ai;
+package net.smazeee.prehistoriccraft.entities.ai.goals;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Mob;

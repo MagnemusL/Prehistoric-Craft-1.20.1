@@ -8,7 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.smazeee.prehistoriccraft.PrehistoricCraft;
-import net.smazeee.prehistoriccraft.entities.land.lambeosaurus.StyracosaurusEntity;
+import net.smazeee.prehistoriccraft.entities.land.styracosaurus.StyracosaurusEntity;
 import net.smazeee.prehistoriccraft.entities.water.dayongaspis.DayongaspisEntity;
 
 public class ModEntityTypes {
