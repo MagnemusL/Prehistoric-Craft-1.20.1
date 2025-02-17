@@ -6,6 +6,8 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.Level;
 import net.smazeee.prehistoriccraft.util.Age;
@@ -25,16 +27,19 @@ public class LandDinosaur extends Animal {
     private static final EntityDataAccessor<Float> TIREDNESS_LEVEL = SynchedEntityData.defineId(LandDinosaur.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Integer> CLEANLINESS_LEVEL = SynchedEntityData.defineId(LandDinosaur.class, EntityDataSerializers.INT);
 
-    private static final EntityDataAccessor<Boolean> GENDER = SynchedEntityData.defineId(LandDinosaur.class, EntityDataSerializers.BOOLEAN);
+    //1: Male
+    //2: Female
+    //3: No Gender
+    private static final EntityDataAccessor<Integer> GENDER = SynchedEntityData.defineId(LandDinosaur.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> AGE = SynchedEntityData.defineId(LandDinosaur.class, EntityDataSerializers.INT);
 
     public LandDinosaur(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
-    @Nullable
+
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         return null;
     }
 
@@ -52,20 +57,19 @@ public class LandDinosaur extends Animal {
         entityData.define(TIREDNESS_LEVEL, 0f);
         entityData.define(CLEANLINESS_LEVEL, 100);
 
-        entityData.define(GENDER, true);
+        entityData.define(GENDER, 1);
         entityData.define(AGE, 0);
     }
 
-    @Override
-    public void tick() {
-        if (isRunning()) {
-            this.setSpeed(6f);
-        } else {
-            this.setSpeed(3f);
-        }
+    public boolean needsFood() {
+        return getNutritionLevel() < 60;
+    }
+    public boolean needsWater() {
+        //return getHydrationLevel() < 60;
+        return true;
     }
 
-    public boolean getGender() {return this.entityData.get(GENDER);}
+    public int getGender() {return this.entityData.get(GENDER);}
     public Age getCurrentAge() {
         return switch (this.entityData.get(AGE)) {
             case 0 -> Age.HATCHLING;
@@ -79,10 +83,13 @@ public class LandDinosaur extends Animal {
     public void setGender(Gender gender) {
         switch (gender) {
             case MALE:
-                this.entityData.set(GENDER, true);
+                this.entityData.set(GENDER, 1);
                 break;
             case FEMALE:
-                this.entityData.set(GENDER, false);
+                this.entityData.set(GENDER, 2);
+                break;
+            case NO_GENDER:
+                this.entityData.set(GENDER, 3);
                 break;
         }
     }

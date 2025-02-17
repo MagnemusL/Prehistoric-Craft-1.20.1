@@ -73,8 +73,11 @@ public class ModCreativeModeTabs {
         output.accept(ModItems.TRIASSIC_FOSSIL.get());
         output.accept(ModItems.EXTRACTION_MACHINE_BLOCK_ITEM.get());
         output.accept(ModItems.SULFUR.get());
-        output.accept(ModItems.SULFURIC_ACID_BUCKET.get());
         output.accept(ModBlocks.SULFUR_ORE.get());
+        output.accept(ModBlocks.DEEPSLATE_SULFUR_ORE.get());
+        output.accept(ModItems.AMBER.get());
+        output.accept(ModBlocks.AMBER_ORE.get());
+        output.accept(ModBlocks.AMBER_BLOCK.get());
     }).build());
 
     public static final RegistryObject<CreativeModeTab> DECORATION_TAB = CREATIVE_MODE_TABS.register("decoration_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.LEAF_LITTER.get())).title(Component.translatable("creativetab.decorations_tab")).displayItems((displayParameters, output) -> {
@@ -101,6 +104,7 @@ public class ModCreativeModeTabs {
     }).build());
 
     public static final RegistryObject<CreativeModeTab> ENTITY_TAB = CREATIVE_MODE_TABS.register("entity_tab", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.DAYONGASPIS_SPAWN_EGG.get())).title(Component.translatable("creativetab.entity_tab")).displayItems((displayParameters, output) -> {
+        output.accept(ModItems.STYRACOSAURUS_SPAWN_EGG.get());
         output.accept(ModItems.DAYONGASPIS_SPAWN_EGG.get());
         output.accept(ModItems.EGGY.get());
         output.accept(ModItems.CRACKED_EGGY.get());

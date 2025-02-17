@@ -37,7 +37,7 @@ public class ShoreRandomPos {
 
     private static boolean isShore(PathfinderMob mob, BlockPos pos) {
         Level level = mob.level();
-        return level.getFluidState(pos).isEmpty() && level.getFluidState(pos).is(FluidTags.WATER);
+        return true;//level.getFluidState(pos).isEmpty() && level.getFluidState(pos).is(FluidTags.WATER);
     }
 
     @Nullable

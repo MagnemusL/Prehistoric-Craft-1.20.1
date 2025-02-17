@@ -2,5 +2,6 @@ package net.smazeee.prehistoriccraft.util;
 
 public enum Gender {
     FEMALE,
-    MALE
+    MALE,
+    NO_GENDER
 }

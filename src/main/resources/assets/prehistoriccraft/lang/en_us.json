@@ -88,7 +88,11 @@
   "item.prehistoriccraft.eggy": "Eggy!",
   "item.prehistoriccraft.cracked_eggy": "Cracked Eggy :(",
 
+  "item.prehistoriccraft.styracosaurus_spawn_egg": "Styracosaurus Spawn Egg",
+  "entity.prehistoriccraft.styracosaurus": "Styracosaurus",
+
   "item.prehistoriccraft.dayongaspis_spawn_egg": "Dayongaspis Spawn Egg",
+  "entity.prehistoriccraft.dayongaspis": "Dayongaspis",
   "item.prehistoriccraft.dayongaspis_bucket": "Dayongaspis Bucket",
 
   "blockentity.acid_shower": "Acid Shower",

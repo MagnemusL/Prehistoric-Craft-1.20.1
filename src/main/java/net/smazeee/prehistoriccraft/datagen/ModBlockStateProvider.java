@@ -46,6 +46,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.SILURIAN_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.TRIASSIC_FOSSILIFEROUS_STONE);
         blockItem(ModBlocks.AMBER_ORE);
+        blockItem(ModBlocks.AMBER_BLOCK);
 
         blockItem(ModBlocks.SULFUR_ORE);
         blockItem(ModBlocks.DEEPSLATE_SULFUR_ORE);

@@ -1,4 +1,5 @@
-// 1.20.1	2024-07-11T20:51:17.0539401	Loot Tables
+// 1.20.1	2025-02-11T22:38:16.5700543	Loot Tables
+3c34bb7179c80d80367a3e0663f64b25dc563fc4 data/prehistoriccraft/loot_tables/blocks/amber_block.json
 fe34bc0c9a089d1b8e74acf41de96ee0a90ef186 data/prehistoriccraft/loot_tables/blocks/amber_ore.json
 5c2d654a635680c93e48fc152114f28e21610698 data/prehistoriccraft/loot_tables/blocks/aqua_stony_coral.json
 651f3328c7d6d0be9627675c9113d87689326dc4 data/prehistoriccraft/loot_tables/blocks/belemnopteris.json
@@ -53,5 +54,4 @@ ea124a3eba7f7dab1c557bdbd4008fc2167798dd data/prehistoriccraft/loot_tables/block
 5cf2c59b8308a792ffd2fc8af7c3f576417eec68 data/prehistoriccraft/loot_tables/blocks/sandy_dirt.json
 6ccb4594dc9e8ee906bf7a1dc9fdc9c63127dcd8 data/prehistoriccraft/loot_tables/blocks/silurian_fossiliferous_stone.json
 9f7f240ca9acca51188b4d6ec7111ff57a30b3c3 data/prehistoriccraft/loot_tables/blocks/sulfur_ore.json
-321382bef2b33a4987564a645c5361d3428af20f data/prehistoriccraft/loot_tables/blocks/test.json
 098af42816d97550d02598bb7b34b38a1d34f78b data/prehistoriccraft/loot_tables/blocks/triassic_fossiliferous_stone.json

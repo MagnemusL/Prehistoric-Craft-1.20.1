@@ -18,7 +18,7 @@ import net.smazeee.prehistoriccraft.block.ModBlocks;
 import net.smazeee.prehistoriccraft.block.entity.ModBlockEntities;
 import net.smazeee.prehistoriccraft.block.entity.client.ExtractionMachineRenderer;
 import net.smazeee.prehistoriccraft.entities.ModEntityTypes;
-import net.smazeee.prehistoriccraft.entities.land.styracosaurus.StyracosaurusEntity;
+import net.smazeee.prehistoriccraft.entities.land.styracosaurus.Styracosaurus;
 import net.smazeee.prehistoriccraft.entities.land.styracosaurus.StyracosaurusRenderer;
 import net.smazeee.prehistoriccraft.entities.water.dayongaspis.DayongaspisEntity;
 import net.smazeee.prehistoriccraft.entities.water.dayongaspis.DayongaspisRenderer;
@@ -59,7 +59,7 @@ public class PrehistoricCraft {
 
     private void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(ModEntityTypes.DAYONGASPIS.get(), DayongaspisEntity.setAttributes());
-        event.put(ModEntityTypes.STYRACOSAURUS.get(), StyracosaurusEntity.setAttributes());
+        event.put(ModEntityTypes.STYRACOSAURUS.get(), Styracosaurus.setAttributes());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -68,7 +68,7 @@ public class PrehistoricCraft {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         TerritoryUtil.get(event.getServer().overworld());
-        PrehistoricCraft.LOGGER.info("Instantiated Territory Util");
+        PrehistoricCraft.LOGGER.info("Instantiated Territories");
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "prehistoriccraft:test"
+          "name": "prehistoriccraft:amber_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "prehistoriccraft:blocks/test"
+  "random_sequence": "prehistoriccraft:blocks/amber_block"
 }

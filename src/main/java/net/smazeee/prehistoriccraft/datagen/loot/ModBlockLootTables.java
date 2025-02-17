@@ -62,6 +62,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropOre(ModBlocks.SILURIAN_FOSSILIFEROUS_STONE, ModItems.SILURIAN_FOSSIL);
         dropOre(ModBlocks.TRIASSIC_FOSSILIFEROUS_STONE, ModItems.TRIASSIC_FOSSIL);
         dropOre(ModBlocks.AMBER_ORE, ModItems.AMBER);
+        drop(ModBlocks.AMBER_BLOCK);
 
         dropOre(ModBlocks.SULFUR_ORE, ModItems.SULFUR);
         dropOre(ModBlocks.DEEPSLATE_SULFUR_ORE, ModItems.SULFUR);

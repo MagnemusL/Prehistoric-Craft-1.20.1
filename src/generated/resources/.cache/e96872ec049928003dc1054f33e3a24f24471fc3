@@ -1,4 +1,5 @@
-// 1.20.1	2024-07-11T20:51:17.0574528	Block States: prehistoriccraft
+// 1.20.1	2025-02-11T22:38:16.5726745	Block States: prehistoriccraft
+ed3f56cac858cef5cc27b0c2d6997ad6a06041b6 assets/prehistoriccraft/blockstates/amber_block.json
 41808947d203209ab4bd96df6d0711d01c1d17e4 assets/prehistoriccraft/blockstates/amber_ore.json
 b9d1022affe6448fb57bf51f4321cea87274ea54 assets/prehistoriccraft/blockstates/aqua_stony_coral.json
 24170965ac3f0d5b38c3583852b2f98cd2490c04 assets/prehistoriccraft/blockstates/blue_soft_fan_coral.json
@@ -47,6 +48,7 @@ cb39c40382b29f8695e93b7465d093d2fa759d2b assets/prehistoriccraft/blockstates/san
 5d1d8904cb6845e10db8a174cf135c7eb0756dfe assets/prehistoriccraft/blockstates/silurian_fossiliferous_stone.json
 e64ffb0075a37bee36928f3d2aeff7183b58494a assets/prehistoriccraft/blockstates/sulfur_ore.json
 b9c521027a86538a55b8ccc174c9fc3767a0680d assets/prehistoriccraft/blockstates/triassic_fossiliferous_stone.json
+a3753d97ad02b0b20c4a9288349884d554ba5ad4 assets/prehistoriccraft/models/block/amber_block.json
 2dbee10a8eced9538edd0102ae2060dd3b0c6382 assets/prehistoriccraft/models/block/amber_ore.json
 8a962d7a2bef436bcd8c01e12e56a2e5474528e2 assets/prehistoriccraft/models/block/aqua_stony_coral.json
 45a2ad0e7c5ef6d8f4e69e11330dc1ccd270acf2 assets/prehistoriccraft/models/block/blue_soft_fan_coral.json
@@ -95,6 +97,7 @@ fe93802a45a48c12b72194c0d2e6634edac76359 assets/prehistoriccraft/models/block/re
 bedf35347ae10c8e0b8e0b1eeac3fe4c2ccc9357 assets/prehistoriccraft/models/block/silurian_fossiliferous_stone.json
 65543729c9be598f9aff2eb83984f0a7b85d5fe4 assets/prehistoriccraft/models/block/sulfur_ore.json
 fc0d50c6f5ef3d0d13e9afe099060b5a1ae15df2 assets/prehistoriccraft/models/block/triassic_fossiliferous_stone.json
+66dcba0d400eb6defbb8131155c424d7adf4df93 assets/prehistoriccraft/models/item/amber_block.json
 4c5bcda4e15a17a07d3ef1ae0caa7feb455de592 assets/prehistoriccraft/models/item/amber_ore.json
 9a4724e08456872bf2b1c86b1a47fdf54fa2faa5 assets/prehistoriccraft/models/item/aqua_stony_coral.json
 d425f9237884d3479112eb48eb32e9d9a038c33c assets/prehistoriccraft/models/item/belemnopteris.json
