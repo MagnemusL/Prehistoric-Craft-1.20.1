@@ -341,7 +341,7 @@
 [11feb.2025 22:51:06.702] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@261db982 - got cpw.mods.cl.ModuleClassLoader@77ee25f1
 [11feb.2025 22:51:06.702] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.tslat.tes.TES
 [11feb.2025 22:51:06.703] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@261db982 - got cpw.mods.cl.ModuleClassLoader@77ee25f1
-[11feb.2025 22:51:06.703] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.smazeee.prehistoriccraft.PrehistoricCraft
+[11feb.2025 22:51:06.703] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.seentro.prehistoriccraft.PrehistoricCraft
 [11feb.2025 22:51:06.704] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@261db982 - got cpw.mods.cl.ModuleClassLoader@77ee25f1
 [11feb.2025 22:51:06.704] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.minecraftforge.common.ForgeMod
 [11feb.2025 22:51:06.706] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@261db982 - got cpw.mods.cl.ModuleClassLoader@77ee25f1
@@ -373,10 +373,10 @@
 [11feb.2025 22:51:06.847] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: java.nio.Buffer.address: available
 [11feb.2025 22:51:06.848] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for tslatentitystatus
 [11feb.2025 22:51:06.848] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for prehistoriccraft
-[11feb.2025 22:51:06.848] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.smazeee.prehistoriccraft.datagen.DataGenerators to MOD
-[11feb.2025 22:51:06.854] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.smazeee.prehistoriccraft.PrehistoricCraft$ClientModEvents to MOD
-[11feb.2025 22:51:06.855] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.smazeee.prehistoriccraft.PrehistoricCraft$ModEvents to MOD
-[11feb.2025 22:51:06.856] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.smazeee.prehistoriccraft.PrehistoricCraft$ModEventsForge to FORGE
+[11feb.2025 22:51:06.848] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.seentro.prehistoriccraft.datagen.DataGenerators to MOD
+[11feb.2025 22:51:06.854] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.seentro.prehistoriccraft.PrehistoricCraft$ClientModEvents to MOD
+[11feb.2025 22:51:06.855] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.seentro.prehistoriccraft.PrehistoricCraft$ModEvents to MOD
+[11feb.2025 22:51:06.856] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.seentro.prehistoriccraft.PrehistoricCraft$ModEventsForge to FORGE
 [11feb.2025 22:51:06.847] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: direct buffer constructor: unavailable
 java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
 	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31) ~[netty-common-4.1.82.Final.jar%23151!/:4.1.82.Final]

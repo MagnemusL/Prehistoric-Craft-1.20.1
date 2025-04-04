@@ -4324,7 +4324,7 @@
 							"vector": [33.75, -12.5, 0]
 						},
 						"1.4": {
-							"vector": [8.04687, -32.03125, 0]
+							"vector": [8.04688, -32.03125, 0]
 						},
 						"2.5": {
 							"vector": [7.5, -75, 0]
@@ -5383,6 +5383,43 @@
 						"2.0": {
 							"vector": [0, 0, 0]
 						}
+					}
+				}
+			}
+		},
+		"animation.model.molang": {
+			"loop": true,
+			"bones": {
+				"Neck4": {
+					"rotation": {
+						"vector": ["(query.head_x_rotation)*0.15", "(query.head_y_rotation)*0.15", 0]
+					},
+					"position": {
+						"vector": [0, 0, "-1*(query.head_x_rotation)/90"]
+					}
+				},
+				"Neck5": {
+					"rotation": {
+						"vector": ["(query.head_x_rotation)*0.15", "(query.head_y_rotation)*0.3", 0]
+					},
+					"position": {
+						"vector": [0, "-1*(query.head_x_rotation)/180", "-1*(query.head_x_rotation)/90"]
+					}
+				},
+				"Neck6": {
+					"rotation": {
+						"vector": ["(query.head_x_rotation)*0.15", "(query.head_y_rotation)*0.3", 0]
+					},
+					"position": {
+						"vector": [0, 0, "(-1*(query.head_x_rotation)/90)*3.5"]
+					}
+				},
+				"Head2": {
+					"rotation": {
+						"vector": ["(query.head_x_rotation)*0.15", "(query.head_y_rotation)*0.2", 0]
+					},
+					"position": {
+						"vector": ["-1*(query.head_y_rotation)/90", 0, 0]
 					}
 				}
 			}
