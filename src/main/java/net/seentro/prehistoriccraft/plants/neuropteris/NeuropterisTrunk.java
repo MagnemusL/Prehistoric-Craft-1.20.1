@@ -1,4 +1,4 @@
-package net.seentro.prehistoriccraft.plants;
+package net.seentro.prehistoriccraft.plants.neuropteris;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

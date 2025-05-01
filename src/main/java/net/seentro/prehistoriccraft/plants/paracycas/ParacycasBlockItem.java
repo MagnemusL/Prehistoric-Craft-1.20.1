@@ -1,4 +1,4 @@
-package net.seentro.prehistoriccraft.plants;
+package net.seentro.prehistoriccraft.plants.paracycas;
 
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.BlockItem;

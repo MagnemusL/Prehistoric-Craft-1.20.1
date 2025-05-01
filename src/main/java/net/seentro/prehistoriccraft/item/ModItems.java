@@ -15,9 +15,9 @@ import net.seentro.prehistoriccraft.block.ModBlocks;
 import net.seentro.prehistoriccraft.entities.ModEntityTypes;
 import net.seentro.prehistoriccraft.item.custom.*;
 import net.seentro.prehistoriccraft.item.custom.satchets.*;
-import net.seentro.prehistoriccraft.plants.NeuropterisBlockItem;
-import net.seentro.prehistoriccraft.plants.PachypterisBlockItem;
-import net.seentro.prehistoriccraft.plants.ParacycasBlockItem;
+import net.seentro.prehistoriccraft.plants.neuropteris.NeuropterisBlockItem;
+import net.seentro.prehistoriccraft.plants.pachypteris.PachypterisBlockItem;
+import net.seentro.prehistoriccraft.plants.paracycas.ParacycasBlockItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -43,7 +43,6 @@ public class ModItems {
     public static final RegistryObject<Item> EGGY = ITEMS.register("eggy", () -> new BatteryItem(new Item.Properties()));
     public static final RegistryObject<Item> CRACKED_EGGY = ITEMS.register("cracked_eggy", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> EMPTY_FLUID_CONTAINER = ITEMS.register("empty_fluid_container", () -> new FluidContainer(new Item.Properties()));
-    public static final RegistryObject<Item> EXTRACTION_MACHINE_BLOCK_ITEM = ITEMS.register("extraction_machine", () -> new ExtractionMachineBlockItem(ModBlocks.EXTRACTION_MACHINE.get(), new Item.Properties()));
     public static final RegistryObject<Item> STYRACOSAURUS_SPAWN_EGG = ITEMS.register("styracosaurus_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.STYRACOSAURUS, 0x997102, 0x80692b, new Item.Properties()));
     public static final RegistryObject<Item> DAYONGASPIS_SPAWN_EGG = ITEMS.register("dayongaspis_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.DAYONGASPIS, 0x997102, 0x80692b, new Item.Properties()));
     public static final RegistryObject<Item> DAYONGASPIS_BUCKET = ITEMS.register("dayongaspis_bucket", () -> new MobBucketItem(() -> ModEntityTypes.DAYONGASPIS.get(), () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1)));

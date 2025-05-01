@@ -2,7 +2,6 @@ package net.seentro.prehistoriccraft;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,19 +15,17 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.seentro.prehistoriccraft.block.ModBlocks;
 import net.seentro.prehistoriccraft.block.entity.ModBlockEntities;
-import net.seentro.prehistoriccraft.block.entity.client.ExtractionMachineRenderer;
 import net.seentro.prehistoriccraft.entities.ModEntityTypes;
 import net.seentro.prehistoriccraft.entities.land.styracosaurus.Styracosaurus;
 import net.seentro.prehistoriccraft.entities.land.styracosaurus.StyracosaurusRenderer;
 import net.seentro.prehistoriccraft.entities.water.dayongaspis.DayongaspisEntity;
 import net.seentro.prehistoriccraft.entities.water.dayongaspis.DayongaspisRenderer;
-import net.seentro.prehistoriccraft.screen.ExtractionMachineScreen;
 import net.seentro.prehistoriccraft.tabs.ModCreativeModeTabs;
 import net.seentro.prehistoriccraft.item.ModItems;
 import net.seentro.prehistoriccraft.recipe.ModRecipes;
 import net.seentro.prehistoriccraft.screen.AcidShowerScreen;
 import net.seentro.prehistoriccraft.screen.ModMenuTypes;
-import net.seentro.prehistoriccraft.util.TerritoryUtil;
+import net.seentro.prehistoriccraft.util.TerritorySavedData;
 import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
 
@@ -67,7 +64,7 @@ public class PrehistoricCraft {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        TerritoryUtil.get(event.getServer().overworld());
+        TerritorySavedData.get(event.getServer().overworld());
         PrehistoricCraft.LOGGER.info("Instantiated Territories");
     }
 
@@ -76,9 +73,6 @@ public class PrehistoricCraft {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.ACID_SHOWER_MENU.get(), AcidShowerScreen::new);
-            MenuScreens.register(ModMenuTypes.EXTRACTION_MACHINE_MENU.get(), ExtractionMachineScreen::new);
-
-            BlockEntityRenderers.register(ModBlockEntities.EXTRACTION_MACHINE_BE.get(), ExtractionMachineRenderer::new);
 
             EntityRenderers.register(ModEntityTypes.DAYONGASPIS.get(), DayongaspisRenderer::new);
             EntityRenderers.register(ModEntityTypes.STYRACOSAURUS.get(), StyracosaurusRenderer::new);

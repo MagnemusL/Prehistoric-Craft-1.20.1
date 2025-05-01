@@ -12,16 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class TerritoryUtil extends SavedData {
+public class TerritorySavedData extends SavedData {
     private static final String DATA_NAME = "prehistoriccraft_territory_data";
 
     private static List<BlockPosListEntry> entries = new ArrayList<>();
 
-    public TerritoryUtil() {
+    public TerritorySavedData() {
     }
 
-    public TerritoryUtil(List<BlockPosListEntry> entries) {
-        TerritoryUtil.entries = entries;
+    public TerritorySavedData(List<BlockPosListEntry> entries) {
+        TerritorySavedData.entries = entries;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class TerritoryUtil extends SavedData {
         return compound;
     }
 
-    public static TerritoryUtil load(CompoundTag compound) {
+    public static TerritorySavedData load(CompoundTag compound) {
         List<BlockPosListEntry> entries = new ArrayList<>();
 
         ListTag entriesTag = compound.getList("entries", Tag.TAG_COMPOUND);
@@ -61,11 +61,11 @@ public class TerritoryUtil extends SavedData {
             entries.add(new BlockPosListEntry(id, blockPosList));
         }
 
-        return new TerritoryUtil(entries);
+        return new TerritorySavedData(entries);
     }
 
-    public static TerritoryUtil get(ServerLevel level) {
-        return level.getDataStorage().computeIfAbsent(TerritoryUtil::load, TerritoryUtil::new, DATA_NAME);
+    public static TerritorySavedData get(ServerLevel level) {
+        return level.getDataStorage().computeIfAbsent(TerritorySavedData::load, TerritorySavedData::new, DATA_NAME);
     }
 
     public List<BlockPosListEntry> getEntries() {
@@ -73,7 +73,7 @@ public class TerritoryUtil extends SavedData {
     }
 
     public void setEntries(List<BlockPosListEntry> entries) {
-        TerritoryUtil.entries = entries;
+        TerritorySavedData.entries = entries;
         setDirty();
     }
 

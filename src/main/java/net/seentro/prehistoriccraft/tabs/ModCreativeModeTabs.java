@@ -71,7 +71,6 @@ public class ModCreativeModeTabs {
         output.accept(ModItems.PERMIAN_FOSSIL.get());
         output.accept(ModItems.SILURIAN_FOSSIL.get());
         output.accept(ModItems.TRIASSIC_FOSSIL.get());
-        output.accept(ModItems.EXTRACTION_MACHINE_BLOCK_ITEM.get());
         output.accept(ModItems.SULFUR.get());
         output.accept(ModBlocks.SULFUR_ORE.get());
         output.accept(ModBlocks.DEEPSLATE_SULFUR_ORE.get());

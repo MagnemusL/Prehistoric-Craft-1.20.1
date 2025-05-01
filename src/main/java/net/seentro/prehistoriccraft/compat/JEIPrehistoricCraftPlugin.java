@@ -10,9 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.seentro.prehistoriccraft.PrehistoricCraft;
 import net.seentro.prehistoriccraft.recipe.AcidShowerRecipe;
-import net.seentro.prehistoriccraft.recipe.ExtractionMachineRecipe;
 import net.seentro.prehistoriccraft.screen.AcidShowerScreen;
-import net.seentro.prehistoriccraft.screen.ExtractionMachineScreen;
 
 import java.util.List;
 
@@ -27,8 +25,6 @@ public class JEIPrehistoricCraftPlugin implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registration) {
         /*ACID SHOWER*/
         registration.addRecipeCategories(new AcidShowerRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
-        /*EXTRACTION MACHINE*/
-        registration.addRecipeCategories(new ExtractionMachineRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
@@ -37,10 +33,6 @@ public class JEIPrehistoricCraftPlugin implements IModPlugin {
         /*ACID SHOWER*/
         List<AcidShowerRecipe> sprayingRecipes = recipeManager.getAllRecipesFor(AcidShowerRecipe.Type.INSTANCE);
         registration.addRecipes(AcidShowerRecipeCategory.ACID_SHOWERING_TYPE, sprayingRecipes);
-
-        /*EXTRACTION MACHINE*/
-        List<ExtractionMachineRecipe> extractionRecipes = recipeManager.getAllRecipesFor(ExtractionMachineRecipe.Type.INSTANCE);
-        registration.addRecipes(ExtractionMachineRecipeCategory.EXTRACTION_TYPE, extractionRecipes);
     }
 
     @Override
@@ -48,9 +40,5 @@ public class JEIPrehistoricCraftPlugin implements IModPlugin {
         /*ACID SHOWER*/
         registration.addRecipeClickArea(AcidShowerScreen.class, 64, 61, 46, 12,
                 AcidShowerRecipeCategory.ACID_SHOWERING_TYPE);
-
-        /*EXTRACTION MACHINE*/
-        registration.addRecipeClickArea(ExtractionMachineScreen.class, 63, 35, 51, 29,
-                ExtractionMachineRecipeCategory.EXTRACTION_TYPE);
     }
 }

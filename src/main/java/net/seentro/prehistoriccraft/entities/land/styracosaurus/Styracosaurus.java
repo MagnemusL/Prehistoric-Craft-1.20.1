@@ -10,7 +10,6 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.schedule.Activity;
 import net.minecraft.world.level.Level;
 import net.seentro.prehistoriccraft.entities.LandDinosaur;
-import net.seentro.prehistoriccraft.entities.ai.behaviours.SupplyWaterNeedsBehaviour;
 import net.tslat.smartbrainlib.api.SmartBrainOwner;
 import net.tslat.smartbrainlib.api.core.BrainActivityGroup;
 import net.tslat.smartbrainlib.api.core.SmartBrainProvider;
@@ -91,11 +90,7 @@ public class Styracosaurus extends LandDinosaur implements SmartBrainOwner<Styra
         return BrainActivityGroup.idleTasks(
                 new FirstApplicableBehaviour<Styracosaurus>(
                         new SetPlayerLookTarget<>(),
-                        new SetRandomLookTarget<>()),
-                new OneRandomBehaviour<>(
-                        new SupplyWaterNeedsBehaviour<>(),
-                        //new SetRandomWalkTarget<>(),
-                        new Idle<>().runFor(entity -> entity.getRandom().nextInt(30, 100))));
+                        new SetRandomLookTarget<>()));
     }
 
     @Override

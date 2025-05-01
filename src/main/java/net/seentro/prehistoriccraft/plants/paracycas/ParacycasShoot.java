@@ -1,4 +1,4 @@
-package net.seentro.prehistoriccraft.plants;
+package net.seentro.prehistoriccraft.plants.paracycas;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,31 +13,32 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.seentro.prehistoriccraft.PrehistoricCraft;
 import net.seentro.prehistoriccraft.block.ModBlocks;
 import net.seentro.prehistoriccraft.item.ModItems;
 
-public class NeuropterisShoot extends BushBlock {
+public class ParacycasShoot extends BushBlock {
     protected static final VoxelShape SHAPE = Block.box(5.8D, 0.0D, 5.8D, 10.2D, 6.0D, 10.2D);
 
-    public NeuropterisShoot(Properties properties) {
+    public ParacycasShoot(Properties properties) {
         super(properties);
     }
 
     @Override
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return pState.is(ModBlocks.NEUROPTERIS_TRUNK.get());
+        return pState.is(ModBlocks.PARACYCAS_TRUNK.get());
     }
 
     @Override
     public void playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
         if (!pPlayer.isCreative()) {
             if (pPlayer.getItemInHand(InteractionHand.MAIN_HAND).getItem() == Items.SHEARS || pPlayer.getItemInHand(InteractionHand.OFF_HAND).getItem() == Items.SHEARS) {
-                popResource(pLevel, pPos, new ItemStack(ModItems.NEUROPTERIS_SHOOT.get()));
+                popResource(pLevel, pPos, new ItemStack(ModItems.PARACYCAS_SHOOT.get()));
             } else {
-                popResource(pLevel, pPos, new ItemStack(ModBlocks.NEUROPTERIS_SAPLING.get()));
+                popResource(pLevel, pPos, new ItemStack(ModBlocks.PARACYCAS_SAPLING.get()));
             }
         }
         super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
@@ -57,6 +58,7 @@ public class NeuropterisShoot extends BushBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        Vec3 vec3 = state.getOffset(getter, pos.below());
+        return SHAPE.move(vec3.x, 0, vec3.z);
     }
 }

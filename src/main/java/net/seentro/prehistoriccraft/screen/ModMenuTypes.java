@@ -15,7 +15,6 @@ public class ModMenuTypes {
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, PrehistoricCraft.MODID);
 
     public static final RegistryObject<MenuType<AcidShowerMenu>> ACID_SHOWER_MENU = registerMenu(AcidShowerMenu::new, "acid_shower_menu");
-    public static final RegistryObject<MenuType<ExtractionMachineMenu>> EXTRACTION_MACHINE_MENU = registerMenu(ExtractionMachineMenu::new, "extraction_machine_menu");
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenu(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

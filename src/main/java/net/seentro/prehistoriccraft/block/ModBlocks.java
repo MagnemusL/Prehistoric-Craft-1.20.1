@@ -14,6 +14,12 @@ import net.seentro.prehistoriccraft.PrehistoricCraft;
 import net.seentro.prehistoriccraft.block.custom.*;
 import net.seentro.prehistoriccraft.plants.*;
 import net.seentro.prehistoriccraft.item.ModItems;
+import net.seentro.prehistoriccraft.plants.neuropteris.NeuropterisShoot;
+import net.seentro.prehistoriccraft.plants.neuropteris.NeuropterisTrunk;
+import net.seentro.prehistoriccraft.plants.pachypteris.PachypterisShoot;
+import net.seentro.prehistoriccraft.plants.pachypteris.PachypterisTrunk;
+import net.seentro.prehistoriccraft.plants.paracycas.ParacycasShoot;
+import net.seentro.prehistoriccraft.plants.paracycas.ParacycasTrunk;
 
 import java.util.function.Supplier;
 
@@ -43,7 +49,6 @@ public class ModBlocks {
 
     //MACHINES
     public static final RegistryObject<Block> ACID_SHOWER = registerBlock("acid_shower", () -> new AcidShowerBlock(BlockBehaviour.Properties.of().noLootTable().requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-    public static final RegistryObject<Block> EXTRACTION_MACHINE = BLOCKS.register("extraction_machine", () -> new ExtractionMachineBlock(BlockBehaviour.Properties.of().noLootTable().requiresCorrectToolForDrops().strength(3.0F, 3.0F).noOcclusion()));
 
     //PLANTS
     public static final RegistryObject<Block> BELEMNOPTERIS = registerBlock("belemnopteris", () -> new Belemnopteris(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().instabreak().dynamicShape().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
